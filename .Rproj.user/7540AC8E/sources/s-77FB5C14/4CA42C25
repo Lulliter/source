@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1569786103111.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2353466872",
+    "id" : "4CA42C25",
+    "lastKnownWriteTime" : 1569182123,
+    "last_content_update" : 1569182123,
+    "path" : "~/GoogleDrive/Github/source/___render-deploy.sh",
+    "project_path" : "___render-deploy.sh",
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "sh"
+}

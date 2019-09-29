@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Lulliter</title>
+    <link>/source/project/</link>
+    <description>Recent content in Projects on Lulliter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Luisa M. Mimmi, 2019</copyright>
+    <lastBuildDate>Sun, 09 Sep 2018 00:00:00 -0400</lastBuildDate>
+    
+	<atom:link href="/source/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Labor certification processing time analysis</title>
+      <link>/source/project/greencard_analysis/</link>
+      <pubDate>Thu, 20 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/source/project/greencard_analysis/</guid>
+      <description> Short project evaluating labor certification processing time for PERM/Green Card Holders
+This project investigates whether the Trump administration has slowed down the green card application process for foreign workers?.
+The analysis relies on DOL/OFLC and USCIS open data.
+Results Green Card Processing time under Trump - Brief
+Green Card Processing time under Trump - Github Repo
+ </description>
+    </item>
+    
+    <item>
+      <title>Linkedin data analysis</title>
+      <link>/source/project/linkedinanalysis/</link>
+      <pubDate>Sun, 14 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/source/project/linkedinanalysis/</guid>
+      <description> Study of jobs and competitivity of cities This mini-study project was a take-home test I completed in winter 2018 as part of a job interview for a consultancy with IFC (in collaboration with LinkedIn). It used it as an opportunity to refresh some R programming and learn to use the xaringan package to make html presentations.
+ Results Linkedin Analysis Presentation
+Linkedin Analysis Github Repo
+ </description>
+    </item>
+    
+    <item>
+      <title>NYE fundraising data analysis</title>
+      <link>/source/project/nye-fundraising/</link>
+      <pubDate>Sun, 14 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/source/project/nye-fundraising/</guid>
+      <description>Analysis of Fundraising data for Non Profit “NYE Encounter” Since March 2018, I have worked part-time as a Pro-Bono Fundraising Data Analyst for the nonprofit organization New York Encounter. I performed several ETL tasks –via SQL-based data transformations and R programming– to set up the integration of data that existed in separate and disconnected platforms. Namely, the Nonprofit had informations on donors and attendees on SendGrid, donations recorded via Square and miscellaneous other information in Salesforce.</description>
+    </item>
+    
+    <item>
+      <title>World Development Indicator data analysis</title>
+      <link>/source/project/wdianalysis/</link>
+      <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/source/project/wdianalysis/</guid>
+      <description>Study of World Bank’s WDI indicator Life expectancy at birth This mini-study project was an exercise to learn how to use the World Bank’s API for the World Development Indicator (WDI) repository.
+In this study, I explore the indicator Life expectancy at birth and I also do some comparative analisys using other indicators that I expect to be highly correlated with life expectancy: namely GDP and the status of Fragile and conflict affected situations (FCS).</description>
+    </item>
+    
+    <item>
+      <title>IADB Survey of WSS suppliers in Brazil 2018/2019</title>
+      <link>/source/project/iadb_wss-survey-brazil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/project/iadb_wss-survey-brazil/</guid>
+      <description>Please note, the survey is still in progress, hence the results are subject to change and NOT (yet) ready for dissemination.  Link to Project Page https://lulliter.github.io/BrazilWaterSurvey/
+ Purpose of the study The survey is part of a larger effort to collect original data in preparation of the publication “Development in America” 2020 that will focus on Infrastructure (Energy, Water and Transportation) sector in LAC.
+ Creators This page was created by Luisa M.</description>
+    </item>
+    
+  </channel>
+</rss>

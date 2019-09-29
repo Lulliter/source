@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lapply on Lulliter</title>
+    <link>/source/tags/lapply/</link>
+    <description>Recent content in lapply on Lulliter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Luisa M. Mimmi, 2019</copyright>
+    <lastBuildDate>Fri, 28 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/source/tags/lapply/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Working with project&#39;s directories and lists of files in R</title>
+      <link>/source/tutorial/working-with-project-s-directories-and-lists-of-files-in-r/</link>
+      <pubDate>Fri, 28 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tutorial/working-with-project-s-directories-and-lists-of-files-in-r/</guid>
+      <description>&lt;p&gt;Here I want to collect a few useful R code chunks that I execute common tasks when I compile a complex research project with several sub-folders organizing the content. A very common goal is to lead in the environment all the files stored in a certain subdirectory of the project&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

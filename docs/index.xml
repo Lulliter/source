@@ -1,0 +1,2579 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lulliter on Lulliter</title>
+    <link>/source/</link>
+    <description>Recent content in Lulliter on Lulliter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Luisa M. Mimmi, 2019</copyright>
+    <lastBuildDate>Thu, 20 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/source/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Labor certification processing time analysis</title>
+      <link>/source/project/greencard_analysis/</link>
+      <pubDate>Thu, 20 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/source/project/greencard_analysis/</guid>
+      <description>
+
+
+&lt;p&gt;Short project evaluating labor certification processing time for &lt;strong&gt;&lt;em&gt;PERM/Green Card&lt;/em&gt;&lt;/strong&gt; Holders&lt;/p&gt;
+&lt;p&gt;This project investigates whether the Trump administration has slowed down the green card application process for foreign workers?.&lt;/p&gt;
+&lt;p&gt;The analysis relies on DOL/OFLC and USCIS open data.&lt;/p&gt;
+&lt;div id=&#34;results&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;/source/project/GreenCard_Article.pdf&#34;&gt;Green Card Processing time under Trump - Brief&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Lulliter/GreenCard&#34;&gt;Green Card Processing time under Trump - Github Repo&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linkedin data analysis</title>
+      <link>/source/project/linkedinanalysis/</link>
+      <pubDate>Sun, 14 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/source/project/linkedinanalysis/</guid>
+      <description>
+
+
+&lt;div id=&#34;study-of-jobs-and-competitivity-of-cities&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Study of jobs and competitivity of cities&lt;/h2&gt;
+&lt;p&gt;This mini-study project was a take-home test I completed in winter 2018 as part of a job interview for a consultancy with &lt;strong&gt;IFC&lt;/strong&gt; (in collaboration with &lt;strong&gt;LinkedIn&lt;/strong&gt;). It used it as an opportunity to refresh some R programming and learn to use the &lt;code&gt;xaringan&lt;/code&gt; package to make html presentations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;results&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://lulliter.github.io/Linkedin/slides/Linkedin-Pres-LMM.html#1&#34;&gt;Linkedin Analysis Presentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Lulliter/Linkedin&#34;&gt;Linkedin Analysis Github Repo&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>NYE fundraising data analysis</title>
+      <link>/source/project/nye-fundraising/</link>
+      <pubDate>Sun, 14 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/source/project/nye-fundraising/</guid>
+      <description>
+
+
+&lt;div id=&#34;analysis-of-fundraising-data-for-non-profit-nye-encounter&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Analysis of Fundraising data for Non Profit “NYE Encounter”&lt;/h2&gt;
+&lt;p&gt;Since March 2018, I have worked part-time as a Pro-Bono Fundraising Data Analyst for the nonprofit organization &lt;a href=&#34;http://www.newyorkencounter.org/&#34;&gt;New York Encounter&lt;/a&gt;. I performed several ETL tasks –via SQL-based data transformations and R programming– to set up the integration of data that existed in separate and disconnected platforms. Namely, the Nonprofit had informations on donors and attendees on &lt;strong&gt;SendGrid&lt;/strong&gt;, donations recorded via &lt;strong&gt;Square&lt;/strong&gt; and miscellaneous other information in &lt;strong&gt;Salesforce&lt;/strong&gt;. After cleaning and merging such information, I performed an initial explorative characterization of the Nonprofit private donors. Most of the data integration and analisys was performed in R.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;results&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;p&gt;I cannot share the GIthub repo because it contains confidential data.&lt;/p&gt;
+&lt;p&gt;This link points to a presentation I delivered with insights from my &lt;a href=&#34;/source/project/NYE-fundraising_Presentation_14April2019.pdf&#34;&gt;Fundraising Analysis&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>2019-03-18 Files (and Lists) in Environment</title>
+      <link>/source/tutorial/files-list-management/</link>
+      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tutorial/files-list-management/</guid>
+      <description>&lt;/p&gt;
+&lt;div id=&#34;preliminary-steps&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;0) PRELIMINARY STEPS&lt;/h2&gt;
+&lt;div id=&#34;use-some-pre-loaded-r-datasets-save-as-dfs&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Use some pre-loaded R datasets &amp;amp; save as DFs&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# data() 
+mtcars &amp;lt;- as.data.frame(mtcars)
+iris &amp;lt;- as.data.frame(iris)
+orange &amp;lt;- as.data.frame(Orange)
+titanic &amp;lt;- as.data.frame(Titanic)
+Orange &amp;lt;- as.data.frame(Orange)
+OrchardSprays &amp;lt;- as.data.frame(OrchardSprays)
+airquality &amp;lt;- as.data.frame(airquality)
+airmiles &amp;lt;- as.data.frame(airmiles)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;create-a-list-list-with-names-2-ways-to-name-elements-of-list&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Create a list &lt;code&gt;list&lt;/code&gt; with names (2 ways to name elements of list)&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# 1.a) Create a list of n data frames
+list_dfs &amp;lt;- list(mtcars, iris ,  orange, titanic)
+list_dfs[1]
+
+# 1.b) Give names the data frames
+names(list_dfs) &amp;lt;- c(&amp;quot;mtcars&amp;quot;,&amp;quot;iris&amp;quot;, &amp;quot;orange&amp;quot; , &amp;quot;titanic&amp;quot;) 
+
+# OR -----
+
+# 2) Create a list of n data frames WHILE giving them a  name
+list_dfs_N &amp;lt;- list(mtcars = mtcars, iris = iris, orange = orange, titanic = titanic)
+list_dfs_N[[1]]&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;create-output-dir-file.path-in-a-proj-folder-e.g.-.staticpost&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Create Output DIR &lt;code&gt;file.path&lt;/code&gt; in a proj folder (e.g. “./static/post/…”)&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Create Output Dir... remember final&amp;quot;/&amp;quot;
+Outdf2csv &amp;lt;- file.path(&amp;quot;.&amp;quot;, &amp;quot;static&amp;quot;,&amp;quot;post&amp;quot;, &amp;quot;df2csv/&amp;quot;)
+dir.create(Outdf2csv)
+
+# Dir_pcr &amp;lt;- file.path(&amp;quot;.&amp;quot;, &amp;quot;static&amp;quot;,&amp;quot;post&amp;quot;, &amp;quot;pcr/&amp;quot;)
+# dir.create(Dir_pcr)&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;task-1-write-maintaining-names&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;TASK 1) WRITE ?? (MAINTAINING NAMES)&lt;/h2&gt;
+&lt;div id=&#34;option-1.1a-write-list-of-envir-objects-as-.csv-using-ls-for&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;OPTION (1.1a) WRITE list of Envir objects as &lt;strong&gt;.csv&lt;/strong&gt; using &lt;code&gt;ls&lt;/code&gt; + &lt;code&gt;for&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Not &lt;del&gt;&lt;code&gt;length(list_loop_DF)&lt;/code&gt;&lt;/del&gt; (lenght of the list), but &lt;code&gt;seq_along(list_loop_DF)&lt;/code&gt; -&amp;gt; &lt;em&gt;CORRECT&lt;/em&gt;! (Generates a sequence long as the list)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;utils:write.table(x, file = &amp;quot;&amp;quot;)&lt;/code&gt; where
+&lt;ul&gt;
+&lt;li&gt;x = &lt;code&gt;list_loop_DF[[i]]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;file = &lt;code&gt;paste0(Outdf2csv, names(list_loop_DF[i]), &amp;quot;.csv&amp;quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;list-of-envir-objects-many-csv-files&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;List of Envir objects –&amp;gt; many csv files&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Create a list of NAMED dataframes
+list_loop_DF &amp;lt;- list(airquality = airquality, airmiles = airmiles)
+
+# Write a .csv file with each
+for (i in seq_along(list_loop_DF)) {
+  # Outdf2csv &amp;lt;- if (!dir.exists(&amp;quot;./zzz_purrr/Output/&amp;quot;)) {
+  #   dir.create(file.path(&amp;quot;./zzz_purrr/Output/&amp;quot;))
+  # } else {
+  #   print(&amp;quot;Dir already exists!&amp;quot;)
+  # }
+  write.csv(x = list_loop_DF[[i]], 
+             file = paste0(Outdf2csv, names(list_loop_DF[i]), &amp;quot;.csv&amp;quot;))
+}
+
+
+# or -----
+for (i in seq_along(list_loop_DF)) {
+  # Outdf2csv &amp;lt;- if (!dir.exists(&amp;quot;./zzz_purrr/Output/&amp;quot;)) {
+  #   dir.create(file.path(&amp;quot;./zzz_purrr/Output/&amp;quot;))
+  # } else {
+  #   print(&amp;quot;Dir already exists!&amp;quot;)
+  # }
+  readr::write_csv(x = list_loop_DF[[i]], 
+             path = paste0(Outdf2csv, names(list_loop_DF[i]), &amp;quot;.csv&amp;quot;))
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;option-1.1b-write-list-of-envir-objects-as-.rdata-files-using-ls-for&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;OPTION (1.1b) WRITE list of Envir objects –&amp;gt; as &lt;strong&gt;.Rdata&lt;/strong&gt; files using &lt;code&gt;ls&lt;/code&gt; + &lt;code&gt;for&lt;/code&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; &lt;code&gt;save (list= ...., file = ...)&lt;/code&gt; -&amp;gt; &lt;em&gt;list instead of obj name&lt;/em&gt;!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Create Output Dir... remember final&amp;#39;/&amp;#39;
+OutAPI &amp;lt;- file.path(&amp;quot;.&amp;quot;, &amp;quot;static&amp;quot;,&amp;quot;post&amp;quot;, &amp;quot;SendGrid_API/&amp;quot;)
+# dir.create(OutAPI)
+
+# List of files starting  with &amp;lt;REcip_&amp;gt;
+files_Recip &amp;lt;- ls( pattern=&amp;quot;^Recip_&amp;quot;# &amp;quot;^xx&amp;quot; = &amp;quot;starts with  xx&amp;quot;
+                         # all.files = FALSE,
+                         # full.names = FALSE, recursive = FALSE,
+                         # ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
+)   
+
+# ====== LOOP for as many times as there are items in the listing (= LENGHT)
+for (i in 1:length(files_Recip)) {
+    # at each round  
+    save (list = (files_Recip[i]) ,  # ... take the name of an item from the list 
+            file = paste0(OutAPI, files_Recip[i], &amp;quot;.Rdata&amp;quot;))
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;option-1.2-write-list-of-envir-objects-as-.csv-using-lapply-within-a-function&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;OPTION (1.2) WRITE list of Envir objects as &lt;strong&gt;.csv&lt;/strong&gt; using &lt;code&gt;lapply&lt;/code&gt; (within a function)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; I already created above landing Output dir &lt;code&gt;Outdf2csv&lt;/code&gt; - becomes:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Create a list of NAMED dataframes
+list_lapply_DF &amp;lt;- list(mtcars = mtcars, titanic = titanic ) # 
+
+# Write the function with arguments (DFlist)
+Func_list_lapply &amp;lt;- function(list_lapply_DF) { # optional arg2 (Outdf2csv)
+    lapply(1:length(list_lapply_DF), 
+             function(i) write.csv(list_lapply_DF[[i]], 
+                                         file = paste0(Outdf2csv, 
+                                                          names(list_lapply_DF[i]), &amp;quot;.csv&amp;quot;), 
+                                         row.names = FALSE
+             )
+    )
+}
+
+# Call the function
+Func_list_lapply(list_lapply_DF)&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;option-1.3-write-list-of-envir-objects-as-.csv-using-purrrwalk-not-map&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;OPTION (1.3) WRITE list of Envir objects as &lt;strong&gt;.csv&lt;/strong&gt; using &lt;code&gt;purrr:walk&lt;/code&gt; (not &lt;del&gt;map&lt;/del&gt; )&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; Writing a file to a disk is considered to be a side-effect (we are not changing our data, only save it) so we must use &lt;code&gt;purrr:walk&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Specifically, we are using &lt;code&gt;purrr::walk2(.x, .y, .f, ...&lt;/code&gt; where
+&lt;code&gt;.x&lt;/code&gt; and &lt;code&gt;.y&lt;/code&gt; are vectors of the same length
+&lt;code&gt;.f&lt;/code&gt; is a 2-argument function&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(purrr)
+library(tidyverse)
+
+# Create a list of NAMED dataframes
+list_purrr_DF &amp;lt;- list(Orange = Orange, OrchardSprays = OrchardSprays ) # 
+
+# Set the Output Dir to an object - done before... 
+  # Outdf2csv &amp;lt;- if (!dir.exists(&amp;quot;./zzz_purrr/Output/&amp;quot;)) {
+  #   dir.create(file.path(&amp;quot;./zzz_purrr/Output/&amp;quot;))
+  # } else {
+  #   print(&amp;quot;Dir already exists!&amp;quot;)
+  # }
+
+# ... &amp;amp; combine it with the complete file path
+path &amp;lt;- file.path(paste0(Outdf2csv, names(list_purrr_DF), &amp;quot;.csv&amp;quot;))
+
+# run the function
+purrr::walk2(list_purrr_DF, path, write.csv)&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;option-2-clean-write-as-.csvto-disk-group_by-group_map-purrrgroup_map&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;OPTION (2) CLEAN &amp;amp;&amp;amp; WRITE as &lt;strong&gt;.csv&lt;/strong&gt;to disk &lt;code&gt;group_by + group_map + purrr::group_map&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://luisdva.github.io/rstats/export-iteratively/&#34;&gt;Luis Verde Arregoitia’s&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this case, the five new files (one for each bat family) will end up in the working directory.
+&lt;strong&gt;NOTE&lt;/strong&gt; We use &lt;code&gt;group_by&lt;/code&gt; and &lt;code&gt;group_map&lt;/code&gt; to create a grouped tibble and &lt;code&gt;apply&lt;/code&gt; functions to each group.
++group_map returns a list, so we can use paste0 to create a path for each file to be written, including a custom prefix.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# read csv from web
+batRecs &amp;lt;- read.csv(&amp;quot;https://raw.githubusercontent.com/luisDVA/codeluis/master/batRecords.csv&amp;quot;,
+  stringsAsFactors = FALSE
+)
+# preview how many files we should be ending up with
+batRecs %&amp;gt;% count(family)
+
+# drop na,
+batRecs %&amp;gt;% na.omit() %&amp;gt;%
+  # split to create a list of data frames for each group,
+  group_by(family) %&amp;gt;%
+  # then map to apply functions to each list element. I
+  group_map(~ distinct(.x, decimal_latitude, decimal_longitude, .keep_all = TRUE), keep = TRUE) %&amp;gt;%
+  # walk because write.csv returns nothing and creates the csv file as a side effect
+  walk(~ .x %&amp;gt;% 
+        write_csv(path = paste0(Outdf2csv, &amp;quot;nov1_&amp;quot;, unique(.x$family), &amp;quot;.csv&amp;quot;), 
+                     append = F))&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;task-2-reverse-topic-read-into-environment&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;TASK 2) Reverse topic: READ into Environment&lt;/h2&gt;
+&lt;div id=&#34;option-2.1-read-list-of-.csv-into-r-environment-list.files-for-loop-custom-function&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;OPTION (2.1) READ list of *.csv into R environment &lt;code&gt;list.files&lt;/code&gt; + &lt;code&gt;for&lt;/code&gt; loop {&lt;code&gt;custom function&lt;/code&gt;}&lt;/h3&gt;
+&lt;p&gt;Here, I want to read all .csv files into R and create a DF for each (keeping the original csv file name
+minus “spaces and”.csv&amp;quot;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# path
+path &amp;lt;- file.path(&amp;quot;.&amp;quot;, &amp;quot;static&amp;quot;,&amp;quot;post&amp;quot;, &amp;quot;df2csv/&amp;quot;)
+# list of files 
+list_2read &amp;lt;-  list.files(path = path, 
+                        # pattern = c(&amp;#39;^Send&amp;#39;,&amp;#39;.csv$&amp;#39; ), 
+                    full.names = F,  
+                        all.files = FALSE,  # def (= only visible)
+                  recursive = FALSE,  # def  (= no inside sub-dir )
+                  ignore.case = TRUE, # (= pattern-matching be case-insensitive)
+                  include.dirs = FALSE, # def (subdir names NOT be included in recursive listings)
+                  no.. = FALSE) %&amp;gt;% # def (both &amp;quot;.&amp;quot; and &amp;quot;..&amp;quot; be excluded also from non-recursive listings) 
+            sort(decreasing = FALSE) 
+
+# CSV_read FUNCTION
+for (file in list_2read) {
+  order &amp;lt;- which( # Give the TRUE indices of a logical object
+    strsplit(file, &amp;quot;&amp;quot;)[[1]] == &amp;quot;.&amp;quot;
+  ) # Split the elements of a character vector &amp;quot;file&amp;quot; to the matches to substring split
+  
+  assign( # Assign a value to a name in an environment.
+    gsub(&amp;quot; &amp;quot;, &amp;quot;&amp;quot;, substr(file, 1, order - 1)), # x = a variable name
+    # read.csv(paste(path,file,sep=&amp;quot;&amp;quot;), stringsAsFactors = F) # value = to be assigned to x
+    read_csv(paste(path, file, sep = &amp;quot;&amp;quot;))
+  )
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;option-2.2-read-list-of-.csv-into-r-environment-list.files-stringr-map&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;OPTION (2.2) READ list of *.csv into R environment &lt;code&gt;list.files&lt;/code&gt; + &lt;code&gt;stringr&lt;/code&gt;+ &lt;code&gt;map&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Elegant version of above&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# path
+path &amp;lt;- file.path(&amp;quot;.&amp;quot;, &amp;quot;static&amp;quot;,&amp;quot;post&amp;quot;, &amp;quot;df2csv/&amp;quot;)
+# list of files 
+list_2read &amp;lt;-  list.files(path = path, 
+                        # pattern = c(&amp;#39;^Send&amp;#39;,&amp;#39;.csv$&amp;#39; ), 
+                    full.names = F,  
+                        all.files = FALSE,  # def (= only visible)
+                  recursive = FALSE,  # def  (= no inside sub-dir )
+                  ignore.case = TRUE, # (= pattern-matching be case-insensitive)
+                  include.dirs = FALSE, # def (subdir names NOT be included in recursive listings)
+                  no.. = FALSE) %&amp;gt;% # def (both &amp;quot;.&amp;quot; and &amp;quot;..&amp;quot; be excluded also from non-recursive listings) 
+            sort(decreasing = FALSE) 
+
+# select only 2
+list_2read %&amp;gt;% 
+    .[stringr::str_detect(., &amp;quot;air&amp;quot;)] -&amp;gt; csv_files
+
+ 
+# Load everything into the Global Environment
+csv_files %&amp;gt;%
+  purrr::map(function(file_name){ # iterate through each file name
+  # Give a name to :    
+  assign(x = stringr::str_remove(file_name, &amp;quot;.csv&amp;quot;), # x = file, but without &amp;quot;.csv&amp;quot;)
+         value = read_csv(paste0(path, file_name)), # value -&amp;gt; it will take in env
+         envir = .GlobalEnv) # (where)
+})&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;task-3-render-multiple-.rmd-files-saving-outputs-in-separate-dir-using-baselist.files-purrrwalk&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;TASK 3) Render multiple .Rmd files saving outputs in separate DIR using &lt;code&gt;base::list.files + purrr::walk&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;This is the case in which I have several &lt;code&gt;.Rmd&lt;/code&gt; files in the working directory and I want to render them all in one go.
+&lt;strong&gt;NOTE&lt;/strong&gt; The output types were specifies in the .Rmd files themselves like so :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;uses {base::list.files + purrr::walk}&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#======  DIRECTORIES PATHS  
+root_DIR &amp;lt;- fs::path_abs(&amp;quot;.&amp;quot;)
+reports_DIR &amp;lt;- fs::path_abs(&amp;quot;./reports&amp;quot;) # output reports 
+
+# ======== LIST THE FILES I NEED TO RENDER   
+filesRmd &amp;lt;- list.files(path = &amp;quot;.&amp;quot;, 
+                              pattern=&amp;quot;.Rmd$&amp;quot;,
+                              all.files = FALSE,  # def (= only visible)
+                              full.names = TRUE,  # I NEED dir name prepended
+                              recursive = FALSE,  # def  (= no inside sub-dir )
+                              ignore.case = TRUE, # (= pattern-matching be case-insensitive)
+                              include.dirs = FALSE, # def (subdirectory names NOT be included in recursive listings)
+                              no.. = FALSE)   # def (both &amp;quot;.&amp;quot; and &amp;quot;..&amp;quot; be excluded also from non-recursive listings) 
+ 
+
+# Execute them them in the environment
+purrr::walk(filesRmd, rmarkdown::render,
+    output_file = NULL, #  If using NULL then the output filename will be based on filename for the input file
+    output_format = &amp;quot;all&amp;quot;, # because I specify it in the .Rmd files (Html &amp;amp; pdf) 
+    output_dir = reports_DIR,
+    envir = new.env(), # The environment in which the code chunks are to be evaluated during knitting
+    encoding = &amp;quot;UTF-8&amp;quot;
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;acknowledgments&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;ACKNOWLEDGMENTS&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://luisdva.github.io/rstats/export-iteratively/&#34;&gt;More operations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lsru.github.io/tv_course/TD_purrr_solution.html&#34;&gt;Following this post&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Prof Claus Wilke has a &lt;a href=&#34;https://serialmentor.com/blog/2016/6/13/reading-and-combining-many-tidy-data-files-in-R&#34;&gt;Useful tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://martinctc.github.io/blog/vignette-write-and-read-multiple-excel-files-with-purrr/&#34;&gt;Martin Chan’s post&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>My R links</title>
+      <link>/source/tutorial/my-r-links/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tutorial/my-r-links/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/Rcupcake.jpg&#34; alt=&#34;Yay R&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here are some useful links and resources for R programming.&lt;/p&gt;
+
+&lt;h3 id=&#34;general&#34;&gt;General&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://community.rstudio.com/&#34; target=&#34;_blank&#34;&gt;Rstudio Community&lt;/a&gt;: forum and discussions organized by macro-topic.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://rseek.org/&#34; target=&#34;_blank&#34;&gt;Rseek&lt;/a&gt;: a sort of wiki R page!&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.littlemissdata.com/blog/rstudioconf2019&#34; target=&#34;_blank&#34;&gt;From rstudioconf2019&lt;/a&gt;: a collection of R resources by @littlemissdata&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.rstudio.com/resources/cheatsheets/&#34; target=&#34;_blank&#34;&gt;Cheatsheets&lt;/a&gt;: self-explanatory&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://whattheyforgot.org/&#34; target=&#34;_blank&#34;&gt;WTF&lt;/a&gt;.. or &lt;em&gt;&amp;ldquo;What They Forgot to Teach You About R&amp;rdquo;&lt;/em&gt; 😉 Another life-changing guide from Jenny Bryan&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://google.github.io/styleguide/Rguide.xml&#34; target=&#34;_blank&#34;&gt;Google&amp;rsquo;s R Style Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;project-management&#34;&gt;Project Management&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Best Practices &lt;a href=&#34;https://blog.revolutionanalytics.com/2015/11/r-projects.html&#34; target=&#34;_blank&#34;&gt;Handling Packages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.r-bloggers.com/%F0%9F%93%81-project-oriented-workflow/&#34; target=&#34;_blank&#34;&gt;R-Bloggers blog (scroll to) reference&lt;/a&gt;: collection of links&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://peerj.com/preprints/3192.pdf&#34; target=&#34;_blank&#34;&gt;analytical work reproducibly using R&lt;/a&gt;: Pre-print article&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://kbroman.org/Tools4RR/assets/lectures/06_org_eda_withnotes.pdf&#34; target=&#34;_blank&#34;&gt;Karl Broman slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Joris Muller&amp;rsquo;s Blog on &lt;a href=&#34;http://blog.jom.link/ten_rules_reproductible_research.html&#34; target=&#34;_blank&#34;&gt;The &amp;ldquo;ten simple rules for reproducible computational research&amp;rdquo; in R&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Joris Muller&amp;rsquo;s Blog on &lt;a href=&#34;http://blog.jom.link/reproducible_analysis_my_principles.html&#34; target=&#34;_blank&#34;&gt;A basic reproducible data analysis workflow - principles&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;r-studio-terminal&#34;&gt;R studio TERMINAL&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Great post &lt;a href=&#34;https://jozefhajnala.gitlab.io/r/r905-rstudio-terminal/&#34; target=&#34;_blank&#34;&gt;Using rstudio-terminal/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;More on &lt;a href=&#34;https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal&#34; target=&#34;_blank&#34;&gt;Using the RStudio Terminal&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;databases&#34;&gt;DATABASES&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Databases using R &lt;a href=&#34;https://db.rstudio.com/&#34; target=&#34;_blank&#34;&gt;RStudio list&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;api-r&#34;&gt;API &amp;amp; R&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Amanda Gadrow &lt;a href=&#34;https://github.com/ajmcoqui/webAPIsR&#34; target=&#34;_blank&#34;&gt;Resources&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Saving tokens &lt;a href=&#34;https://blog.revolutionanalytics.com/2015/11/how-to-store-and-use-authentication-details-with-r.html&#34; target=&#34;_blank&#34;&gt;Various Ways&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Saving tokens &lt;a href=&#34;https://whattheyforgot.org/r-startup.html#rprofile&#34; target=&#34;_blank&#34;&gt;WTF&amp;hellip; to tell you&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;ggplot2-graphs&#34;&gt;ggplot2 &amp;amp; GRAPHS&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Great line by line tutorial &lt;a href=&#34;https://evamaerey.github.io/ggplot_flipbook/&#34; target=&#34;_blank&#34;&gt;ggplot flipbook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Modern Dive Chapter &lt;a href=&#34;https://moderndive.com/3-viz.html#grammarofgraphics&#34; target=&#34;_blank&#34;&gt;Grammar of Graphics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;table-packages-to-discover&#34;&gt;Table Packages to discover&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;DataExplorer&lt;/strong&gt; EDA,  See &lt;a href=&#34;https://cran.r-project.org/web/packages/DataExplorer/vignettes/dataexplorer-intro.html&#34; target=&#34;_blank&#34;&gt;github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Formattable&lt;/strong&gt; Tables,  See &lt;a href=&#34;https://www.littlemissdata.com/blog/prettytables&#34; target=&#34;_blank&#34;&gt;more info&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;table1&lt;/strong&gt; Tables,  See &lt;a href=&#34;https://cran.r-project.org/web/packages/table1/vignettes/table1-examples.html&#34; target=&#34;_blank&#34;&gt;more info&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ggstatsplot&lt;/strong&gt; Graphs, See &lt;a href=&#34;https://github.com/IndrajeetPatil/ggstatsplot&#34; target=&#34;_blank&#34;&gt;more info&lt;/a&gt;
+Extension of ggplot2 package for creating graphics with details from statistical tests included in the plots themselves and targeted primarily at behavioral sciences community.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;working-with-strings-regex&#34;&gt;Working with strings, regex&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Great post &lt;a href=&#34;https://jozefhajnala.gitlab.io/r/r007-string-manipulation/&#34; target=&#34;_blank&#34;&gt;How to work with strings in base R&amp;hellip;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;silly&#34;&gt;Silly&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.webfx.com/tools/emoji-cheat-sheet/&#34; target=&#34;_blank&#34;&gt;EMOJI CHEAT SHEET&lt;/a&gt;: for adding 💎, ✨, 🆒 in markdown&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Wise Words | Perle di saggezza</title>
+      <link>/source/post/2018-quotes/</link>
+      <pubDate>Thu, 27 Dec 2018 00:00:00 -0500</pubDate>
+      
+      <guid>/source/post/2018-quotes/</guid>
+      <description>&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;23rd of June 2019&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;you should choose to enter by the small rivers, and not go right away into the sea, because you should move from easy things to difficult things.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;(Letter of St. Thomas Aquinas to Brother John on How to Study)&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1st of March 2019&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Apri la mente a quel ch’io ti paleso&lt;br /&gt;
+e fermalvi entro; ché non fa scïenza,&lt;br /&gt;
+sanza lo ritenere, avere inteso.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;(Dante Alighieri, Divina Commedia, Paradiso V, 40-42)&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As beautifully said in the famous &lt;em&gt;terzina&lt;/em&gt;, there is no real knowledge without &amp;ldquo;stopping inside&amp;rdquo;
+and &amp;ldquo;retaining&amp;rdquo; what we have heard. Even more so in an age of incessant distraction and information overload.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;23rd of February 2019
+&lt;img src=&#34;Twitter_programming_quote_23Feb2019.png&#34; alt=&#34;Test Image 1&#34; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;28 of February 2017&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;The purpose of models is not to fit the data but to sharpen the questions.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;(Karlin, Samuel (1923 - ), 11th R A Fisher Memorial Lecture, Royal Society 20, April 1983.)&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Working with project&#39;s directories and lists of files in R</title>
+      <link>/source/tutorial/working-with-project-s-directories-and-lists-of-files-in-r/</link>
+      <pubDate>Fri, 28 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tutorial/working-with-project-s-directories-and-lists-of-files-in-r/</guid>
+      <description>&lt;p&gt;Here I want to collect a few useful R code chunks that I execute common tasks when I compile a complex research project with several sub-folders organizing the content. A very common goal is to lead in the environment all the files stored in a certain subdirectory of the project&lt;/p&gt;
+
+&lt;h2 id=&#34;1-using-base-r-to-load-several-files&#34;&gt;1) Using base R to LOAD several files&lt;/h2&gt;
+
+&lt;p&gt;I start using &lt;code&gt;base::dir&lt;/code&gt; + &lt;code&gt;base::load&lt;/code&gt; (wrapped in &lt;code&gt;base::lapply&lt;/code&gt;) to LOAD several files, whereas &lt;code&gt;base::dir&lt;/code&gt; produces a character vector of the names of files or directories in the named dir:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;SYNTAX dir:
+&lt;code&gt;dir(path = &amp;quot;.&amp;quot;, pattern = NULL, all.files = FALSE,full.names = FALSE, recursive = FALSE, &amp;gt; ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&amp;hellip; and I can use it to obtain a list of files which I then &lt;code&gt;base::load&lt;/code&gt; using &lt;code&gt;base::lapply&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;load(file, envir = parent.frame(), verbose = FALSE)&lt;/code&gt; wrapped in &lt;code&gt;lapply&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Get the list of FILES
+file_names=as.list(dir(path =&amp;quot;./04_CleanData/&amp;quot;, pattern = NULL ,full.names = TRUE ))
+
+# Load them in the environment
+lapply(file_names, load, environment())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;2-a-selectively-load-the-list-of-files-ending-with&#34;&gt;2.a) Selectively load the list of FILES &lt;em&gt;ending&lt;/em&gt; with &amp;ldquo;&amp;rdquo;&lt;/h2&gt;
+
+&lt;p&gt;Similarly, I can use &lt;code&gt;base::list.files&lt;/code&gt;, with the addition of the argument &lt;code&gt;pattern = &amp;lt;some regex&amp;gt;&lt;/code&gt; to screen certain files&amp;hellip; again followed by &lt;code&gt;base::lapply(load)&lt;/code&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;list.files(path = &amp;quot;.&amp;quot;, pattern = NULL, all.files = FALSE,
+           full.names = FALSE, recursive = FALSE,
+           ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# List of files ending with &amp;lt;_sf.Rdata&amp;gt;
+filesSF &amp;lt;- list.files(path = &amp;quot;./04_CleanData/&amp;quot;, pattern=&amp;quot;_sf.Rdata$&amp;quot;, 
+                      full.names = T # &amp;quot;xx$&amp;quot; = &amp;quot;ends with  xx&amp;quot;
+                      # all.files = FALSE,
+                      # full.names = FALSE, recursive = FALSE,
+                      # ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
+                      )   
+
+# load in environment
+lapply(filesSF, load, environment())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;2-b-selectively-load-the-list-of-files-starting-with&#34;&gt;2.b) Selectively load the list of FILES &lt;em&gt;starting&lt;/em&gt; with &amp;ldquo;&amp;rdquo;&lt;/h2&gt;
+
+&lt;p&gt;Same as above, except I need a different &lt;code&gt;regex&lt;/code&gt; because I want the list of FILES starting  with &amp;ldquo;&amp;rdquo;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# List of files ending with &amp;lt;Amit&amp;gt;
+filesAmit &amp;lt;- list.files(path = &amp;quot;./04_CleanData/&amp;quot;, pattern=&amp;quot;^Amit&amp;quot;, full.names = T  
+    # &amp;quot;^xx&amp;quot; = &amp;quot;starts with  xx&amp;quot;
+    # all.files = FALSE,
+    # full.names = FALSE, recursive = FALSE,
+     # ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
+)   
+
+# load them in environment
+lapply(filesAmit, load, environment())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;3-using-tidyverse-package-purrr-to-execute-several-r-scripts&#34;&gt;3) Using tidyverse package &lt;code&gt;purrr&lt;/code&gt; to EXECUTE several R scripts&lt;/h2&gt;
+
+&lt;p&gt;Now, I turn instead to a case where I have R scripts that I want to execute, using &lt;code&gt;tidyverse&lt;/code&gt; package &lt;code&gt;purrr&lt;/code&gt;.
+Plus, instead of &lt;code&gt;load&lt;/code&gt; I use &lt;code&gt;source&lt;/code&gt; because I intend to EXECUTE several R scripts contained in a project&amp;rsquo;s subfolder.&lt;/p&gt;
+
+&lt;p&gt;Again, I use &lt;code&gt;base::list.files&lt;/code&gt;, but combined with &lt;code&gt;purrr::walk(source)&lt;/code&gt; - which is a more sophisticated function to loop through things and execute something.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;NOTE: The function &lt;code&gt;purrr:walk&lt;/code&gt; is specifically used for functions that don&amp;rsquo;t produce an output (as opposed to &lt;code&gt;purrr:map&lt;/code&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Get the list of SCRIPTS in my subfolder &amp;quot;03_Munge&amp;quot;
+all_munge &amp;lt;- list.files(path = &amp;quot;./03_Munge&amp;quot;, 
+            pattern = &#39;.R$&#39; , 
+            all.files = FALSE,  # def (= only visible)
+            full.names = TRUE,  # I NEED dir name prepended
+            recursive = FALSE,  # def  (= no inside sub-dir )
+            ignore.case = TRUE, # (= pattern-matching be case-insensitive)
+            include.dirs = FALSE, # def (subdirectory names NOT be included in recursive listings)
+            no.. = FALSE) %&amp;gt;% # def (both &amp;quot;.&amp;quot; and &amp;quot;..&amp;quot; be excluded also from non-recursive listings) 
+            sort(decreasing = FALSE)  
+
+# Execute them them in the environment
+purrr::walk(all_munge, source, local = FALSE, echo = TRUE, verbose = TRUE) 
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>CC BY-SA 4.0</title>
+      <link>/source/privacy/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 -0400</pubDate>
+      
+      <guid>/source/privacy/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;The content of this blog is released under a &lt;a href=&#34;http://creativecommons.org/licenses/by-sa/4.0/&#34; target=&#34;_blank&#34;&gt;Creative Commons Attribution-ShareAlike 4.0 International License&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;i class=&#34;fab fa-creative-commons fa-2x&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-creative-commons-by fa-2x&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-creative-commons-sa fa-2x&#34;&gt;&lt;/i&gt;
+&lt;/center&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>World Development Indicator data analysis</title>
+      <link>/source/project/wdianalysis/</link>
+      <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/source/project/wdianalysis/</guid>
+      <description>
+
+
+&lt;div id=&#34;study-of-world-banks-wdi-indicator-life-expectancy-at-birth&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Study of World Bank’s WDI indicator &lt;strong&gt;&lt;em&gt;Life expectancy at birth&lt;/em&gt;&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;This mini-study project was an exercise to learn how to use the World Bank’s API for the &lt;a href=&#34;http://datatopics.worldbank.org/world-development-indicators/&#34;&gt;World Development Indicator (WDI)&lt;/a&gt; repository.&lt;/p&gt;
+&lt;p&gt;In this study, I explore the indicator &lt;strong&gt;&lt;em&gt;Life expectancy at birth&lt;/em&gt;&lt;/strong&gt; and I also do some comparative analisys using other indicators that I expect to be highly correlated with life expectancy: namely &lt;strong&gt;GDP&lt;/strong&gt; and the status of &lt;strong&gt;Fragile and conflict affected situations&lt;/strong&gt; (FCS).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In order to flag the individual countries that are classified as FCS, I used the World Bank list of economies (as of June 2017) found &lt;a href=&#34;http://databank.worldbank.org/data/download/site-content/CLASS.xls&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div id=&#34;results&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;/source/project/WB_DEC.pdf&#34;&gt;WDI Analysis Brief&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Lulliter/DECdatascience&#34;&gt;WDI Analysis Github Repo&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Open spatial data for resilience in Tanzania: Lessons learned from &#39;Dar Ramani Huria&#39;</title>
+      <link>/source/post/2016-11-15_ramani-huria/</link>
+      <pubDate>Tue, 15 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/source/post/2016-11-15_ramani-huria/</guid>
+      <description>
+
+&lt;!-- ![Dar Ramani Huria logo](../../static/post/RamHuria.jpg) --&gt;
+
+&lt;h2 id=&#34;community-mapping-for-flood-resilience&#34;&gt;Community Mapping For Flood Resilience&lt;/h2&gt;
+
+&lt;p&gt;“Dar Ramani Huria” (Swahili for “Dar Open Map”) is the name of a community-based mapping project in Dar es Salaam, Tanzania. This project brought together international agencies, local university students and community members with the aim of putting the city’s most flood- prone areas “on the map” for the first time, an endeavor made possible by the coordinated adoption of a host of geospatial and open data tools.
+Dar es Salaam is one of the fastest growing cities in Africa, with an annual population growth of about 5%. Urbanization is largely unplanned and over half of city residents live in informal settlements. Every year during the rainy seasons, the coastal city endures floods and heavy rains that cause great damage and economic loss, even death. As is often the case, the poorest citizens living in informal areas suffer disproportionally from these hazardous events. Damaged roads and footpaths force business and services to close for days and, after flooding, unplanned settlements become more vulnerable to diseases such as cholera. Because of the city’s largely unregulated growth, available maps are highly inaccurate, which hampers both the immediate response attempts and adequate long-term planning to improve disaster preparedness.
+Dar Ramani Huria is a multi-partner collaboration facilitated by Tanzania’s 2011 commitment to the Open Government Partnership (OGP), an international initiative in which governments have pledged to become more open, accountable and responsive to citizens. Under the auspices of the Tanzania government, and in line with its new commitment to transparency and citizen engagement, the project is supported by the Tanzania Commission for Science and Technology (COSTECH), the World Bank’s Global Facility for Disaster Reduction and Recovery (GFDRR), and the Red Cross. The key operational responsibility lies with Humanitarian OpenStreetMap Team (HOT) and such local partners as municipal councils and planning agencies. Playing another fundamental role in giving legitimacy and stability to the project, two local universities (University of Dar es Salaam and Ardhi University) seized this opportunity to teach valuable geospatial analysis skills to students, who make up most of the mapping teams.
+Since January 2015, the project has covered 29 neighborhoods (locally known as wards) within four districts of Dar es Salaam, encompassing the most flood-prone areas of the city.
+The project operations follow these main steps:
+1) Building on drone-generated Very High Resolution (VHR) imagery, mappers capture features like drainage lines, water and sanitation facilities, roads and footpaths, buildings and key landmarks.
+ 2) The detailed data captured in the various wards through GPS devices are digitized using the OpenStreetMap platform.
+3) Risk assessment is performed by InaSAFE software, an open-source tool piloted in Indonesia that is provided as a plugin for QGIS and enables users to run natural disaster scenarios for better impact assessment and response planning.&lt;/p&gt;
+
+&lt;h2 id=&#34;key-lessons-learned&#34;&gt;Key Lessons Learned&lt;/h2&gt;
+
+&lt;h3 id=&#34;ripple-effects-of-an-open-data-initiative-for-resilience&#34;&gt;Ripple effects of an open data initiative for resilience&lt;/h3&gt;
+
+&lt;p&gt;During a conversation about the project, two executives of Ramani Huria (Edward Anderson, Senior Disaster Risk Management Specialist at the World Bank, and Mark Iliffe, a geospatial expert) first remarked that from the outset the benefits of mapping started multiplying in areas of interventions beyond the original intended goals. The project website reports several interviews with Ward Executive Officers of the involved neighborhoods, illustrating how quickly they turned into the most enthusiastic advocates of the initiative – most of them, the interviewer reported, proudly display printouts of the maps in the office. These local officials can now use the extremely accurate ward maps to present projects to the municipality, or to plan roads and drainage construction. Covered wards have also benefited from these maps in unexpected ways, such as promoting adhesion to the national addressing system, planning for better provision of services like health centers and schools, or directing the work of local NGOs. Such unintended effects of the initiative echo the very justification of open data, which is to make curated information accessible, understandable and usable for a broad array of users, potentially serving purposes unforeseen by the data creators. Furthermore, maps and data are now available for anyone interested in doing research or developing applications that can improve the livelihoods of citizens.
+Another fascinating aspect of the project, which extends beyond disaster response, is how well this approach to mapping matches the reality of a city growing at a fast pace in a mostly unplanned fashion. While lacking or outdated maps are often cited as one huge obstacle to systematic upgrading of urban informal areas, this community-mapping initiative (facilitated by the OSM platform) empowers the very residents of these communities – who are both the experts and ultimate beneficiaries – giving them a voice in the identification and prioritization of their actual needs. In a peculiar role switch, the data deficit caused by Dar’s inadequate institutional capacity is gradually being filled from the bottom up.&lt;/p&gt;
+
+&lt;h3 id=&#34;triggering-a-global-collaborative-network&#34;&gt;Triggering a global collaborative network&lt;/h3&gt;
+
+&lt;p&gt;As noted by Patrick Meier in a very thought-provoking talk on creating resilience through big data: “The term resilience is important because it focuses not on the development and disaster response community, but rather on local at-risk communities” and their own coping mechanisms. Within the long-standing debate about the effectiveness (or lack thereof) of top-
+ 4) Maps and underlying data collected within Ramani Huria are free and accessible for anyone
+ on OpenStreetMap (OSM) and on the project website. As the project is rolled out in multiples
+ wards, various technical workshops, kickoff events and ‘maphatons’ are effectively keeping the
+ communities engaged and promoting the dissemination of results in different forum.
+ down approaches in development, Dar Ramani Huria is a remarkable example of how a broad array of involved parties can be successfully mobilized in a multi-polar scheme. Clearly, a complex partnership like Dar Ramani Huria benefited from a fortunate combination of enabling conditions, including the government’s timely commitment towards open data, the backing of universities and the political will of local officials. Nevertheless, the unprecedented growth of geospatial and analytical open-source software plays an indisputable “crowdsourcing” role. Nowadays, a highly complex issue such as improving resilience in unplanned urban areas can be tackled within a paradigm of distributed problem solving, where local civil society can join international geospatial experts and software designers to contribute to critical urban-planning decisions. Another interesting byproduct of open data is the creation of “virtual communities” that effectively connect people who would not seem associated by location or cultural proximity. A case in point is the InaSAFE tool for disaster risk analysis, initially designed in Indonesia, which was seamlessly combined with Ramani Huria-generated maps for flooding risk analysis.
+The desire to help when natural hazards hit (we are sadly witnessing stronger and more frequent earthquakes, floods and hurricanes all over the world) is probably a universal human reaction, particularly when such events strike close to home or we perceive a personal connection to the victims. Yet, our globalized and constantly connected world can leave us a sense of frustration when we struggle to identify an effective way to help or fail to see the fruits of our contribution. The multiplication of open access platforms (OpenStreetMaps, Ushahidi, WorldPop and the likes) and, to some extent, social media have this promising power to directly match people in need with individuals or groups that have the right skills to help. It is well documented how many digital volunteers and geospatial experts mobilized to help after the recent earthquakes in Haiti and Nepal, working together (remotely or in loco) contributing coding skills, updating web documents and maps, or simply posting tweets and photos to fill critical information gaps. While GIS and geospatial analysis still require a significant degree of technical skills for certain steps along the data pipeline, there are increasing opportunities for basic users to perform key data collection tasks, also owing to the huge role of mobile technology in bridging the digital divide.
+Certainly, open data does not mean “unregulated,” and issues of security or privacy protection deserve adequate consideration at the international and local levels. Nonetheless Dar Ramani Huria is yet another demonstration of the undeniable potential of open-data platforms to effectively promote a transparent, collaborative and incremental creation of vital information to improve lives.&lt;/p&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Davies, Tim. 2014. &amp;ldquo;Open Data in Developing Countries – Emerging insights from Phase I”. Web Foundation, Berlin.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Deogawanka, Sangeeta. 2015, May 9. How Crowdsourced Mapping is Supporting Relief Efforts in Nepal [Blog post]. Retrieved from &lt;a href=&#34;https://www.gislounge.com/how-crowdsourced-&#34; target=&#34;_blank&#34;&gt;https://www.gislounge.com/how-crowdsourced-&lt;/a&gt; mapping-is-supporting-relief-efforts-in-nepal/
+Humanitarian OpenStreetMap Team. 2015. &amp;ldquo;Flood Resilience in Dar es Salaam Second Quarterly Report”. HOT, Washington, DC.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Meier, Patrick. 2013, January 11. How to Create Resilience Through Big Data [Blog
+post]. Retrieved from &lt;a href=&#34;https://irevolutions.org/2013/01/11/disaster-resilience-2-0/&#34; target=&#34;_blank&#34;&gt;https://irevolutions.org/2013/01/11/disaster-resilience-2-0/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;UN Committee of Experts on Global Geospatial Information Management. 2015. &amp;ldquo;Future trends in geospatial information management: the five to ten year vision”. UN-GGIM, New York.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;web-sites-and-software&#34;&gt;Web sites and software&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Ramani Huria (&lt;a href=&#34;http://ramanihuria.org/&#34; target=&#34;_blank&#34;&gt;http://ramanihuria.org/&lt;/a&gt;) - Dar Ramani Huria project website providing description, access to data and news.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;InaSAFE (&lt;a href=&#34;http://inasafe.org&#34; target=&#34;_blank&#34;&gt;http://inasafe.org&lt;/a&gt;) - an extension for QGIS that allows disaster managers to do better contingency planning for disasters.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;OpenStreetMap (&lt;a href=&#34;https://www.openstreetmap.org/&#34; target=&#34;_blank&#34;&gt;https://www.openstreetmap.org/&lt;/a&gt;) - The Free Wiki World Map – An openly licensed map of the world being created by volunteers using local knowledge, GPS tracks and donated sources.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;QGIS (&lt;a href=&#34;https://www.qgis.org/&#34; target=&#34;_blank&#34;&gt;https://www.qgis.org/&lt;/a&gt;) - is a cross-platform free and open-source desktop geographic information system (GIS) application that provides data viewing, editing, and analysis.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Ushahidi (&lt;a href=&#34;https://www.ushahidi.com/&#34; target=&#34;_blank&#34;&gt;https://www.ushahidi.com/&lt;/a&gt;) - a non-profit software company that develops free and open-source software (LGPL) for information collection, visualisation, and interactive
+mapping.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;WorldPop (&lt;a href=&#34;http://www.worldpop.org.uk/&#34; target=&#34;_blank&#34;&gt;http://www.worldpop.org.uk/&lt;/a&gt;) - open platform for spatial demographic data&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>2 Sussidiarietà e sviluppo: l’elettricità nelle favelas dell’America Latina</title>
+      <link>/source/post/sussidiariet%C3%A0-e-sviluppo/</link>
+      <pubDate>Sat, 21 Feb 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/source/post/sussidiariet%C3%A0-e-sviluppo/</guid>
+      <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;I prepared this blog post as a reflection on the experience as a graduate student and summer intern in a NGO working in Brazil&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Uno dei temi che hanno maggiormente animato il recente dibattito sulla cooperazione allo sviluppo è la critica rivolta a governi e istituzioni multilaterali (Banca Mondiale, Fondo Monetario Internazionale e varie agenzie ONU in primis), di gestire gli aiuti ai paesi in via di sviluppo in modo arbitrario, assitenzialista e ultimamente inefficace (in sintesi con un approccio top-down). D’altra parte, un numero crescente di voci, talvolta provenienti dal cuore stesso di queste istituzioni, come Bill Easterly &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; per citare uno dei più rappresentativi, invocano un’azione multilaterale per lo sviluppo diversa, meno supponente e più attenta alla realtà vera di chi è povero, in altre parole un approccio bottom-up. Provocatoriamente, ma forse saggiamente, Muhammad Yunus,&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; il fondatore della Grameen Bank divenuto con il Nobel per la Pace l’icona internazionale del microcredito, suggeriva di trasferire la sede centrale della Banca Mondiale da Washington a un villaggio del Bangladesh, come antidoto all’approccio burocratico e un po’ altezzoso a volte riscontrato nei suoi funzionari.
+Ma tralasciando i dibattiti accademici, ciò che emerge da alcune ricerche nell’ambito dell’accesso alle infrastrutture nei paesi emergenti dell’America Latina è che, in realtà, vi è un fermento in atto di iniziative e programmi che sono davvero bottom-up, e c’è un manipolo di persone che, in un dialogo che allaccia le capitali occidentali le favelas sudamericane, tentano con grande creatività di interagire in un modo che appare inequivocabilmente come una concreta applicazione del principio di sussidiarietà. Quel che segue è una sintetica illustrazione di alcuni casi, in cui il coinvolgimento attivo del settore privato e dei corpi intermedi della società e delle comunità locali si è rivelato la chiave per orientare e incanalare in modo efficace il sostegno pubblico allo sviluppo.&lt;/p&gt;
+
+&lt;h2 id=&#34;tre-casi-in-colombia-e-brasile&#34;&gt;Tre casi in Colombia e Brasile&lt;/h2&gt;
+
+&lt;p&gt;Il primo caso è quello dell’impresa Codensa,&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; la maggiore società colombiana di distribuzione dell’energia elettrica, che ridisegnando il proprio modello di business è riuscita a conciliare il profitto con il servizio ai propri consumatori delle aree urbane povere di Bogotà. Dopo la ristrutturazione del 1997, la società si trovava a fronteggiare la recessione generale, aggravata dal terrorismo e dalle entrate incerte dovute a una clientela per la maggior parte composta da famiglie negli strati più poveri della società. Codensa ha optato per un modello improntato su due pilastri, la gestione efficiente della distribuzione di energia e la conoscenza approfondita della propria clientela. Dopo aver ridotto al minimo gli sprechi e le inefficienze, la società si è impegnata a incrementare i propri ricavi migliorando ed allargando il proprio portafoglio di servizi. L’intuizione fondamentale scaturiva dalla constatazione che pochissimi clienti disponevano di elettrodomestici, ragion per cui Codensa ha lanciato prestiti agevolati accordandosi con i principali produttori locali di elettrodomestici. Al contempo, si impegnava ad alzare la qualità della fornitura e degli allacciamenti dell’energia elettrica. Adottando meccanismi ispirati al microcredito, Codensa ha quindi permesso a tanti suoi clienti che non avevano mai messo piede in banca di ottenere credito al consumo (spesso ancorando il pagamento delle rate alle proprie bollette elettriche). La risposta è stata estremamente positiva, tanto che la società, oltre all’elettricità ed agli elettrodomestici, adesso offre ai suoi clienti anche servizi assicurativi, di riparazione e ristrutturazione della casa, fino a servizi funebri ed altro. A chi sospetta la società di aver sfruttato ai fini di profitto famiglie già svantaggiate, rispondono i bilanci di Condensa che mostrano indici di soddisfazione per il servizio mai così alti (soprattutto tra le fasce povere), ridotte percentuali di clienti indebitati o insolventi, e famiglie che dispongono di servizi finanziari prima inaccessibili (credito bancario, assicurazioni) e con tassi di restituzione del tutto soddisfacenti.&lt;/p&gt;
+
+&lt;p&gt;Vi sono poi i due casi gemelli dei progetti brasiliani “Agente” e “Conviver”, facilitati dal lavoro della ONG italiana AVSI in stretta collaborazione con Coelba e CEMIG, le rispettive utilità dell’energia a Salvador de Bahia e a Belo Horizonte. Le motivazioni all’origine di tali interventi (avviati con considerevoli investimenti da parte delle due compagnie) erano problematiche simili legate all’altissimo numero di famiglie povere residenti nelle favelas delle due metropoli brasiliane servite dalle rispettive compagnie. In particolare l’ alta incidenza di connessioni illegali (“gatos” in brasiliano) e di clienti insolventi o indebitati, la scarsa qualità del servizio ed i conseguenti incidenti e insicurezza urbana. In tale contesto, il rapporto tra la compagnia elettrica e questi quartieri poveri era compromesso a tal punto che i tecnici (che ormai si presentavano quasi esclusivamente per tagliare i fili a chi non pagava più) non potevano più entrare in alcune strade per timore di rappresaglie violente. La risposta, pensata insieme ad AVSI, è stata quella di partire dal ripristino delle relazioni tra azienda e clienti poveri attraverso un mezzo molto semplice e immediato. Un gruppo di giovani operatori (da cui appunto il nome “progetto agente”) &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;, residenti nelle favelas stesse, sono stati selezionati e formati per andare a visitare le famiglie, casa per casa, e attraverso successive visite (di conoscenza, immatricolazione e poi operative) mettere in atto una serie di azioni che andavano dalla installazione di lampadine efficienti gratuite, alla rinegoziazione dei debiti con rate personalizzate, alla educazione al risparmio energetico finalizzato ad ottenere tariffe agevolate.
+Vale la pena soffermarsi su due aspetti particolarmente significativi di tali progetti. Il primo, ho potuto constatarlo di persona accompagnando alcuni di questi giovani agenti nei loro giri in una favela di Belo Horizonte. Ed è la reazione prima stupita, e a volte quasi commossa di alcune persone nel ricevere la visita dei giovani operatori. Per alcuni si trattava di una cosa inaudita, per il fatto che questi giovani (esplicitamente preparati a presentarsi con discrezione, pazienza e rispetto) dedicassero del tempo ad ascoltare i loro problemi, a capire la loro situazione, e a valutare insieme una soluzione.
+La seconda sottolineatura è emersa dall’analisi approfondita del caso “Conviver” di Belo Horizonte e dallo studio specifico delle tariffe sussidiate che in Brasile sono previste per i clienti residenziali con redditi bassi e che vengono attribuite in base a un duplice criterio di volumi di energia consumati e reddito.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; In pratica, tali tariffe sono disegnate in modo da crescere secondo un meccanismo a blocchi, garantendo sconti elevatissimi per il consumo di sussistenza, e poi via via decrescenti nei successivi blocchi di volume consumato. Evidentemente queste speciali tariffe, volte a garantire l’accesso idealmente universale a servizi di base, rappresentano de facto un sussidio di povertà. Pertanto, ha senso domandarsi se siano più o meno efficaci delle tradizionali forme dirette di sussidio di povertà (cash transfer), quali Bolsa Familia, che in Brasile rappresentano una politica caratterizzante della presidenza Lula. Gli esperti in materia generalmente accusano i sussidi ancorati alla quantita’ consumata (in questo caso di energia) di essere assegnati in modo meno solidale dei sussidi diretti, ovvero di escludere un numero maggiore di veri poveri.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34;&gt;6&lt;/a&gt;&lt;/sup&gt; Al contrario, dall’analisi di un campione di oltre 15.000 famiglie di Belo Horizonte, risulta che tale “errore di esclusione” (la percentuale tra i più poveri che non riceve il sussidio) é enormemente maggiore nel caso del rinomato sussidio diretto alle famiglie Bolsa Familia &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;, rispetto alle tariffe sociali basate sul consumo di energia. Certamente, tale significativo indicatore è solo uno dei criteri che devono entrare nella valutazione dei trasferimenti pubblici e, del resto, la validità di una tale conclusione non può essere generalizzata in modo superficiale. Ciò nonostante, questo risultato mette in evidenza che, almeno in quel contesto specifico, il sussidio più strettamente ancorato al consumo reale della famiglia di un bene di base (l’elettricità) si dimostra distribuito in modo più giusto. Senza contare un’altra fondamentale qualità dei sussidi energetici descritti, ovvero il connaturato incentivo al risparmio energetico. Di fatti, e l’informazione in questo senso era parte integrante del progetto “Conviver”, lo stesso meccanismo tariffario a blocchi, presuppone che a fronte di una maggiore accortezza ed efficienza nel consumo dell’energia, una famiglia possa notevolmente abbassare la spesa energetica, con un annesso impatto ambientale positivo.&lt;/p&gt;
+
+&lt;h2 id=&#34;una-responsabilizzazione-condivisa&#34;&gt;Una responsabilizzazione condivisa&lt;/h2&gt;
+
+&lt;p&gt;Questo ci porta ad una ulteriore considerazione su come valutare l’efficacia di un programma di sviluppo. In apparenza infatti si potrebbe pensare che, qualora un governo abbia mezzi e volontà politica di ridistribuire fondi ai più poveri, dei sussidi diretti e commisurati al reddito siano la strada in fondo più opportuna. Ma torniamo per un attimo ai descritti programmi di elettrificazione delle favelas. Il valore aggiunto di tali programmi é molto di più che una semplice alternativa ad un approccio assistenziale di redistribuzione dei redditi. In questi casi, infatti, si osserva chiaramente la attiva responsabilizzazione di un gruppo variegato di agenti coinvolti, che è bene scomporre più nel dettaglio.
+Vi sono innanzitutto le compagnie elettriche coinvolte in tali progetti, tutte almeno parzialmente privatizzate nel corso della massiccia ondata di privatizzazioni in America Latina degli anni ’90. Esse dimostrano in modo evidente che, nonostante la cronaca recente porti a dubitarne, non c’è incompatibilità tra una normale logica di profitto ed un’attività con fine sociale. Infatti, specialmente in un’ottica di lungo periodo, conviene all’azienda contribuire al miglioramento del benessere delle comunità in cui opera, in quanto proprio lì risiedono i suoi potenziali clienti, fornitori e dipendenti, tutti soggetti vitali per la sua esistenza. I massicci investimenti versati dalle utilities negli esempi riferiti confermano questo.
+I nostri casi-esempio mettono poi in primo piano i clienti (nella fattispecie i consumatori più poveri). Da più parti nel pensiero di alcuni economisti (da Amartya Sen &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34;&gt;8&lt;/a&gt;&lt;/sup&gt; con la sua idea seminale di “basic capabilities”, a C.K. Prahalad col suo paradigma della ‘Base della Piramide’&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34;&gt;9&lt;/a&gt;&lt;/sup&gt; , o lo stesso Yunus sul microcredito), si viene irrobustendo la corrente di pensiero secondo cui i soggetti degli strati più poveri della popolazione non sono semplicemente passivi recettori di assistenza, ma bensì attivi protagonisti di scelte, iniziative e tentativi di migliorare la propria condizione. Certo, per operare con loro, il business deve anche saper leggere i loro bisogni e differenziare l’offerta di prodotti e servizi secondo le specifiche esigenze e disponibilità finanziarie, ma i casi di successo di questo ‘capitalismo creativo’ in aree povere si moltiplicano negli ambiti più diversi, dai prodotti assicurativi, alla telefonia mobile ai beni di largo consumo.
+E’ interessante poi sottolineare come, in tutti i recenti programmi pilota di elettrificazione delle favelas, la valutazione ex-post della soddisfazione dei clienti/beneficiari ricopre un ruolo chiave nel decidere della fattibilità e viabilità dei progetti stessi su larga scala.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34;&gt;10&lt;/a&gt;&lt;/sup&gt; Infatti, nella maggioranza dei casi, la reale percezione di un migliore servizio e di una maggiore duttilità della compagnia nel riscuotere i pagamenti è chiaramente la condizione perché tanti clienti prima illegali decidano di regolarizzarsi. Il che rappresenta il prerequisito necessario a garantire alla azienda fornitrice un flusso atteso di ricavi adeguato a coprire i costi iniziali dei programmi. E’ altresì interessante notare che i residenti delle favelas metropolitane di fatto ‘desiderano’ regolarizzare i propri contratti di fornitura dei servizi. In Brasile ad esempio, nella condizione di precarietà ed esclusione sociale che affligge tanti favelados, disporre di un indirizzo e di una regolare bolletta elettrica costituisce per alcuni un vero e proprio ‘passaporto per la cittadinanza’, in quanto prova sufficiente per aprire un conto in banca.
+Inoltre, non si può certo tralasciare il ruolo chiave giocato da tutti quei corpi intermedi intervenuti nella realizzazione di questi progetti, quali le Organizzazioni Non Governative, alcune agenzie di sviluppo ed altre forme locali di rappresentanza dei quartieri poveri. Questi soggetti sono nella maggioranza dei casi il vero ponte di conoscenza e di dialogo tra le grandi aziende private e le comunità svantaggiate, presso cui essi sono in genere presenti e legittimati.
+Infine, lo stato, nelle sue espressioni nazionali e locali, potrebbe erroneamente sembrare il grande assente in queste operazioni, ma evidentemente non è cosi. Certo, i casi descritti, e molti altri simili, si caratterizzano per un impulso iniziale di natura privata, ciò nondimeno essi necessitano dell’intervento pubblico, e non in termini finanziari soltanto. Di fatto, anche laddove un’azienda decida di operare in una zona socialmente svantaggiata, esistono delle iniziali barriere di accesso che quasi sempre presuppongono qualche incentivo pubblico ad intervenire. Inoltre, in un quadro di reale sussidiarietà in atto, anche allo stato è chiesta la sua parte, ovvero garantire la stabilità macro-economica, politica e regolatoria, così come la trasparenza nei processi competitivi e il rispetto dei contratti. Laddove queste condizioni non vengano assicurate (e l’America Latina ha purtroppo una pesante eredità politica di clientelismo e corruzione con cui fare i conti), è chiaro che nessuna impresa privata può ragionevolmente decidere di mettersi in gioco.&lt;/p&gt;
+
+&lt;h2 id=&#34;creatività-e-realismo&#34;&gt;Creatività e realismo&lt;/h2&gt;
+
+&lt;p&gt;Un altro aspetto affascinante di questi casi, oltre alla responsabilizzazione di diversi soggetti sopra descritta, é la creatività e la notevole diversità degli approcci sperimentati. Se l’economia è una disciplina che guarda all’uomo e ai suoi comportamenti, come tale dovrebbe sempre riflettere la costante tensione tra la semplificazione dei modelli - necessaria per intendere il reale - e la imprevedibilità ultima dell’agire umano. Vi sono anche altri recenti casi, sempre in contesti di povertà, dove la fornitura di servizi di base (acqua, energia, telefonia) é intrapresa da piccoli fornitori locali (Small Scale Providers) che in molti casi sono operatori informali. Tipicamente il servizio da loro fornito si configura, secondo una valutazione micro-economica, come un’opzione di second best (per via del costo marginale molto più alto rispetto a quello di un tradizionale distributore su larga scala). Cio’ nondimeno, ad esempio in certe aree rurali, questi piccoli fornitori informali sono l’unica risposta ad un bisogno che resterebbe altrimenti disatteso. L’offerta in termini di costo-qualità è generalmente al di sotto dei nostri normali standard, ma risulta accettabile in quelle condizioni. Molto opportunamente, e ancora una volta secondo un approccio sussidiario, alcuni recenti progetti di cooperazione tendono a promuovere una valorizzazione di questi piccoli fornitori tramite meccanismi ad hoc mirati a sussidiarli parzialmente, anche allo scopo di abbattere il prezzo al consumo. Un chiaro esempio sono i cosiddetti sussidi ‘performance-based’, che, oltre ad essere generalmente attribuiti ai candidati fornitori tramite apposita asta competitiva, sono ancorati alla effettiva attuazione di determinati obiettivi pre-negoziati (come l’allacciamento di tot connessioni elettriche, o la depurazione di tot metri cubi di acqua potabile, ecc.). Anche in questi casi è interessante sottolineare che tutto ciò non scaturisce da una pianificazione a tavolino, ma bensì da una valorizzazione di piccole e sporadiche realtà in atto partite spontaneamente ‘dalla base’ come tentativi di risposta ad un bisogno percepito.
+Da ultimo, vale la pena osservare come il fiorire di iniziative come quelle riferite risulti particolarmente rilevante nella prospettiva della fase di crisi e di necessario ripensamento del sistema economico e produttivo a cui stiamo attualmente assistendo. Infatti, i casi esempio riportati colpiscono per l’evidente realismo con cui mirano a rendere universale l’accesso e l’utilizzo di beni o servizi che sono generalmente concepiti come un legittimo diritto di tutti. C’e’ infatti una marcata differenza tra queste iniziative (sorte dal basso) e altre politiche (decise politicamente) magari apparentemente valide, ma poi dimostratesi, alla prova dei fatti, insostenibili. Si pensi ad esempio al credito subprime, che, specialmente nelle intenzioni del partito democratico americano che lo ha energicamente promosso, mirava a garantire un diritto all’accesso universale al credito, ma in qualche modo pretendendo di arrivarci snaturando il prodotto stesso e i suoi necessari requisiti (come la effettiva capacità di onorare il credito), oppure basandosi su condizioni (come gli altissimi tassi d’interesse o le clausole punitive per la mora) del tutto sproporzionate rispetto alle effettive possibilità dei clienti destinatari.
+Diversamente, la validità di iniziative come quelle presentate, il loro realismo appunto, sta nel fatto che non aggirano i problemi oggettivi quali la criticità delle aree interessate, o la volatilità e insufficienza dei redditi delle famiglie beneficiate. Allo stesso tempo, tali iniziative rispettano la struttura e i requisiti fondamentali del mercato competitivo, come ad esempio la necessità di garantire un profitto ragionevole alle aziende private sostenibile nel tempo, o la diversificazione del prodotto/servizio in un modo adeguato alla tipologia del consumatore.
+In sostanza, a partire dall’osservazione attenta di problemi strutturali complessi, e delle specificità di ogni situazione locale, la caratteristica vincente dei programmi riferiti è probabilmente il riuscire a sollecitare il necessario contributo di tutte le parti coinvolte nel trovare con creatività una soluzione. Forse oggi come mai, iniziative del genere vanno valorizzate e sostenute.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Luisa Mimmi ha conseguito, nel 2008, un Master in “International Policy &amp;amp; Development” presso la Georgetown University. Attualmente lavora come consulente per la Inter-American Development Bank a Washington DC.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;note-e-indicazioni-bibliografiche&#34;&gt;Note e indicazioni bibliografiche&lt;/h2&gt;
+
+&lt;p&gt;Komives, Kristin, Jonathan Halpern, Vivien Foster, Quentin T. Wodon and Roohi Abdullah. 2006. “The Distributional Incidence of Residential Water and Electricity Subsidies.” World Bank Policy Research Working Paper no. 3878.
+E anche: Coady, David, Margaret Grosh, and John Hoddinott. 2003. “The Targeting of Transfers in Developing Countries: Review of Experience and Lessons.” Social Protection Discussion Paper, World Bank, Washington, DC.&lt;/p&gt;
+
+&lt;p&gt;Rojas, Juan Manuel, Lallement Dominique. 2007. “Meeting the Energy Needs of the Urban Poor – Lessons from electrification practitioners.” ESMAP technical paper &lt;sup&gt;118&lt;/sup&gt;&amp;frasl;&lt;sub&gt;07&lt;/sub&gt;, Edited by ESMAP c/o Energy and Water Department, World Bank, Washington, DC.
+Manzetti, Luigi, Rufin Carlos. 2006. “Private utility Supply in a Hostile Environment – The experience of Water, Sanitation and Electricity Distribution Utilities in Northern Colombia, the Dominican Republic and Ecuador.” (Reference No. IFM-142) Edited by Inter-American Development Bank, Washington, DC.
+ESMAP c/o Energy and Water Department The World Bank Group. 2007. “Meeting the Energy Needs of the Urban Poor.” ESMAP technical paper &lt;sup&gt;118&lt;/sup&gt;&amp;frasl;&lt;sub&gt;07&lt;/sub&gt;, Washington, DC. Ed. ESMAP c/o Energy and Water Department The World Bank Group.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;William Easterly è stato Research Economist alla World Bank per 16 anni ed è ora professore di economia alla NY University. E’ noto al grande pubblico per il suo recente, molto dibattuto libro The White Man&amp;rsquo;s Burden (The Penguin Press, 2006).
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;Yunus, Muhammad and Alan Jolis. 2003. Banker to the Poor: Micro-Lending and the Battle Against World Poverty. Public Affairs.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;Bueno, Manuel. December 7, 2007. “The Codensa Case: Electricity and Related Services for the BOP in Colombia.” Articolo disponibile press oil sito web NextBillion.net - Development Through Enterprise. &lt;a href=&#34;http://www.nextbillion.net/blogs/2007/12/07/the-codensa-case-electricity-and-related-services-for-the-bop-in-colombia&#34; target=&#34;_blank&#34;&gt;http://www.nextbillion.net/blogs/2007/12/07/the-codensa-case-electricity-and-related-services-for-the-bop-in-colombia&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;Pinhel, Antonio. 2005. “Coelba Agent Project.” Paper presentato al simposio del 2005 Slum Electrification Workshop promosso da Cities Alliance, Salvador de Bahia, Settembre 12-14. &lt;a href=&#34;http://www.citiesalliance.org/publications/homepage-features/sept-05/slum-electrification-workshop.html&#34; target=&#34;_blank&#34;&gt;http://www.citiesalliance.org/publications/homepage-features/sept-05/slum-electrification-workshop.html&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:4&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;Mimmi, Luisa M. e Sencer Ecer. 2009. “Illegal electricity connections: main factors and impact of energy subsidies - A case study in the urban favelas of Belo Horizonte” [prossima pubblicazione].
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:5&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;Sul tema della assegnazione dei sussidi, vedere ad esempio i due significativi lavori di:
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:6&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;Bolsa Família, fa parte dell’ambizioso programma di welfare promosso dall’attuale governo federale brasiliano dal nome “Fame zero”. Bolsa Família offre sostegno diretto alla famiglie povere ed indigenti a condizione che i bambini vadano a scuola e vengano vaccinati (segue cioè il modello dei Conditional Cash Transfers). Il programma oggi raggiunge 11 milioni di famiglie e oltre 46 milioni di persone ed offre alle famiglie con figli un trasferimento mensile diretto medio di R$70 (circa US$35). Tale modello è apparso oltre 10 anni fa in Brasile così come altre iniziative oggi più o meno convogliate in esso quali Bolsa Escola, Bolsa Gas, Carta del Cittadino ecc. Per quanto &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34;&gt;8&lt;/a&gt;&lt;/sup&gt;: risultati siano innegabilmente positivi in termini di raggiungimento e sostegno di famiglie svantaggiate, il programma ha anche alcune inevitabili criticità, quali la sostenibilità finanziaria, la possibilità di corruzione, e gli effetti distorsivi quali ad esempio il potenziale disincentivo al lavoro.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:7&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:8&#34;&gt;Sen, Amartya. 1980. “Equality of What?” in S. McMurrin, ed., Tanner Lectures on Human Values, Volume 1. Cambridge University Press, Cambridge. Reprinted in John Rawls et al.. 1987. Liberty,Equality and Law. Cambridge University Press, Cambridge.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:8&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:9&#34;&gt;Prahalad, Coimbatore K. and Harvey C. Fruehauf. 2006. The fortune at the bottom of the pyramid: Eradicating Poverty Through Profit. Wharton School Publishing.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:9&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:10&#34;&gt;I recenti case studies in Manzetti and Rufin (2006), Rojas and Lallement (2007), ESMAP (2007) confermano coerentemente il supporto alla adozione di politiche (tipicamente promosse dal settore privato) basate sull’offerta di un sensibile miglioramento della qualità, disponibilità e accessibilità del servizio entro un breve periodo. Questo approccio ultimamente produce rendimenti per la società per mezzo della riduzione delle perdite non tecniche.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:10&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>IADB Survey of WSS suppliers in Brazil 2018/2019</title>
+      <link>/source/project/iadb_wss-survey-brazil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/project/iadb_wss-survey-brazil/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;div class=&#34;alert alert-warning&#34;&gt;
+  
+Please note, the survey is still in progress, hence the results are subject to change and NOT (yet) ready for dissemination.
+
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;div id=&#34;link-to-project-page&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Link to Project Page&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://lulliter.github.io/BrazilWaterSurvey/&#34; class=&#34;uri&#34;&gt;https://lulliter.github.io/BrazilWaterSurvey/&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;purpose-of-the-study&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Purpose of the study&lt;/h2&gt;
+&lt;p&gt;The survey is part of a larger effort to collect original data in preparation of the publication “Development in America” 2020 that will focus on Infrastructure (Energy, Water and Transportation) sector in LAC.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;creators&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Creators&lt;/h2&gt;
+&lt;p&gt;This page was created by Luisa M. Mimmi (Research Fellow - consultant at IADB) but builds on data collected by various IADB colleagues and partner organizations.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;acknowledgments&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;ACKNOWLEDGMENTS&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;This survey is sponsored by the &lt;strong&gt;Interamerican Development Bank (IADB)&lt;/strong&gt;, Water Division, Knowledge Team &lt;a href=&#34;https://idbg.sharepoint.com/sites/WSAknowledge&#34;&gt;WSA Knowledge&lt;/a&gt;, where I work as a consultant.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;This survey has been implemented in the field by the is sponsored by the company &lt;strong&gt;PoPa Research&lt;/strong&gt;, &lt;a href=&#34;http://www.poparesearch.com/&#34;&gt;website&lt;/a&gt; in partnership with IADB.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;For the structure of this static webpage, I followed the example of Prof Andrew Heiss &lt;a href=&#34;https://stats.andrewheiss.com/donors-ngo-restrictions/index.html&#34;&gt;project page&lt;/a&gt; who graciously shares his research work (with code).&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;contact&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;CONTACT&lt;/h3&gt;
+&lt;p&gt;Feel free to contact me for questions and/or suggestions (&lt;a href=&#34;mailto:lmm76@georgetown.edu&#34; class=&#34;email&#34;&gt;lmm76@georgetown.edu&lt;/a&gt; or &lt;a href=&#34;mailto:lmmimmi@iadb.org&#34; class=&#34;email&#34;&gt;lmmimmi@iadb.org&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>R Graph Reference</title>
+      <link>/source/tutorial/r-graph-reference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tutorial/r-graph-reference/</guid>
+      <description>
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#set-up&#34;&gt;Set up&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#reproducing-small-r-object-nye-anonimized-stuff&#34;&gt;Reproducing small R object (NYE anonimized stuff )&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#multiple-line-graph-facet_wrap&#34;&gt;Multiple line graph + facet_wrap&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#below-are-saved-images&#34;&gt;(Below are saved images)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#count-of-element-in-sample-by-2-categorical-variables-1-law-stack-2-rango-size&#34;&gt;Count of element in Sample By 2 categorical variables: {1) Law Stack 2) rango-size }&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#density-plot-of-1-continuous-var-nrwm3_pct-by-1-categorical-variables-q1_ownership_lbl&#34;&gt;Density plot of 1 continuous {VAR NRWm3_pct} BY 1 categorical variables: {Q1_ownership_lbl}&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#density-plot-of-1-continuous-var-nrwm3_pct-by-1-categorical-variables-faceted-cov_pop_rango_lbl&#34;&gt;Density plot of 1 continuous VAR {NRWm3_pct} BY 1 categorical variables (faceted): {Cov_pop_rango_lbl}&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#dotplot-2-cont-variables-by-color-1-categ-var&#34;&gt;DOTPLOT {2 cont variables &amp;amp; BY (color) 1 categ var}&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#boxplot-could-do-the-same-but-1-cont-variable-1-categ-variable&#34;&gt;BOXPLOT could do the same but {1 cont variable &amp;amp; 1 categ Variable }&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#barplot-of-count-of-obs-by-1-grouped-var-by-color-1-categ-variable&#34;&gt;BARPLOT of Count of obs BY 1 grouped var &amp;amp; By (color) 1 categ Variable&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;set-up&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Set up&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;I load the R scipt with my theme&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pacman::p_load(tidyverse, plyr, ggplot2, here, png)
+
+
+# === save and source R script with `my_theme`
+source(here::here( &amp;quot;content&amp;quot;,&amp;quot;tutorial&amp;quot;, &amp;quot;ggplot-theme.R&amp;quot;))
+
+# (OR) # Define the theme locally
+require(ggplot2)
+
+my_theme &amp;lt;- theme(
+    legend.position = &amp;quot;right&amp;quot;,
+    panel.background = element_rect(fill = NA),
+    panel.border = element_rect(fill = NA, color = &amp;quot;grey75&amp;quot;), axis.ticks = element_line(color = &amp;quot;grey85&amp;quot;),
+    panel.grid.major = element_line(color = &amp;quot;grey95&amp;quot;, size = 0.2), panel.grid.minor = element_line(color = &amp;quot;grey95&amp;quot;, size = 0.2), legend.key = element_blank())
+
+# === To USE: simply add to plot `+ my_theme`&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;reproducing-small-r-object-nye-anonimized-stuff&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Reproducing small R object (NYE anonimized stuff )&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# I had save the file as ASCII object before 
+        #dput(Don_byType, file = &amp;quot;Don_byType.text&amp;quot;)
+
+# Read it back here 
+NYEtest &amp;lt;- dget(here::here( &amp;quot;content&amp;quot;,&amp;quot;tutorial&amp;quot;, &amp;quot;Don_byType.text&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;multiple-line-graph-facet_wrap&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Multiple line graph + facet_wrap&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;wide to long df&lt;/li&gt;
+&lt;li&gt;(all gathered vars must have same type)&lt;/li&gt;
+&lt;li&gt;show point + line&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# ---- wide to  Long format 
+ByTypeTOT_Long &amp;lt;- NYEtest %&amp;gt;% 
+    select(1, 3:11)  %&amp;gt;% 
+    # I have t reconvert back to numeric or error
+    # ... attributes are not identical across measure variables;they will be dropped 
+    # mutate_each(list(~as.numeric), contains(&amp;#39;TOT_&amp;#39;)) %&amp;gt;%
+    gather(key= &amp;quot;NYE_Edition&amp;quot; , value = &amp;quot;USDollars&amp;quot;,
+             &amp;#39;TOT_NYE11&amp;#39;, &amp;#39;TOT_NYE12&amp;#39;, &amp;#39;TOT_NYE13&amp;#39;, &amp;#39;TOT_NYE14&amp;#39;, &amp;#39;TOT_NYE15&amp;#39;,
+             &amp;#39;TOT_NYE16&amp;#39;, &amp;#39;TOT_NYE17&amp;#39;, &amp;#39;TOT_NYE18&amp;#39;,&amp;#39;TOT_NYE19&amp;#39;, 
+              na.rm = FALSE)  
+
+# ---- plot
+plot &amp;lt;- ggplot(ByTypeTOT_Long) + 
+    aes(x = NYE_Edition,  y = USDollars,  color = Acc_Type_NA) + 
+    geom_point() +
+    geom_line(aes(group = Acc_Type_NA))  +
+    labs(title=&amp;quot;Total donations over the years by Type of Accounts&amp;quot;,
+          x =NULL, y = &amp;quot;US Dollars&amp;quot;) +
+    ggthemes::theme_hc() + #+ scale_colour_hc()# theme_urban() +
+    theme(axis.text.x = element_text(angle=45) ) +  ##  theme(text=element_text(family=&amp;quot;Garamond&amp;quot;, size=14))
+    facet_wrap((~ Acc_Type_NA))  
+
+plot&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-19-r-graph-reference_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;div id=&#34;below-are-saved-images&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;(Below are saved images)&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;count-of-element-in-sample-by-2-categorical-variables-1-law-stack-2-rango-size&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Count of element in Sample By 2 categorical variables: {1) Law Stack 2) rango-size }&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;dataset in wide form&lt;br /&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DON&#39;T MAP A VARIABLE TO Y&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;shows counts of obs by level of one var, by class of another var&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# -----  { Count of obs in sample by 2 categorical variables: 1) Law Stack 2) rango-size }
+ggplot(data = Bra1_complete) + 
+    geom_bar() + #   position = &amp;quot;dodge&amp;quot;,width=0.7) +
+    aes(x = Q8a_c_Leg_comb) + 
+    aes(fill = Cov_pop_rango_lbl) +
+    # scale_fill_discrete(name = &amp;quot;Size of population \ncovered&amp;quot;) + 
+    scale_fill_manual(values = colorRampPalette(RColorBrewer::brewer.pal(9, &amp;quot;Purples&amp;quot;))(8)[0:8], 
+                            na.value=&amp;quot;grey&amp;quot;, guide = guide_legend(reverse = F)) +
+    labs(fill = &amp;quot;Size of population \ncovered&amp;quot;) +
+    
+    labs(x = &amp;quot;&amp;quot;) +
+    labs(y = &amp;quot;Count of Suppliers in Sample&amp;quot;) +
+    labs(title = &amp;quot;Number of WSS suppliers in Brazil sample by existing legislation 
+          \n(Coverage + Service + Quality + Tariffs) and Size of covered area&amp;quot;) +
+    coord_flip()  + 
+    my_theme -&amp;gt; p2
+p2
+#ggsave(p2, filename=here::here(&amp;quot;07_output&amp;quot;, &amp;quot;Plot_CountByRango.png&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# -----  Doesn&amp;#39;t work (dir issue)
+img2_path &amp;lt;- here::here(&amp;quot;content&amp;quot;,&amp;quot;tutorial&amp;quot;, &amp;quot;Plot_CountByRango.png&amp;quot;)
+library(png)
+img2 &amp;lt;- readPNG(img2_path, native = TRUE, info = TRUE)
+# attr(img1, &amp;quot;info&amp;quot;)
+
+# -----  Doesn&amp;#39;t work (dir issue)
+# knitr::include_graphics(img1_path)&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- Using markdown way OK for site rendering --&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/source/tutorial/Plot_CountByRango.png&#34; alt=&#34;Count By LawStack and Rango&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Count By LawStack and Rango&lt;/p&gt;
+&lt;/div&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# similar 
+ggplot(data = Bra1_complete) + 
+    aes(x = Q8a_c_Leg_comb) + 
+    aes(fill = Q1_ownership_lbl) +
+    geom_bar() +
+    labs(fill = &amp;quot;Type of Supplier: \nOwnership&amp;quot;) +
+    labs(x = &amp;quot;&amp;quot;) +
+    labs(y = &amp;quot;Count of Suppliers&amp;quot;) +
+    labs(title = &amp;quot;Number of WSS suppliers in Brazil sample by existing legislation 
+          \n(Coverage + Service + Quality + Tariffs) and Ownership&amp;quot;) +
+    coord_flip()  + my_theme -&amp;gt; p
+
+p
+# save plot
+ggsave(p, filename=here::here(&amp;quot;07_output&amp;quot;, &amp;quot;Plot_CountByLawOwnersh.png&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- Using markdown way --&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/source/tutorial/Plot_CountByLawOwnersh.png&#34; alt=&#34;Count By LawStack and Ownership&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Count By LawStack and Ownership&lt;/p&gt;
+&lt;/div&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;density-plot-of-1-continuous-var-nrwm3_pct-by-1-categorical-variables-q1_ownership_lbl&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Density plot of 1 continuous {VAR NRWm3_pct} BY 1 categorical variables: {Q1_ownership_lbl}&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;dataset in wide form&lt;/li&gt;
+&lt;li&gt;Using &lt;code&gt;plyr::ddply&lt;/code&gt; –&amp;gt; Split data frame, apply function, and return results in a data frame
+(similar to &lt;code&gt;dplyr::group__map()_by %&amp;gt;%  summarise&lt;/code&gt; to iterate on groups)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ggplot2::geom_density&lt;/code&gt; + &lt;code&gt;ggplot2::geom_vline&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(plyr)
+
+# ----- find the mean for each group 
+densNWR &amp;lt;- Bra1_complete %&amp;gt;% 
+    # Get rid of NA in NRW 
+    drop_na(., NRWm3_pct) %&amp;gt;% 
+    # return mean by group
+    plyr::ddply(., # data
+                    &amp;quot;Q1_ownership_lbl&amp;quot;, # var  
+                    summarise, NRWm3_pct.mean=mean(NRWm3_pct), NRWm3_pct.med=median(NRWm3_pct) # function
+                    )
+
+# ----- Plot 
+ggplot (    data = Bra1_complete , aes ( x=NRWm3_pct, fill = Q1_ownership_lbl )) +
+    geom_density(alpha=.3) +
+    geom_vline(data=densNWR, aes(xintercept= NRWm3_pct.mean,  colour=Q1_ownership_lbl),
+                  linetype=&amp;quot;dashed&amp;quot;, size=1, show.legend = T)  +
+    labs(title = &amp;quot;Density plot of % NRW by ownership type&amp;quot;,
+          subtitle = &amp;quot;(Vertical line = Group MEAN)&amp;quot;) +
+    my_theme -&amp;gt;  NRWp
+
+NRWp    
+
+# ----- Save plot
+ggsave(NRWp, filename=here::here(&amp;quot;07_output&amp;quot;, &amp;quot;Plot_DensNRW_byOwn.png&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- Using markdown way --&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/source/tutorial/Plot_DensNRW_byOwn.png&#34; alt=&#34;Density of NRW By Ownership&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Density of NRW By Ownership&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;density-plot-of-1-continuous-var-nrwm3_pct-by-1-categorical-variables-faceted-cov_pop_rango_lbl&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Density plot of 1 continuous VAR {NRWm3_pct} BY 1 categorical variables (faceted): {Cov_pop_rango_lbl}&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;(same as above), but…&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ggplot2::facet_wrap&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(plyr)
+# BY  Q9a_d_Mix_comb /  Cov_pop_rango_lbl
+
+# ----- find the mean for each group 
+densSIZE &amp;lt;- Bra1_complete %&amp;gt;% 
+    # Get rid of NA in NRW 
+    drop_na(., NRWm3_pct) %&amp;gt;% 
+    plyr::ddply(., &amp;quot;Cov_pop_rango_lbl&amp;quot;, summarise, 
+                    NRWm3_pct.mean=mean(NRWm3_pct) , NRWm3_pct.med=median(NRWm3_pct))
+densSIZE
+
+# -----Plot 
+ggplot (    data = Bra1_complete , aes ( x=NRWm3_pct, fill = Cov_pop_rango_lbl )) +
+    geom_density(alpha=.3) +
+    geom_vline(data=densSIZE, aes(xintercept= NRWm3_pct.mean,  colour=Cov_pop_rango_lbl),
+                  linetype=&amp;quot;dashed&amp;quot;, size=1, show.legend = T)  +
+    labs(title = &amp;quot;Density plot of % NRW by Size of covered area&amp;quot;,
+          subtitle = &amp;quot;(Vertical line = Group MEAN)&amp;quot;) +
+    facet_wrap(~ Cov_pop_rango_lbl, scales = &amp;quot;free_y&amp;quot;) +
+    my_theme -&amp;gt;  SIZEp
+
+# ----- see plot
+SIZEp   
+# ----- save plot 
+ggsave(SIZEp, filename=here::here(&amp;quot;07_output&amp;quot;, &amp;quot;Plot_DensNRW_bySIZE.png&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- Using markdown way --&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/source/tutorial/Plot_DensNRW_bySIZE.png&#34; alt=&#34;Density of NRW By Size&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Density of NRW By Size&lt;/p&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Using functions to repeat charts
+follow &lt;a href=&#34;https://rpubs.com/alexbra/173596&#34; class=&#34;uri&#34;&gt;https://rpubs.com/alexbra/173596&lt;/a&gt; !!!!!!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div id=&#34;dotplot-2-cont-variables-by-color-1-categ-var&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;DOTPLOT {2 cont variables &amp;amp; BY (color) 1 categ var}&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;design a function that I can reuse (changing variables, labels, title)&lt;/li&gt;
+&lt;li&gt;call the function&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# ----- Create function for scatterplot object 
+point_plot_func &amp;lt;- function(factor, x_str, y_str, xl, yl, t, rvrs = T,lt = &amp;quot;Factor levels&amp;quot; ){
+    # I declaring the dataset inside for the project
+    ggplot( data = Bra1_complete, aes_string(x=x_str, y = y_str, color=factor)) +
+        geom_point(size=3, alpha=0.5, position=&amp;quot;jitter&amp;quot;) +
+        xlab(xl)+
+        ylab(yl)+    
+        ggtitle(t)+
+        scale_color_brewer(palette=&amp;quot;Spectral&amp;quot;,
+                                 guide = guide_legend(title = lt, reverse = rvrs)) +
+        my_theme
+}
+
+
+# ----- call Func: NRWm3_pct x Q27_IndivMeter_Perc BY Q9a_d_Mix_comb
+dot1 &amp;lt;- point_plot_func(factor = &amp;quot;Q9a_d_Mix_comb&amp;quot;,
+                      x_str = &amp;quot;Q27_IndivMeter_Perc&amp;quot;, 
+                      y_str = &amp;quot;NRWm3_pct&amp;quot;, 
+                      xl = &amp;quot;Perc Conn with Indiv Meter&amp;quot;, 
+                      yl = &amp;quot;Percent NRW&amp;quot;, 
+                      t = &amp;quot;&amp;quot;, # no title, I am using caption in md 
+                      rvrs = F)+
+    coord_cartesian(ylim=c(0,100)) +  
+    geom_rect(aes(xmin=0,xmax=Inf,ymin=50,ymax=Inf), alpha=0.005,fill=&amp;quot;red&amp;quot;, linetype=&amp;quot;blank&amp;quot;) 
+
+# ----- save 
+ggsave(dot1, filename=here::here(&amp;quot;07_output&amp;quot;, &amp;quot;Plot_DotsNWR_Meter_byMIX.png&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- Using markdown way --&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/source/tutorial/Plot_DotsNWR_Meter_byMIX.png&#34; alt=&#34;Dot Plot of NRW By ServMix and Perc Meters&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Dot Plot of NRW By ServMix and Perc Meters&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;boxplot-could-do-the-same-but-1-cont-variable-1-categ-variable&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;BOXPLOT could do the same but {1 cont variable &amp;amp; 1 categ Variable }&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;design a function that I can reuse (changing variables, labels, title)&lt;/li&gt;
+&lt;li&gt;call the function&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# -----function to create box plot object
+box_plot_func &amp;lt;- function(factor, 
+                                  lt = &amp;quot;Factor levels&amp;quot;,
+                                  x_str = &amp;quot;quality.rank&amp;quot;, 
+                                  y_str, 
+                                  xl = &amp;quot;Quality rank&amp;quot;,
+                                  yl,
+                                  t){
+    ggplot(data = Bra1_complete, aes_string(x=x_str, y = y_str, color=factor)) +
+        geom_boxplot() +
+        xlab(xl) +
+        ylab(yl) + 
+        ggtitle(t) +
+        my_theme
+}
+
+# -----call Func :   NRWm3_pct BY Q41_ClandConn_Analyzed
+box_plot_func(factor = NULL,
+                    x_str = &amp;quot;Q41_ClandConn_Analyzed&amp;quot;, 
+                    y_str = &amp;quot;NRWm3_pct&amp;quot;, 
+                    xl = &amp;quot;Is there a process to detect informal connections?&amp;quot;, 
+                    yl = &amp;quot;Percent NRW&amp;quot;, 
+                    t = &amp;quot;Perc of NRW vs. Having a system to detect IRREGULAR CONNECTIONS&amp;quot;) +
+    coord_cartesian(ylim=c(0,100)) +  
+    geom_rect(aes(xmin=0,xmax=Inf,ymin=50,ymax=Inf), alpha=0.005,fill=&amp;quot;red&amp;quot;, linetype=&amp;quot;blank&amp;quot;) -&amp;gt; box1
+
+# -----save 
+ggsave(box1, filename=here::here(&amp;quot;07_output&amp;quot;, &amp;quot;Plot_BOXNWR_Cland.png&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- Using markdown way --&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/source/tutorial/Plot_BOXNWR_Cland.png&#34; alt=&#34;Box plot of NRW By Perc clandest&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Box plot of NRW By Perc clandest&lt;/p&gt;
+&lt;/div&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;barplot-of-count-of-obs-by-1-grouped-var-by-color-1-categ-variable&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;BARPLOT of Count of obs BY 1 grouped var &amp;amp; By (color) 1 categ Variable&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;wide to long&lt;/li&gt;
+&lt;li&gt;design a function that I can reuse (changing variables, labels, title)&lt;/li&gt;
+&lt;li&gt;call the function&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# -----wide to long --&amp;gt; gather variables about SWIT  
+SWIT_long &amp;lt;- Bra1_compl_SWIT %&amp;gt;%  
+    # wide to long (omly on specified selected var )
+    tidyr::gather(.,key = &amp;quot;technology&amp;quot; , value = &amp;quot;value&amp;quot;,  
+                      # specific vars I want to gather
+                      VolLossEstim =  Q24_VolLossMech_Has,
+                      LeaksDetection  = Q39_LeaksDetection_Analyzed, 
+                      Dept_Innov= Q55_Dept_Inn_Has, 
+                      Dept_R_D = Q56_Dept_ReD_Has , 
+                      Dept_IT_data= Q57_Dept_ITdata_Has , 
+                      GIS_Pipes= Q58a_GIS_Pipe_Has , 
+                      GIS_PressValves= Q58b_GIS_Press_Has, 
+                      GIS_Reserv= Q58c_GIS_Storg_Has , 
+                      GIS_ConnPts = Q58d_GIS_Conn_Has , 
+                      HidrMod   = Q60_HidrMod_Has , 
+                      DMA   = Q62_DMA_Has   , 
+                      DMA_w_flows   = Q63_DMA_Has_Flows   , 
+                      DMA_w_pressvalves = Q64_DMA_Has_PressValv   , 
+                      PressSyst= Q65_PressSyst_Has, 
+                      AMR  , 
+                      AMI) %&amp;gt;% 
+    # I turn value from &amp;quot;Yes/No/DK&amp;quot; to DUMMY 0/1
+    dplyr::mutate(value_dummy = case_when(value == &amp;quot;Yes&amp;quot; ~ 1,
+                                                      value == &amp;quot;InConstr&amp;quot; ~ 1,
+                                                      value == &amp;quot;No&amp;quot; ~ 0,
+                                                      value == &amp;quot;DK&amp;quot; ~ 0,
+                                                      value == &amp;quot;na&amp;quot; ~ 0))  
+
+
+# ----- GROUP BY &amp;amp; COUNT obs each group 
+SWIT_long2 &amp;lt;- SWIT_long %&amp;gt;% 
+    dplyr::group_by(technology) %&amp;gt;% 
+    dplyr::summarise(Count_SWIT = sum( value_dummy)) %&amp;gt;% 
+# ----- add technology category var 
+    dplyr::mutate( tech_type = case_when(
+        technology ==   &amp;quot;Q55_Dept_Inn_Has&amp;quot; | technology ==  &amp;quot;Q56_Dept_ReD_Has&amp;quot; | technology ==   &amp;quot;Q57_Dept_ITdata_Has&amp;quot; ~ 1, 
+        technology ==   &amp;quot;Q24_VolLossMech_Has&amp;quot;| technology == &amp;quot;Q39_LeaksDetection_Analyzed&amp;quot; ~ 2 ,
+        technology == &amp;quot;Q68_SCADA_UtilLevel&amp;quot; | technology == &amp;quot;Q58a_GIS_Pipe_Has&amp;quot; | 
+        technology == &amp;quot;Q58b_GIS_Press_Has&amp;quot;| technology ==&amp;quot;Q58c_GIS_Storg_Has&amp;quot; |
+        technology ==&amp;quot;Q58d_GIS_Conn_Has&amp;quot; ~ 3, 
+        technology ==    &amp;quot;Q60_HidrMod_Has&amp;quot;   ~ 4, 
+        technology == &amp;quot;Q62_DMA_Has&amp;quot; |technology == &amp;quot;Q65_PressSyst_Has&amp;quot; 
+        |technology ==  &amp;quot;Q63_DMA_Has_Flows&amp;quot; |technology == &amp;quot;Q64_DMA_Has_PressValv&amp;quot;      ~ 5, 
+        technology ==  &amp;quot;AMR&amp;quot;  | technology ==&amp;quot;AMI&amp;quot;~ 6)
+        )
+
+
+# ----- Define the order I want for technology category vars
+SWIT_long2$technology &amp;lt;-factor(SWIT_long2$technology, 
+                                         levels = c(&amp;quot;Q55_Dept_Inn_Has&amp;quot;, &amp;quot;Q56_Dept_ReD_Has&amp;quot;, &amp;quot;Q57_Dept_ITdata_Has&amp;quot;, 
+                                                      &amp;quot;Q24_VolLossMech_Has&amp;quot;,  &amp;quot;Q39_LeaksDetection_Analyzed&amp;quot;, 
+                                                      &amp;quot;Q68_SCADA_UtilLevel&amp;quot; ,  &amp;quot;Q58a_GIS_Pipe_Has&amp;quot; , 
+                                                      &amp;quot;Q58b_GIS_Press_Has&amp;quot;, &amp;quot;Q58c_GIS_Storg_Has&amp;quot;,  
+                                                      &amp;quot;Q58d_GIS_Conn_Has&amp;quot; , &amp;quot;Q60_HidrMod_Has&amp;quot; , &amp;quot;Q62_DMA_Has&amp;quot; , 
+                                                      &amp;quot;Q65_PressSyst_Has&amp;quot; , &amp;quot;Q63_DMA_Has_Flows&amp;quot; ,  
+                                                      &amp;quot;Q64_DMA_Has_PressValv&amp;quot;, &amp;quot;AMR&amp;quot;  , &amp;quot;AMI&amp;quot; ))
+
+SWIT_long2$tech_type &amp;lt;-factor(SWIT_long2$tech_type, 
+                                        levels = c(&amp;quot;1&amp;quot;, &amp;quot;2&amp;quot;,&amp;quot;3&amp;quot; ,&amp;quot;4&amp;quot; ,&amp;quot;5&amp;quot; ,&amp;quot;6&amp;quot; ), # order
+                                        labels = c(&amp;quot;Technical Staff&amp;quot;, &amp;quot;Network Mngmnt&amp;quot;,&amp;quot;GIS or SCADA&amp;quot; ,&amp;quot;Hydr Model&amp;quot;,
+                                                      &amp;quot;DMA or Pressure Mngmnt&amp;quot; ,&amp;quot;Smart Meters&amp;quot; )
+)
+
+# ----- PLOT  
+ggplot(SWIT_long2) + 
+    aes(x = technology, y = Count_SWIT , fill = tech_type)  + 
+    geom_bar(stat = &amp;quot;identity&amp;quot;, position=&amp;quot;identity&amp;quot;) + 
+    # count inside bars
+    geom_text(aes(label=Count_SWIT), color = &amp;quot;white&amp;quot;, hjust=2)+
+    theme( axis.text.x = element_text(size=10), axis.text.y = element_text(size=10,face=&amp;quot;bold&amp;quot;) ) + # they are flipped!!!
+    labs(title=&amp;quot;SWIT and other ICT tools used by the Suppliers in Brazil Sample&amp;quot; ,
+          subtitle = &amp;quot;(Includes when technology is in construction)&amp;quot;) + 
+    labs(x = &amp;quot;&amp;quot;, y = &amp;quot;# suppliers in sample&amp;quot; ) + 
+    # rename legend labels
+    guides(fill=guide_legend(title=&amp;quot;Type of Technology&amp;quot;)) + 
+    # reference line to show tot N of sample
+    geom_hline(yintercept=38, color = &amp;quot;#616161&amp;quot;, size=0.3) +
+    geom_text(aes(x= 7, label=&amp;quot;sample = 38&amp;quot;, y=38), colour=&amp;quot;#616161&amp;quot;, angle=90, vjust = 1.2 ) +
+    coord_flip()        -&amp;gt; ggSWITbar   
+
+# ----- save 
+ggSWITbar  
+ggsave( ggSWITbar, filename =here::here(&amp;quot;07_output&amp;quot;, &amp;quot;ggSWITbar.png&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- Using markdown way --&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/source/tutorial/ggSWITbar.png&#34; alt=&#34;Bar Plot for # of obs adopting SWIT by Type&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Bar Plot for # of obs adopting SWIT by Type&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>R Notes on Classification, Clustering, etc.</title>
+      <link>/source/tutorial/r-notes-on-classification/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tutorial/r-notes-on-classification/</guid>
+      <description>
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#set-up&#34;&gt;Set up&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#classification&#34;&gt;CLASSIFICATION&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#k-nearest-neighbors-knn-classification&#34;&gt;k-Nearest-Neighbors (kNN) CLASSIFICATION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#exe-decision-trees&#34;&gt;EXE Decision trees&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#exe-naive-bayes-bayesian-classifier&#34;&gt;EXE Naive Bayes // Bayesian Classifier&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#cluster-analisys&#34;&gt;CLUSTER ANALISYS&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#three-major-kinds-of-clustering&#34;&gt;Three major kinds of clustering:&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#exe-12-hierarchical-clust&#34;&gt;EXE 1/2 HIERARCHICAL CLUST&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#exe-22-hierarchical&#34;&gt;EXE 2/2 hierarchical&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#exe-12-k-means-clustering&#34;&gt;EXE 1/2 k-means Clustering&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#exe-22-k-means-clust---theory-illustration&#34;&gt;EXE 2/2 k-means CLUST - THEORY ILLUSTRATION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#resources&#34;&gt;RESOURCES&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;set-up&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Set up&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div id=&#34;classification&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;CLASSIFICATION&lt;/h1&gt;
+&lt;p&gt;Assign an observation to the “class” where it belongs:&lt;/p&gt;
+&lt;p&gt;NOTES:
+- (&lt;em&gt;) &lt;em&gt;typically not useful for understanding the nature of teh relationship between the feature and class outcome (aka the sign), but can be very effective as “black box”prediction engines&amp;quot; &lt;/em&gt;
+- (&lt;/em&gt;) &lt;em&gt;closely depends on available variables &lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;TYPES&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SUPERVISED&lt;/strong&gt;: I DO have the actual “label”
+&lt;ul&gt;
+&lt;li&gt;criterion become &lt;em&gt;accuracy&lt;/em&gt; of the prediction&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UNSUPERVISED&lt;/strong&gt;: I don’t have the actual “label”
+&lt;ul&gt;
+&lt;li&gt;criterion (to shape groups) become &lt;em&gt;similarity&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;spam filter&lt;/li&gt;
+&lt;li&gt;genetic testing&lt;/li&gt;
+&lt;li&gt;fraud detection&lt;/li&gt;
+&lt;li&gt;psicological diagnosis&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ALGORITHMs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;K-nn ( Find the number of cases in the multidimensional space that are closest to the new one)&lt;/li&gt;
+&lt;li&gt;k-means&lt;/li&gt;
+&lt;li&gt;Decision trees&lt;/li&gt;
+&lt;li&gt;Random forest&lt;/li&gt;
+&lt;li&gt;Naive Bayes (start prior probability (eg of having cancer) then naive Bayes adjusts the probability - posterior probability- with each new piece of information, )&lt;/li&gt;
+&lt;li&gt;SVM&lt;/li&gt;
+&lt;li&gt;ANN (are multiple layers of equations and weights to model nonlinear outcomes)&lt;/li&gt;
+&lt;li&gt;Logistic regression&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;k-nearest-neighbors-knn-classification&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;k-Nearest-Neighbors (kNN) CLASSIFICATION&lt;/h3&gt;
+&lt;p&gt;NOTES:
+- (&lt;em&gt;) &lt;em&gt;“Closest” usually is defined by Euclidean distance (OF for quantitative features) in feature space&lt;/em&gt;
+- (&lt;/em&gt;) &lt;em&gt;You typically first standardize each feature to have mean =0 and variance =1 in the training sample&lt;/em&gt;
+- (*) &lt;em&gt;The Nearest-Neighbors technique can also be used in regressoin and works reasonably well for low-dimensional problems. Instead, with high-dimensional features, the bias-variance tradeoff does not work in regr as it does in classificationo&lt;/em&gt;&lt;/p&gt;
+&lt;div id=&#34;example-credit-default-data---using-classknn&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;1/2) Example Credit Default data - using &lt;code&gt;class::knn&lt;/code&gt;&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;colnames(df)
+[1] “ID” “LIMIT_BAL” “SEX” “EDUCATION” “MARRIAGE” “AGE” “PAY_0” “PAY_2” “PAY_3” “PAY_4”&lt;br /&gt;
+[11] “PAY_5” “PAY_6” “BILL_AMT1” “BILL_AMT2” “BILL_AMT3” “BILL_AMT4” “BILL_AMT5” “BILL_AMT6” “PAY_AMT1” “PAY_AMT2”
+[21] “PAY_AMT3” “PAY_AMT4” “PAY_AMT5” “PAY_AMT6” “DEFAULT”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# DM_04_03.R
+
+# LOAD PACKAGES ############################################
+pacman::p_load(&amp;quot;class&amp;quot;)  # class has knn function
+
+# LOAD DATA ################################################
+# Read CSV 
+df_big &amp;lt;- read.csv(here::here(&amp;quot;content&amp;quot;,&amp;quot;tutorial&amp;quot;, &amp;quot;data&amp;quot;, &amp;quot;ccdefault.csv&amp;quot;), header = T)
+# I want a smaller dataset 
+df&amp;lt;- df_big[sample(nrow(df_big),replace=F,size=0.05*nrow(df_big)),]
+ 
+# NORMALIZE DATA ###########################################
+# If ranges for variables are very different, then it&amp;#39;s a
+# good idea to normalize the variables, which puts them in
+# similar ranges. Use custom function for now.
+
+# Define function for normalizing data
+normalize &amp;lt;- function(x) {
+    num &amp;lt;- x - min(x)
+    denom &amp;lt;- max(x) - min(x)
+    return (num/denom)
+}
+
+# Apply function to data frame (but not index or outcome)
+dfn &amp;lt;- as.data.frame(lapply(df[, 2:24], normalize))
+head(dfn)
+
+# Put outcome variable back on and rename
+dfn &amp;lt;- cbind(dfn, df[, 25])
+names(dfn)[24] &amp;lt;- &amp;quot;DEFAULT&amp;quot;
+
+# Check data
+colnames(dfn)
+head(dfn)
+
+# SPLIT DATA ###############################################
+
+# Split data into training set (2/3) and testing set (1/3)
+set.seed(2786)  # Random seed
+dfn.split &amp;lt;- sample(2, 
+                          nrow(dfn), 
+                    replace = TRUE,# assign a 1 or a 2 to a certain row and then reset the vector of 2 to its original state
+                    prob = c(2/3, 1/3))
+
+# Create training and testing datasets without outcome
+# labels. Use just the first 23 variables.
+dfn.train &amp;lt;- dfn[dfn.split == 1, 1:23]
+dfn.test  &amp;lt;- dfn[dfn.split == 2, 1:23]
+
+# Create outcome labels
+dfn.train.labels &amp;lt;- dfn[dfn.split == 1, 24]
+dfn.test.labels  &amp;lt;- dfn[dfn.split == 2, 24]
+
+# BUILD AND TEST knn CLASSIFIER ################################
+# Build classifier for test data.
+# k = number of neighbors to compare; odd n avoids ties.
+# Try with several values of k and check accuracy on following table.
+dfn.pred &amp;lt;- class::knn(train = dfn.train,
+                test = dfn.test, 
+                cl = dfn.train.labels,  # true class
+                k = 9)                  # you set k = n neighbors
+
+dfn.pred 
+# -&amp;gt; is a factor vector with the predicted classes for each row of the test data 
+
+
+
+# ================ Evaluate  predicted outcome to observed outcome
+table(dfn.pred, dfn.test.labels)
+
+# ================ Evaluate  predicted outcome 
+# Put `dfn.test.labels` in a data frame
+dfn.test.labels_df &amp;lt;- data.frame(dfn.test.labels)
+
+# Merge `iris_pred` and `dfn.test.labels_df` 
+merge &amp;lt;- data.frame(dfn.pred, dfn.test.labels_df)
+
+# Specify column names for `merge`
+names(merge) &amp;lt;- c(&amp;quot;Predicted Species&amp;quot;, &amp;quot;Observed Species&amp;quot;)
+
+# Visually Inspect `merge`  and get an idea of how well it predicted 
+head(merge)
+
+# ================ FURTHER Evaluate predicted outcome `gmodels`
+# make a cross tabulation or a contingency table
+gmodels::CrossTable(x = dfn.test.labels, y = dfn.pred, 
+                          prop.chisq=FALSE,
+                          format = &amp;quot;SPSS&amp;quot;)
+
+# argument `prop.chisq` =  chi-square statistic is the sum of the contributions from each of the individual cells and is used to decide whether the difference between the observed and the expected values is significant.&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a2-example-credit-default-data---using-caret&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;2a/2) Example Credit Default data - using &lt;code&gt;caret&lt;/code&gt;&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;the &lt;code&gt;caret&lt;/code&gt; package picks the optimal number of neighbors (k) for you&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# LOAD PACKAGES ############################################
+# caret
+
+# LOAD DATA ################################################
+# Read CSV 
+# df_big &amp;lt;- read.csv(here::here(&amp;quot;content&amp;quot;,&amp;quot;tutorial&amp;quot;, &amp;quot;data&amp;quot;, &amp;quot;ccdefault.csv&amp;quot;), header = T)
+# I want a smaller dataset 
+# df&amp;lt;- df_big[sample(nrow(df_big),replace=F,size=0.05*nrow(df_big)),]
+
+# NORMALIZE  ################################################
+# Apply function to data frame (but not index or outcome)
+# dfn &amp;lt;- as.data.frame(lapply(df[, 2:24], normalize))
+# head(dfn)
+
+# Put outcome variable back on and rename
+dfn &amp;lt;- cbind(dfn, df[, 25])
+names(dfn)[24] &amp;lt;- &amp;quot;DEFAULT&amp;quot;
+ 
+# LABEL must be a factor 
+ dfn$DEFAULT &amp;lt;- as.factor (dfn$DEFAULT)
+
+ 
+# Create index to split based on labels  
+index &amp;lt;- caret::createDataPartition(dfn$DEFAULT, p=0.75, list=FALSE)
+
+# Subset training set with index
+dfn.training &amp;lt;- dfn[index,]
+
+# Subset test set with index
+dfn.test &amp;lt;- dfn[-index,]
+
+# ========= TRAIN MODEL ################################################
+# Overview of algos supported by caret
+# names(getModelInfo())
+
+# Train a model
+model_knn &amp;lt;- caret::train(dfn.training[, 1:23], dfn.training[, 24], method=&amp;#39;knn&amp;#39;)
+
+# How many k did caret  use? 
+model_knn # 9
+model_knn$bestTune
+#Use plots to see optimal number of clusters:
+#Plotting yields Number of Neighbours Vs accuracy (based on repeated cross validation)
+plot(model_knn)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/knn_careta-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# PREDICT   ################################################
+# Predict the labels of the test set
+predictions &amp;lt;- predict.train(object= model_knn, dfn.test[ ,1:23], type=&amp;quot;raw&amp;quot;)
+
+# Evaluate the predictions
+table(predictions)
+
+# Confusion matrix 
+confusionMatrix(predictions, dfn.test[,24])&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;b2-example-credit-default-data---using-caret-pre-processing&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;2b/2) Example Credit Default data - using &lt;code&gt;caret&lt;/code&gt; + PRE-PROCESSING&lt;/h4&gt;
+&lt;p&gt;Use data without normalization and preprocess with caret&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Some knitr error here&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exe-decision-trees&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;EXE Decision trees&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;add from NYEE example
+&lt;a href=&#34;https://opendatascience.com/the-complete-guide-to-decision-trees-part-1/&#34; class=&#34;uri&#34;&gt;https://opendatascience.com/the-complete-guide-to-decision-trees-part-1/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exe-naive-bayes-bayesian-classifier&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;EXE Naive Bayes // Bayesian Classifier&lt;/h3&gt;
+&lt;p&gt;Builds upon Bayes Rule&lt;/p&gt;
+&lt;!-- Using markdown way --&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/source/tutorial/tut_img/Bayes.png&#34; alt=&#34;Bayes Rule&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Bayes Rule&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;(*) The naiveBayes function takes in numeric or factor variables in a data frame or a numeric matrix. It’s important to note that single vectors will not work for the input data but will work for the dependent variable (Y).&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;* Factor variables and Character variables are accepted.
+* Character variables are coerced into Factors.
+* Numeric variables will be placed on a normal distribution.
+* Then the numeric variable will be converted into a probability on that distribution.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(*) &lt;a href=&#34;http://www.learnbymarketing.com/tutorials/naive-bayes-in-r/&#34; class=&#34;uri&#34;&gt;http://www.learnbymarketing.com/tutorials/naive-bayes-in-r/&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;## ------------------------------------------------------------------------
+SpamData&amp;lt;-read.csv(here::here(&amp;quot;content&amp;quot;,&amp;quot;tutorial&amp;quot;, &amp;quot;data&amp;quot;, &amp;quot;SpamData2.csv&amp;quot;))
+
+## ------------------------------------------------------------------------
+head(SpamData)
+mean(SpamData$Spam)
+
+## ------------------------------------------------------------------------
+SpamEmails&amp;lt;-subset(SpamData,Spam==1)
+mean(SpamEmails$exclamation_point==1)
+
+# Challenge: prove that the maximum likelihood estiamte of θj,y corresponds to the proportion of emails in category y that contain the feature j.
+# ================ Let’s now run our Bayesian classifier. We will a package already implementing a Bayesian classifier in R that will repeat what we just did for all the features.
+
+## ------------------------------------------------------------------------
+#install.packages(&amp;quot;e1071&amp;quot;)
+library(e1071)
+
+## ------------------------------------------------------------------------
+# We will also split our sample into training and testing data:
+
+#install.packages(&amp;quot;caTools&amp;quot;)
+library(caTools)
+SpamData$sample&amp;lt;-sample.split(SpamData$Spam,SplitRatio=0.8)
+train=subset(SpamData, SpamData$sample==TRUE)
+test=subset(SpamData, SpamData$sample==FALSE)
+
+train&amp;lt;-train[,1:55]
+test&amp;lt;-test[,1:55]
+
+
+## ------------------------------------------------------------------------
+#  We call our naiveBayes function with to estimate the model and we evaluate its performance on the testing dataset
+# Create the model on train 
+# model     &amp;lt;- naiveBayes(Class ~ .,            data = HouseVotes84)
+nB_model &amp;lt;- naiveBayes(as.factor(Spam) ~.,  data=train)
+ 
+# Predict (using the model) on test 
+pred_vect &amp;lt;- predict(nB_model, test[,1:54], type=&amp;quot;class&amp;quot;)
+table(pred_vect, as.factor(test$Spam) ,dnn=c(&amp;quot;Prediction&amp;quot;,&amp;quot;Actual&amp;quot;))
+
+pred_T &amp;lt;- table(pred_vect, as.factor(test$Spam) )
+pred_T
+colnames(pred_T)&amp;lt;-c(&amp;quot;predicted non-spam&amp;quot;,&amp;quot;predicted spam&amp;quot;)
+rownames(pred_T)&amp;lt;-c(&amp;quot;true non-spam&amp;quot;, &amp;quot;true spam&amp;quot;)
+# make %
+pred_T &amp;lt;- pred_T/sum(pred_T)
+pred_T
+
+## ------------------------------------------------------------------------
+#Precission:
+pred_T[2,2]/(pred_T[2,2]+pred_T[1,2])
+
+#Recall
+pred_T[2,2]/(pred_T[2,2]+pred_T[2,1])
+
+##Accuracy
+pred_T[2,2]+pred_T[1,1]&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;cluster-analisys&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;CLUSTER ANALISYS&lt;/h1&gt;
+&lt;p&gt;Clustering is “pragmatic grouping” done for a reason that make sense to me.
+It is considered &lt;code&gt;Exploratory Data Mining&lt;/code&gt; bc it helps tease out relationships in large datasets
+Examples:
++ marketing segmentation - similar customers
++ medicine - simiar patients
++ music - genre on playlist that I want together&lt;/p&gt;
+&lt;p&gt;ALGORITHMs:
++ by &lt;strong&gt;distance&lt;/strong&gt; (only convex clusters)
+- euclidean distance
+- connectivity models
+- hierarchical diagrams
+- joining or splitting&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;by &lt;strong&gt;distance from centroid&lt;/strong&gt; (only convex clusters similar size, you pick k)
+&lt;ul&gt;
+&lt;li&gt;(mean for every group)&lt;/li&gt;
+&lt;li&gt;k-means clustering&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;by &lt;strong&gt;density&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;connected dense regions in k-dimensions&lt;/li&gt;
+&lt;li&gt;model nonconvex clusters&lt;/li&gt;
+&lt;li&gt;it is possible to sort of ignore outliers&lt;/li&gt;
+&lt;li&gt;hard to describe (by parametric distrib function)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;by &lt;strong&gt;distribution model&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;clusters as stat distributions&lt;/li&gt;
+&lt;li&gt;(ex. multivariate normal)&lt;/li&gt;
+&lt;li&gt;prone to overfitting&lt;/li&gt;
+&lt;li&gt;good to see correlations b/w attributes in data&lt;/li&gt;
+&lt;li&gt;limited to convex clusters&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;three-major-kinds-of-clustering&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Three major kinds of clustering:&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Hierarchical: Start separate and combine&lt;/li&gt;
+&lt;li&gt;Split into set number of clusters (e.g., kmeans)&lt;/li&gt;
+&lt;li&gt;Dividing: Start with a single group and split&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div id=&#34;exe-12-hierarchical-clust&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;EXE 1/2 HIERARCHICAL CLUST&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;by &lt;strong&gt;distance&lt;/strong&gt; (only convex clusters)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# DM_03_03.R
+
+# LOAD DATA ################################################
+# POV is where .toml is? 
+states &amp;lt;- read.csv(here::here(&amp;quot;content&amp;quot;,&amp;quot;tutorial&amp;quot;, &amp;quot;data&amp;quot;,&amp;quot;ClusterData.csv&amp;quot;), header = T)
+
+colnames(states)
+
+# Save numerical data only
+st &amp;lt;- states[, 3:27]
+row.names(st) &amp;lt;- states[, 2]
+colnames(st)
+
+# Sports search data only
+sports &amp;lt;- st[, 8:11]
+head(sports)
+
+# CLUSTERING ###############################################
+
+# Create distance matrix
+d &amp;lt;- dist(st)
+
+# Hierarchical clustering
+c &amp;lt;- hclust(d)
+c # Info on clustering
+
+# Plot dendrogram of clusters
+plot(c, main = &amp;quot;Cluster with All Searches and Personality&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Or nest commands in one line (for sports data)
+plot(hclust(dist(sports)), main = &amp;quot;Sports Searches&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/unnamed-chunk-2-2.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exe-22-hierarchical&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;EXE 2/2 hierarchical&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Conducting a cluster analysis
+
+# Load data
+#?mtcars
+data(mtcars)
+mtcars[1:5, ]
+mtcars1 &amp;lt;- mtcars[, c(1:4, 6:7, 9:11)]  # Select variables
+mtcars1[1:5, ]
+
+# -------- We&amp;#39;ll use hierarchical clustering
+# Need distance matrix (dissimilarity matrix)
+d &amp;lt;- dist(mtcars1)
+head(d)  # Huge matrix
+
+# Use distance matrix for clustering
+c &amp;lt;- hclust(d)
+c
+
+# Plot dendrogram of clusters
+plot(c)
+
+# Put observations in groups
+# Need to specify either k = groups or h = height
+g3 &amp;lt;- cutree(c, k = 3)  # &amp;quot;g3&amp;quot; = &amp;quot;groups 3&amp;quot;
+# cutree(hcmt, h = 230) will give same result
+g3
+
+# Or do several levels of groups at once
+# &amp;quot;gm&amp;quot; = &amp;quot;groups/multiple&amp;quot;
+gm &amp;lt;- cutree(c, k = 2:5) # or k = c(2, 4)
+gm
+
+# Draw boxes around clusters
+rect.hclust(c, k = 2, border = &amp;quot;gray&amp;quot;)
+rect.hclust(c, k = 3, border = &amp;quot;blue&amp;quot;)
+rect.hclust(c, k = 4, border = &amp;quot;green4&amp;quot;)
+rect.hclust(c, k = 5, border = &amp;quot;darkred&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exe-12-k-means-clustering&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;EXE 1/2 k-means Clustering&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;by &lt;strong&gt;distance from centroid&lt;/strong&gt; (only convex clusters similar size, you pick k)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;k-means&lt;/code&gt; is on well known &lt;em&gt;unsupervised&lt;/em&gt; clustering algorithm that finds the minimum total distance of obs. form the centroid of the (best) cluster (for all dimensions)&lt;/p&gt;
+&lt;p&gt;(*) &lt;em&gt;hyperparameter&lt;/em&gt; &lt;code&gt;k&lt;/code&gt; = the number of clusters and has to be set beforehand. k should be picked as a # that is in the bal park of what you are willing to act on (eg. 5 if I want 5 segments of donors)&lt;/p&gt;
+&lt;p&gt;(*) Where (through an iterative approach) it finds:
++ The distance between data points within clusters should be as small as possible.
++ The distance of the centroids (= centres of the clusters) should be as big as possible.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# ======================================================
+mtcars1 &amp;lt;- mtcars[, c(1:4, 6:7, 9:11)]  # Select variables
+
+# k-means clustering - I pick 3 clusters 
+km &amp;lt;- stats::kmeans(mtcars1, centers=3)
+km
+
+# Graph based on k-means
+require(cluster)
+clusplot(mtcars1,  # data frame
+         km$cluster,  # cluster data
+         color = TRUE,  # color
+#          shade = TRUE,  # Lines in clusters
+         lines = 3,  # Lines connecting centroids
+         labels = 2)  # Labels clusters and cases&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmen-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# here I get the centers
+km$centers
+
+# here I get the cluster assignment (vector)
+km$cluster
+
+# You can evaluate the clusters by looking at $totss and $betweenss.
+km$totss
+km$withinss # sum of the square of the distance from each data point to the cluster center.  Lower is better. (high withinss would indicate either outliers are in your data or you need to create more clusters.)
+km$betweenss # sum of the squared distance between cluster centers.  Ideally you want cluster centers far apart from each other.
+ 
+
+# ======================================================
+# k-means clustering - I pick 5 clusters 
+km2 &amp;lt;- kmeans(mtcars1, 5)
+km2
+
+# Graph based on k-means
+require(cluster)
+clusplot(mtcars1,  # data frame
+         km2$cluster,  # cluster data
+         color = TRUE,  # color
+#          shade = TRUE,  # Lines in clusters
+         lines = 3,  # Lines connecting centroids
+         labels = 2)  # Labels clusters and cases&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmen-2.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt; # here I get the centers
+km2$centers
+
+# You can evaluate the clusters by looking at $totss and $betweenss.
+km2$totss
+km2$withinss # sum of the square of the distance from each data point to the cluster center.  Lower is better. (high withinss would indicate either outliers are in your data or you need to create more clusters.)
+km2$betweenss # sum of the squared distance between cluster centers.  Ideally you want cluster centers far apart from each other.
+
+
+# ======================================================
+# Find ideal k
+rng&amp;lt;-2:20 #K from 2 to 20
+tries &amp;lt;-100 #Run the K Means algorithm 100 times
+avg.totw.ss &amp;lt;-integer(length(rng)) #Set up an empty vector to hold all of points
+
+for(v in rng){ # For each value of the range variable
+ v.totw.ss &amp;lt;-integer(tries) #Set up an empty vector to hold the 100 tries
+ for(i in 1:tries){
+ k.temp &amp;lt;-kmeans(mtcars1,centers=v) #Run kmeans
+ v.totw.ss[i] &amp;lt;-k.temp$tot.withinss#Store the total withinss
+ }
+ avg.totw.ss[v-1] &amp;lt;-mean(v.totw.ss) #Average the 100 total withinss
+}
+
+plot(rng,avg.totw.ss,type=&amp;quot;b&amp;quot;, main=&amp;quot;Total Within SS by Various K&amp;quot;,
+ ylab=&amp;quot;Average Total Within Sum of Squares&amp;quot;,
+ xlab=&amp;quot;Value of K&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmen-3.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Somewhere around K = 5 we start losing dramatic gains.  So I’m satisfied with 5 clusters.&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exe-22-k-means-clust---theory-illustration&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;EXE 2/2 k-means CLUST - THEORY ILLUSTRATION&lt;/h3&gt;
+&lt;p&gt;Building the algorithm
+&lt;a href=&#34;http://www.learnbymarketing.com/tutorials/k-means-clustering-in-r-example/&#34; class=&#34;uri&#34;&gt;http://www.learnbymarketing.com/tutorials/k-means-clustering-in-r-example/&lt;/a&gt;
+&lt;a href=&#34;http://blog.ephorie.de/learning-data-science-understanding-and-using-k-means-clustering&#34; class=&#34;uri&#34;&gt;http://blog.ephorie.de/learning-data-science-understanding-and-using-k-means-clustering&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Because there are too many possible combinations of all possible clusters comprising all possible data points k-means follows an iterative approach called &lt;strong&gt;&lt;em&gt;expectation-maximization algorithm&lt;/em&gt;&lt;/strong&gt;.:
+1. Initialization: assign clusters randomly to all data points
+2. E-step (for expectation): assign each observation to the “nearest” (based on Euclidean distance) cluster
+3. M-step (for maximization): determine new centroids based on the mean of assigned objects
+4. Repeat steps 3 and 4 until no further changes occur&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;n &amp;lt;- 3 # no. of centroids
+set.seed(1415) # set seed for reproducibility
+ 
+M1 &amp;lt;- matrix(round(runif(100, 1, 5), 1), ncol = 2)
+M2 &amp;lt;- matrix(round(runif(100, 7, 12), 1), ncol = 2)
+M3 &amp;lt;- matrix(round(runif(100, 20, 25), 1), ncol = 2)
+M &amp;lt;- rbind(M1, M2, M3)
+ 
+C &amp;lt;- M[1:n, ] # define centroids as first n objects
+obs &amp;lt;- length(M) / 2
+A &amp;lt;- sample(1:n, obs, replace = TRUE) # assign objects to centroids at random
+colors &amp;lt;- seq(10, 200, 25) 
+
+# helper function for plotting the steps 
+clusterplot &amp;lt;- function(M, C, txt) {
+  plot(M, main = txt, xlab = &amp;quot;&amp;quot;, ylab = &amp;quot;&amp;quot;)
+  for(i in 1:n) {
+    points(C[i, , drop = FALSE], pch = 23, lwd = 3, col = colors[i])
+    points(M[A == i, , drop = FALSE], col = colors[i])    
+  }
+}
+clusterplot(M, C, &amp;quot;Initialization&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#------------k-means algorithm iterative
+# diamonds are the Centroids
+
+repeat {
+  # calculate Euclidean distance between objects and centroids
+  D &amp;lt;- matrix(data = NA, nrow = n, ncol = obs)
+  for(i in 1:n) {
+    for(j in 1:obs) {
+      D[i, j] &amp;lt;- sqrt((M[j, 1] - C[i, 1])^2 + (M[j, 2] - C[i, 2])^2)
+    }
+  }
+  O &amp;lt;- A
+   
+  ## E-step: parameters are fixed, distributions are optimized
+  A &amp;lt;- max.col(t(-D)) # assign objects to centroids
+  if(all(O == A)) break # if no change stop
+  clusterplot(M, C, &amp;quot;E-step&amp;quot;)
+   
+  ## M-step: distributions are fixed, parameters are optimized
+  # determine new centroids based on mean of assigned objects
+  for(i in 1:n) {
+    C[i, ] &amp;lt;- apply(M[A == i, , drop = FALSE], 2, mean)
+  }
+  clusterplot(M, C, &amp;quot;M-step&amp;quot;)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-2.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;img src=&#34;/source/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-3.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;img src=&#34;/source/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-4.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;img src=&#34;/source/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-5.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;img src=&#34;/source/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-6.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;img src=&#34;/source/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-7.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;img src=&#34;/source/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-8.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;img src=&#34;/source/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-9.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Check results 
+(custom &amp;lt;- C[order(C[ , 1]), ])
+##        [,1]   [,2]
+## [1,]  3.008  2.740
+## [2,]  9.518  9.326
+## [3,] 22.754 22.396
+
+
+#------------k-means algorithm BASE R
+cl &amp;lt;- kmeans(M, n)
+clusterplot(M, cl$centers, &amp;quot;Base R&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-10.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#Check results 
+(base &amp;lt;- cl$centers[order(cl$centers[ , 1]), ])
+##     [,1]   [,2]
+## 2  3.008  2.740
+## 1  9.518  9.326
+## 3 22.754 22.396
+
+# same!&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;resources&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;RESOURCES&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.learnbymarketing.com/tutorials/&#34; class=&#34;uri&#34;&gt;http://www.learnbymarketing.com/tutorials/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.linkedin.com/learning/r-statistics-essential-training/computing-a-bivariate-regression&#34; class=&#34;uri&#34;&gt;https://www.linkedin.com/learning/r-statistics-essential-training/computing-a-bivariate-regression&lt;/a&gt; (Linkedin Premium)&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://www.linkedin.com/learning/data-science-foundations-data-mining/anomaly-detection-in-r&#34; class=&#34;uri&#34;&gt;https://www.linkedin.com/learning/data-science-foundations-data-mining/anomaly-detection-in-r&lt;/a&gt; (Linkedin Premium)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;IADB ML course&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Hastie, Tibshirani, Firedman “The elements of Statistical Learning”, 2009&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>R Notes on Correlation, Association Measures, etc.</title>
+      <link>/source/tutorial/r-notes-on-correlation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tutorial/r-notes-on-correlation/</guid>
+      <description>
+
+&lt;div id=&#34;TOC&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#correlation-and-how-to-measure-it-depending-on-type-of-variables&#34;&gt;CORRELATION AND HOW TO MEASURE IT DEPENDING ON TYPE OF VARIABLE(S)&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#set-up&#34;&gt;Set UP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#between-2-continuous-variables&#34;&gt;Between 2 CONTINUOUS variables&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#pearson-correlation-r&#34;&gt;Pearson correlation (r)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#between-2-ordinal-interval-or-ratio-variables-x-and-y&#34;&gt;Between 2 ORDINAL, INTERVAL or RATIO variables (x and y)&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#a-spearman-rank-order-correlation&#34;&gt;a) Spearman rank-order correlation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#b-kendall-tau&#34;&gt;b) Kendall tau&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#between-2-categorical-variables&#34;&gt;Between 2 CATEGORICAL variables&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#chi-squared-test-for-crosstabs-with-categorical-variables&#34;&gt;Chi Squared test for Crosstabs with categorical variables&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#chi-squared-tests-crammers-v-for-testing-relationships-between-2-categorical-variables&#34;&gt;Chi-Squared Tests + Crammer’s V for testing relationships between 2 Categorical variables&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#between-1-continuous-variable-and-1-categorical-variable&#34;&gt;Between 1 CONTINUOUS variable AND 1 CATEGORICAL variable&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#a-one-way-anova-f-test&#34;&gt;a) One-Way ANOVA (F-Test)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#b-multiple-pairwise-comparison-between-the-groups-means-anova&#34;&gt;b) Multiple pairwise-comparison between the groups’ means ANOVA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#a-two-factor-anova-f-test&#34;&gt;a) Two-Factor ANOVA (F-Test)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#comparing-means&#34;&gt;COMPARING MEANS&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#t-test-to-compare-means-of-independent-groups&#34;&gt;T-test to compare means of independent groups&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#paired-t-test-to-compare-means-of-paired-groups-e.g.same-group-in-t1-and-t2&#34;&gt;Paired T-test to compare means of paired groups (e.g. same group in t1 and t2)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#comparing-proportions&#34;&gt;COMPARING PROPORTIONS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#cluster-analisys&#34;&gt;CLUSTER ANALISYS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#principal-component-analisys&#34;&gt;PRINCIPAL COMPONENT ANALISYS&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#resources&#34;&gt;RESOURCES&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id=&#34;correlation-and-how-to-measure-it-depending-on-type-of-variables&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;CORRELATION AND HOW TO MEASURE IT DEPENDING ON TYPE OF VARIABLE(S)&lt;/h1&gt;
+&lt;div id=&#34;set-up&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Set UP&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# I am  executing bc it for the blog post 
+knitr::opts_chunk$set(eval = TRUE, 
+                             echo = TRUE, 
+                             tidy = FALSE, 
+                             results=&amp;#39;hide&amp;#39;,  
+                             message = FALSE, 
+                             warning = FALSE , fig.show=&amp;#39;asis&amp;#39;, fig.align=&amp;#39;center&amp;#39;, 
+                             fig.width=6, fig.height=6)
+
+# POV is where .toml is? 
+load(here::here(&amp;quot;content&amp;quot;,&amp;quot;tutorial&amp;quot;, &amp;quot;AC_ppl_fakeID.Rdata&amp;quot;), verbose = T)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading objects:
+##   AC_ppl_fakeID&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!require(&amp;quot;PerformanceAnalytics&amp;quot;)) install.packages(&amp;quot;PerformanceAnalytics&amp;quot;)
+if (!require(&amp;quot;ggcorrplot&amp;quot;)) install.packages(&amp;quot;ggcorrplot&amp;quot;)
+if (!require(&amp;quot;GGally&amp;quot;)) install.packages(&amp;quot;GGally&amp;quot;) # Ext to ggplot2 
+if (!require(&amp;quot;ggpubr&amp;quot;)) install.packages(&amp;quot;ggpubr&amp;quot;)
+if (!require(&amp;quot;kableExtra&amp;quot;)) install.packages(&amp;quot;kableExtra&amp;quot;)
+if (!require(&amp;quot;pander&amp;quot;)) install.packages(&amp;quot;pander&amp;quot;) &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;between-2-continuous-variables&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Between 2 CONTINUOUS variables&lt;/h2&gt;
+&lt;div id=&#34;pearson-correlation-r&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Pearson correlation (r)&lt;/h3&gt;
+&lt;p&gt;Pearson correlation (r) measures a linear dependence between 2 CONTINUOUS variables (x and y) / or 2 dichotomous var
+&amp;gt; It’s also known as a parametric correlation test because it depends to the distribution of the data.
+&amp;gt; The Pearson correlation evaluates the linear relationship between two continuous variables.&lt;/p&gt;
+&lt;div id=&#34;formula&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;FORMULA&lt;/h4&gt;
+&lt;p&gt;In the formula below,&lt;/p&gt;
+&lt;p&gt;= &lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt; are two vectors of length &lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;
+= &lt;span class=&#34;math inline&#34;&gt;\(m_x\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(m_y\)&lt;/span&gt; corresponds to the means of x and y, respectively.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ r = \frac{\sum{(x-m_x)(y-m_y)}}{\sqrt{\sum(x-m_x)^2\sum(y-m_y)^2}} \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;The p-value (significance level) of the correlation can be determined :&lt;/p&gt;
+&lt;p&gt;by calculating the t value as follow:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ t={\frac{r}{\sqrt{(1−r^2)}}}\sqrt{n−2}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;In the case 2) the corresponding p-value is determined using t distribution table for df=n−2&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# For example 
+
+# x = &amp;quot;Acc_Don_NYE2019__c&amp;quot;  
+# y = &amp;quot;Acc_Don_NYE2011__c&amp;quot;
+cor(AC_ppl_fakeID$Acc_Don_NYE2011__c, AC_ppl_fakeID$Acc_Don_NYE2019__c, 
+     method = c(&amp;quot;pearson&amp;quot; )) # 0.17
+cor(AC_ppl_fakeID$Acc_Don_NYE2018__c, AC_ppl_fakeID$Acc_Don_NYE2019__c, 
+     method = c(&amp;quot;pearson&amp;quot; )) # 0.68
+
+# Pearson correlation test 
+res11 &amp;lt;- cor.test(AC_ppl_fakeID$Acc_Don_NYE2011__c, AC_ppl_fakeID$Acc_Don_NYE2019__c, 
+                        method = &amp;quot;pearson&amp;quot;)
+res11
+
+res18 &amp;lt;- cor.test(AC_ppl_fakeID$Acc_Don_NYE2018__c, AC_ppl_fakeID$Acc_Don_NYE2019__c, 
+                        method = &amp;quot;pearson&amp;quot;)
+res18
+
+# Visualize your data using scatter plots
+library(&amp;quot;ggpubr&amp;quot;)
+ggscatter(AC_ppl_fakeID, x = &amp;quot;Acc_Don_NYE2011__c&amp;quot;, y = &amp;quot;Acc_Don_NYE2019__c&amp;quot;, 
+             add = &amp;quot;reg.line&amp;quot;, conf.int = TRUE, 
+             cor.coef = TRUE, cor.method = &amp;quot;pearson&amp;quot;,
+             xlab = &amp;quot;Acc_Don_NYE2011__c&amp;quot;, ylab = &amp;quot;Acc_Don_NYE2019__c&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;quot;ggpubr&amp;quot;)
+ggscatter(AC_ppl_fakeID, x = &amp;quot;Acc_Don_NYE2018__c&amp;quot;, y = &amp;quot;Acc_Don_NYE2019__c&amp;quot;, 
+             add = &amp;quot;reg.line&amp;quot;, conf.int = TRUE, 
+             cor.coef = TRUE, cor.method = &amp;quot;pearson&amp;quot;,
+             xlab = &amp;quot;Acc_Don_NYE2018__c&amp;quot;, ylab = &amp;quot;Acc_Don_NYE2019__c&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-2-2.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;more-visualization&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;More Visualization&lt;/h4&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# SELECT A FEW NUMER 
+data_numeric &amp;lt;- AC_ppl_fakeID[ , purrr::map_lgl(AC_ppl_fakeID, is.numeric)] 
+
+data_numeric2 &amp;lt;- data_numeric %&amp;gt;% 
+    dplyr::filter(Acc_Don_Tot &amp;gt;0) %&amp;gt;% 
+    dplyr::select( 4:12)
+
+# === modo A) 
+library(PerformanceAnalytics)
+cormat &amp;lt;- chart.Correlation(data_numeric2, histogram=TRUE, pch=19)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# === modo B)  
+    # 1) Compute a matrix of correlation p-values
+    library(ggcorrplot)
+    p.mat &amp;lt;- cor_pmat(data_numeric2)
+    p.mat 
+
+    # 2) Compute a correlation matrix
+corr.mat &amp;lt;- round(cor(data_numeric2, use = &amp;quot;pairwise.complete.obs&amp;quot;), # USE everything&amp;quot;, &amp;quot;all.obs&amp;quot;, &amp;quot;complete.obs&amp;quot;, &amp;quot;na.or.complete&amp;quot;
+                        digits = 1)
+corr.mat
+    # 3) Visualize the correlation matrix
+ggcorrplot(corr.mat , hc.order = F, type = &amp;quot;lower&amp;quot;, method = &amp;quot;square&amp;quot;, #method = &amp;quot;circle&amp;quot;
+   outline.col = &amp;quot;white&amp;quot;,
+   ggtheme = ggplot2::theme_gray,
+   colors = c(&amp;quot;#6D9EC1&amp;quot;, &amp;quot;white&amp;quot;, &amp;quot;#E46726&amp;quot;),lab = TRUE, p.mat = p.mat)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-3-2.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# === modo C) 
+library(GGally)
+ GGally::ggcorr(data = data_numeric2 ,
+    # geom object to use. Accepts either &amp;quot;tile&amp;quot;, &amp;quot;circle&amp;quot;, &amp;quot;text&amp;quot; or &amp;quot;blank&amp;quot;
+    geom = &amp;quot;tile&amp;quot; , label = TRUE,   label_alpha = T, hjust = 0.9, layout.exp = 2
+    )  &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-3-3.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;between-2-ordinal-interval-or-ratio-variables-x-and-y&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Between 2 ORDINAL, INTERVAL or RATIO variables (x and y)&lt;/h2&gt;
+&lt;div id=&#34;a-spearman-rank-order-correlation&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;a) Spearman rank-order correlation&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The Spearman’s rank-order correlation is the nonparametric version of the Pearson product-moment correlation. Spearman’s correlation coefficient, (ρ, also signified by rs) measures the strength and direction of association between two ranked variables.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Also called &lt;code&gt;Spearman&#39;s rank-order correlation&lt;/code&gt;&lt;/p&gt;
+&lt;div id=&#34;formula-1&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;FORMULA&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;add from &lt;a href=&#34;http://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r#what-is-correlation-test&#34;&gt;here&lt;/a&gt;
+…&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Ordinal (growing class of Donor) vs ordinal (growing most recent email opened)&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# USING  DON CLASSES AS PER JOSES&amp;#39;
+skimr::sorted_count(AC_ppl_fakeID$DonorClass) # ordine crescete (highere more generous)
+# AND FACTOR RECENT OPEN EMAIL 
+skimr::sorted_count(AC_ppl_fakeID$EmLastMostRecent)# ordine crescete (higher more recent )
+table(AC_ppl_fakeID$EmLastMostRecent, AC_ppl_fakeID$DonorClass)
+
+# ============Spearman’s rho statistic 
+
+corr1 &amp;lt;- cor.test(AC_ppl_fakeID$DonorClass, as.numeric(AC_ppl_fakeID$EmLastMostRecent),  method = &amp;quot;spearman&amp;quot; )
+corr1
+
+# library(&amp;quot;Hmisc&amp;quot;)
+# corr1b &amp;lt;- rcorr(AC_ppl3$Acc_Don_Tot, AC_ppl3$EmLastMostRecent,type = &amp;quot;spearman&amp;quot; )
+# corr1b
+
+library(&amp;quot;ggpubr&amp;quot;)
+ggscatter(AC_ppl_fakeID, x = &amp;quot;EmLastMostRecent&amp;quot;, y = &amp;quot;DonorClass&amp;quot;, 
+          add = &amp;quot;reg.line&amp;quot;, conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = &amp;quot;pearson&amp;quot;,
+          xlab = &amp;quot;How recently opened an email&amp;quot;, ylab = &amp;quot;Class Donor&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Very week negative correlation rho ~ -0.06094809&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;b-kendall-tau&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;b) Kendall tau&lt;/h3&gt;
+&lt;p&gt;Kendall tau is another rank-based correlation coefficients (non-parametric)
+&amp;gt; The Kendall rank correlation coefficient or Kendall’s tau statistic is used to estimate a rank-based measure of association. This test may be used if the data do not necessarily come from a bivariate normal distribution.&lt;/p&gt;
+&lt;p&gt;The Kendall correlation method measures the correspondence between the ranking of x and y variables. The total number of possible pairings of x with y observations is n(n−1)/2, where n is the size of x and y.&lt;/p&gt;
+&lt;p&gt;The procedure is as follow:
++ Begin by ordering the pairs by the x values. If x and y are correlated, then they would have the same relative rank orders.
++ Now, for each yi, count the number of &lt;span class=&#34;math inline&#34;&gt;\({y_{j}}\)&lt;/span&gt; &amp;gt; &lt;span class=&#34;math inline&#34;&gt;\({y_{i}}\)&lt;/span&gt; (&lt;strong&gt;concordant pairs (c)&lt;/strong&gt;) and the number of &lt;span class=&#34;math inline&#34;&gt;\({y_{j}}\)&lt;/span&gt;&amp;lt;&lt;span class=&#34;math inline&#34;&gt;\({y_{i}}\)&lt;/span&gt; (&lt;strong&gt;discordant pairs (d)&lt;/strong&gt;).&lt;/p&gt;
+&lt;div id=&#34;formula-2&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;FORMULA&lt;/h4&gt;
+&lt;p&gt;Kendall correlation distance is defined as follow:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[tau=\frac{n_{c}-n_{d}}{\frac{1}{2}n(n-1)}\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Where
+&lt;span class=&#34;math inline&#34;&gt;\({n_{c}}\)&lt;/span&gt;: total number of concordant pairs
+&lt;span class=&#34;math inline&#34;&gt;\({n_{d}}\)&lt;/span&gt;: total number of discordant pairs
+&lt;span class=&#34;math inline&#34;&gt;\({n}\)&lt;/span&gt;: size of x and y&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;from &lt;a href=&#34;http://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r#what-is-correlation-test&#34;&gt;kendall&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;corrKend &amp;lt;- cor.test(AC_ppl_fakeID$Acc_Don_Tot, as.numeric(AC_ppl_fakeID$EmLastMostRecent),  method = &amp;quot;kendall&amp;quot; )
+corrKend
+# Very week negative correlation tau ~ -0.09864503 
+
+corrKend2 &amp;lt;- cor.test(AC_ppl_fakeID$DonorClass, as.numeric(AC_ppl_fakeID$EmLastMostRecent),  method = &amp;quot;kendall&amp;quot; )
+corrKend2
+# Very week negative correlation tau ~ -0.05578083 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;between-2-categorical-variables&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Between 2 CATEGORICAL variables&lt;/h2&gt;
+&lt;p&gt;When data includes 2 categorical variables, the most common test for that association is going to be the &lt;strong&gt;Chi Squared test for Independence&lt;/strong&gt; (sometimes called &lt;code&gt;Crosstabs&lt;/code&gt;).&lt;/p&gt;
+&lt;div id=&#34;chi-squared-test-for-crosstabs-with-categorical-variables&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Chi Squared test for Crosstabs with categorical variables&lt;/h3&gt;
+&lt;p&gt;EXE 1 : from titanic&lt;/p&gt;
+&lt;p&gt;(*) Quickly check with &lt;code&gt;stats::ftable(..., exclude = c(NA, NaN), row.vars = NULL,col.vars = NULL)&lt;/code&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# smaller 
+AC_red&amp;lt;- AC_ppl_fakeID %&amp;gt;% 
+    dplyr::select(IsDonor, HasEmail)
+
+
+
+# Creating crosstabs for categorical variables
+
+# Load data
+ftable(AC_red)  # Makes &amp;quot;flat&amp;quot; table
+
+ttab &amp;lt;- table(AC_red$IsDonor, AC_red$HasEmail)
+# Call also get cell, row, and column %
+# With rounding to get just 2 decimal places
+# Multiplied by 100 to make %
+round(prop.table(ttab, 1), 2) * 100 # row %
+round(prop.table(ttab, 2), 2) * 100 # column %
+round(prop.table(ttab), 2) * 100    # cell %
+
+# Chi-squared test
+# (Test of association to see if 
+# H0: the 2 cat var (Class &amp;amp; Survived) are independent
+# H1: the 2 cat var are correlated in __some way__
+
+ 
+tchi &amp;lt;- chisq.test(ttab)
+tchi
+# RESULTS  p-value &amp;lt; 0.00000000000000022 --&amp;gt; We reject the null hypothesis that the class is independent of survival
+# (see the row % --&amp;gt; the higher the class, the higher the % surv)
+
+# Additional tables (from results)
+tchi$observed   # Observed frequencies (same as ttab)
+tchi$expected   # Expected frequencies
+tchi$residuals  # Pearson&amp;#39;s residual
+tchi$stdres     # Standardized residual&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;chi-squared-tests-crammers-v-for-testing-relationships-between-2-categorical-variables&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Chi-Squared Tests + Crammer’s V for testing relationships between 2 Categorical variables&lt;/h3&gt;
+&lt;p&gt;EXE 2 : “IsDonor” (binary var) vs. (“HasValidEmail” or “HasValidEmailUnsubscr”)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Theory
+# &lt;a href=&#34;https://datascience.stackexchange.com/questions/893/how-to-get-correlation-between-two-categorical-variable-and-a-categorical-variab&#34; class=&#34;uri&#34;&gt;https://datascience.stackexchange.com/questions/893/how-to-get-correlation-between-two-categorical-variable-and-a-categorical-variab&lt;/a&gt;
+# &lt;a href=&#34;https://www.spss-tutorials.com/cramers-v-what-and-why/&#34; class=&#34;uri&#34;&gt;https://www.spss-tutorials.com/cramers-v-what-and-why/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Also known as Cramér’s phi (coefficient) –&amp;gt; &lt;span class=&#34;math inline&#34;&gt;\(\phi_{c}\)&lt;/span&gt; denotes Cramér’s V&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Checking if two categorical variables are independent –&amp;gt; This is a typical Chi-Square test: if we assume that two variables are independent, then the values of the contingency table for these variables should be distributed uniformly.&lt;/li&gt;
+&lt;li&gt;Crammer’s V that is a measure of correlation that follows from this test&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;H0: the 2 cat var are independent
+H1: the 2 cat var are correlated in some way&lt;/p&gt;
+&lt;div id=&#34;crammers-v-correlation-formula&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Crammer’s V CORRELATION FORMULA&lt;/h4&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\phi_{c}=\sqrt{\frac{\chi^2}{N(k-1)}} \]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;where:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\phi_{c}\)&lt;/span&gt; denotes Cramér’s V &lt;em&gt;(“phi” coefficient)&lt;/em&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\chi^2\)&lt;/span&gt; is the Pearson chi-square statistic from the aforementioned test;
+&lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt; is the sample size involved in the test and
+&lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt; is the lesser number of categories of either variable.&lt;/p&gt;
+&lt;p&gt;Creating a function and calculating Cramér V / Phi&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Two Categorical Variables &amp;quot;IsDonor&amp;quot; VS &amp;quot;HasValidEmail&amp;quot;        OR      &amp;quot;HasValidEmailUnsubscr&amp;quot; 
+
+##======== 1) Chi-Squared test of independence.
+ChisqStat &amp;lt;- chisq.test(AC_ppl_fakeID$DonorClass,AC_ppl_fakeID$HasValidEmail , correct=FALSE) 
+ChisqStat$statistic[1] # 36.94155 
+ChisqStat$p.value[1]  # 1.851939e-07  --&amp;gt; yes independent! 
+
+
+##==========2) a Crammer&amp;#39;s V that is a measure of correlation that follows from this test
+# Function
+cv.test = function(x,y) {
+  ### = Square root of the Pearson chi-square (without the Yates correction) 
+    Chi2stat = chisq.test(x, y, correct=FALSE)$statistic
+    Chi2p = chisq.test(x, y, correct=FALSE)$p.value
+    CV = sqrt(Chi2stat / 
+                        (length(x) * # is divided by N = the sample size  ...
+                        (min(length(unique(x)),length(unique(y))) - 1))) # *k = (smallest b/t categories (row or column) -1)
+#   print.noquote(&amp;quot;Cramér V / Phi:&amp;quot;) # “phi coefficient”
+#   return(as.numeric(CV))
+  return(list(Chi2stat = as.numeric(Chi2stat), Chi2p = as.numeric(Chi2p), CVphi = round(as.numeric(CV), 4)))
+    
+}
+                    # with(top3cit, cv.test(x, y)) # [1] Cramér V / Phi: 0.09052046
+
+## =========3)  call Cramer V function 
+# DOnor class &amp;amp; ... 
+with(AC_ppl_fakeID, cv.test(DonorClass, ConnectionLevel__c_NA)) #  [1] Cramér V / Phi:0.2168275 !!
+with(AC_ppl_fakeID, cv.test(DonorClass, HasValidEmail)) #   [1] Cramér V / Phi:0.0527&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Calculating (many) of them and rendering in a table for the presentation&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ConnectionPhi &amp;lt;- cv.test(AC_ppl_fakeID$IsDonor, AC_ppl_fakeID$ConnectionLevel__c_NA) 
+# Gender__cPhi &amp;lt;- cv.test2(AC_ppl_fakeID$IsDonor, AC_ppl_fakeID$Gender__c) 
+VIP_Phi &amp;lt;- cv.test(AC_ppl_fakeID$IsDonor, AC_ppl_fakeID$VIP) 
+SPeakerPhi &amp;lt;- cv.test(AC_ppl_fakeID$IsDonor, AC_ppl_fakeID$Speaker) 
+VolPhi &amp;lt;- cv.test(AC_ppl_fakeID$IsDonor, AC_ppl_fakeID$Volunteer) 
+HasEmailPhi &amp;lt;- cv.test(AC_ppl_fakeID$IsDonor, AC_ppl_fakeID$HasEmail) 
+HasValidEmaiPhi &amp;lt;- cv.test(AC_ppl_fakeID$IsDonor, AC_ppl_fakeID$HasValidEmail) 
+HAsEmVAlUnsubsPhi &amp;lt;- cv.test(AC_ppl_fakeID$IsDonor, AC_ppl_fakeID$HasValidEmailUnsubscr) 
+LASTOPENED &amp;lt;- cv.test(AC_ppl_fakeID$IsDonor, AC_ppl_fakeID$EmLastOpenFactor)
+
+
+PhiResults &amp;lt;- c(print(ConnectionPhi[[3]]),   print(VIP_Phi[[3]]), print(SPeakerPhi[[3]]), 
+                     print(VolPhi[[3]]), print(HasEmailPhi[[3]]), print(HasValidEmaiPhi[[3]]), print(HAsEmVAlUnsubsPhi[[3]]), print(LASTOPENED[[3]]))
+
+CatXs &amp;lt;- c( &amp;quot;Connection&amp;quot;,
+                # &amp;quot;Gender&amp;quot;, 
+                &amp;quot;VIP status&amp;quot;, 
+                &amp;quot;Speaker status&amp;quot;,
+                &amp;quot;Volunteer status&amp;quot;,
+                &amp;quot;Has Email&amp;quot;, 
+                &amp;quot;Has Valid Email&amp;quot;, 
+                &amp;quot;Has Valid Email but Unsubscribed&amp;quot;,
+                &amp;quot;How recently Opened Last Email&amp;quot;)
+
+CramerVResults &amp;lt;- cbind(PhiResults, CatXs)
+colnames(CramerVResults) &amp;lt;- c(&amp;quot;Cramer&amp;#39;s V phi statistic&amp;quot; , &amp;quot;Categorical Var&amp;quot;)
+
+CramerVs &amp;lt;- knitr::kable(CramerVResults, 
+                                 caption = &amp;quot;Measure of association between \&amp;quot;Is Donor\&amp;quot; and some Categorical Variables&amp;quot;) %&amp;gt;%
+    kableExtra::kable_styling(&amp;quot;striped&amp;quot;, full_width = F, latex_options = &amp;quot;scale_down&amp;quot;,position = &amp;quot;center&amp;quot;) %&amp;gt;%
+    row_spec(1 , background = &amp;quot;yellow&amp;quot;) %&amp;gt;%
+    row_spec(5:6, background = &amp;quot;yellow&amp;quot;) %&amp;gt;%
+    row_spec(8, background = &amp;quot;yellow&amp;quot;) # %&amp;gt;%
+# as_image(., width = NULL, height = NULL, file = &amp;quot;./figures/CramerVs.png&amp;quot; ) 
+
+CramerVs&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then seeing it graphically with BoxPlots&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# ======= Connection
+# average PER YEAR 
+plot1 &amp;lt;- ggplot(AC_ppl_fakeID) +
+  aes(x = ConnectionLevel__c_NA) + 
+  aes(y = Acc_Don_NYE2019__c) +
+  geom_jitter(alpha = .5, height = 0, width = .25) +
+  aes(col = ConnectionLevel__c_NA) +
+  geom_boxplot(alpha = .25) +
+  aes(fill = ConnectionLevel__c_NA) +
+    ylim(0,30000) +
+ggthemes::theme_hc() + ggthemes::scale_color_pander() +  #scale_color_colorblind() + # scale_color_hc() # scale_colour_ptol()  +
+labs(x = &amp;quot;&amp;quot;) + labs(y = &amp;quot;Us Dollars&amp;quot;) +
+theme(legend.position=&amp;quot;none&amp;quot;) + # remove legent &amp;amp; ... 
+labs(title = &amp;quot;Contributions to NYE 2019&amp;quot;) +
+labs(subtitle = &amp;quot;Stratified by \&amp;quot;Connection level\&amp;quot; of Individual/Households&amp;quot;) +
+labs(caption = paste0(&amp;quot;Created on &amp;quot;, Sys.Date())) +
+    coord_flip()  
+
+plot1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Acc_Don_Tot
+plot2 &amp;lt;-ggplot(AC_ppl_fakeID) +
+  aes(x = ConnectionLevel__c_NA) + 
+  aes(y = Acc_Don_Tot) +
+  geom_jitter(alpha = .5, height = 0, width = .25) +
+  aes(col = ConnectionLevel__c_NA) +
+  geom_boxplot(alpha = .25) +
+  aes(fill = ConnectionLevel__c_NA) +
+    ylim(0,30000) +
+ggthemes::theme_hc() + ggthemes::scale_color_pander() +  #scale_color_colorblind() + # scale_color_hc() # scale_colour_ptol()  +
+labs(x = &amp;quot;&amp;quot;) + labs(y = &amp;quot;Us Dollars&amp;quot;) +
+labs(title = &amp;quot;TOTAL Contributions between NYE 2011 - NYE 2019&amp;quot;) +
+labs(subtitle = &amp;quot;Stratified by \&amp;quot;Connection level\&amp;quot; of Individual/Households&amp;quot;) +
+labs(caption = paste0(&amp;quot;Created on &amp;quot;, Sys.Date())) +
+    coord_flip()
+
+plot2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-9-2.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# save the 2 together 
+#ggsave(&amp;quot;./figures/BoxPLOTConnection_ALL.png&amp;quot;, gridExtra::arrangeGrob(plot1, plot2))&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;between-1-continuous-variable-and-1-categorical-variable&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Between 1 CONTINUOUS variable AND 1 CATEGORICAL variable&lt;/h2&gt;
+&lt;p&gt;EXE: Donation amount and ConnectionLevel__c_NA&lt;/p&gt;
+&lt;div id=&#34;a-one-way-anova-f-test&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;a) One-Way ANOVA (F-Test)&lt;/h3&gt;
+&lt;p&gt;ANOVA and One-Way ANOVA F-Test for testing relationships between Numerical and Categorical variables
+FOLLOWING: &lt;a href=&#34;http://www.sthda.com/english/wiki/one-way-anova-test-in-r#what-is-one-way-anova-test&#34; class=&#34;uri&#34;&gt;http://www.sthda.com/english/wiki/one-way-anova-test-in-r#what-is-one-way-anova-test&lt;/a&gt;
+CHECK also: &lt;a href=&#34;https://thomasmock.netlify.com/post/a-gentle-guide-to-tidy-statistics-in-r/&#34; class=&#34;uri&#34;&gt;https://thomasmock.netlify.com/post/a-gentle-guide-to-tidy-statistics-in-r/&lt;/a&gt;
+CHECK also: &lt;a href=&#34;https://ademos.people.uic.edu/Chapter20.html&#34; class=&#34;uri&#34;&gt;https://ademos.people.uic.edu/Chapter20.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;GOAL: for comparing means in a situation where there are more than two groups&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(H_0\)&lt;/span&gt; : Null Hyp = the means of the different groups are the same
+&lt;span class=&#34;math inline&#34;&gt;\(H_1\)&lt;/span&gt; : Alternative hyp = At least one sample mean is not equal to the others.&lt;/p&gt;
+&lt;p&gt;NOTE:
++ It only looks if &lt;strong&gt;in general&lt;/strong&gt; the groups differ (but not specifically by how much and which of them)
++ Better to have data in long form&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# --------One-Way ANOVA F-Test
+# Show the levels
+levels(AC_ppl_fakeID$ConnectionLevel__c_NA)
+
+aov1 = aov( Acc_Don_NYE2019__c ~ ConnectionLevel__c_NA, data = AC_ppl_fakeID)
+summary(aov1) # diff between the groups significant at 0.001
+
+aov2 = aov(Acc_Don_NYE2019__c ~ HasEmail, data = AC_ppl_fakeID )
+summary(aov2) # diff between the groups significant at 0.001
+
+aov3 = aov(Acc_Don_NYE2019__c ~ EmLastOpenFactor, data = AC_ppl_fakeID )
+summary(aov3)  # diff between the groupsnot sig &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;b-multiple-pairwise-comparison-between-the-groups-means-anova&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;b) Multiple pairwise-comparison between the groups’ means ANOVA&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Tukey multiple pairwise-comparisons&lt;/strong&gt; for post-hoc comparison&lt;/p&gt;
+&lt;p&gt;GOAL: As the ANOVA test is significant, we can compute Tukey HSD (Tukey Honest Significant Differences, R function: TukeyHSD()) for performing multiple pairwise-comparison between the means of groups.&lt;/p&gt;
+&lt;p&gt;The function TukeyHD() takes the fitted ANOVA as an argument.&lt;/p&gt;
+&lt;p&gt;INTERPRETATION:
+&lt;strong&gt;diff&lt;/strong&gt;: difference between means of the two groups
+&lt;strong&gt;lwr, upr&lt;/strong&gt;: the lower and the upper end point of the confidence interval at 95% (default)
+&lt;strong&gt;p adj&lt;/strong&gt;: p-value after adjustment for the multiple comparisons.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# ==== Group by group across ConnectionLevel__c_NA
+# aov1 = aov( Acc_Don_NYE2019__c ~ ConnectionLevel__c_NA, data = AC_ppl_fakeID)
+TukeyRes &amp;lt;- stats::TukeyHSD(aov1, ordered = F)  
+
+# ==== Show table
+# OR 
+# TukeyResTukeyRes[1:1] # 
+TukeyRes_df &amp;lt;- as.data.frame(TukeyRes$ConnectionLevel__c_NA) 
+
+# # ==== Display 
+caption &amp;lt;- &amp;quot;Pairwise-comparison between the means of groups (ConnectionLevel Types)&amp;quot;
+TukeyRes_df_table &amp;lt;- pandoc.table.return(TukeyRes_df, 
+                                                      keep.line.breaks = TRUE, 
+                                                      style = &amp;quot;simple&amp;quot;, 
+                                                      justify = &amp;quot;lrrrr&amp;quot;, 
+                                                      caption = caption)
+cat(TukeyRes_df_table)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-two-factor-anova-f-test&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;a) Two-Factor ANOVA (F-Test)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Show also an interaction.&lt;/strong&gt; The beauty of a two factor model is that you can see, not only how factor A affects the mean and factor B affects the mean but the interplay of A and B, specifically to see if the effect of one factor is moderated by the levels of another factor.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Comparing means with a two-factor ANOVA
+
+# Get an Idea... 
+boxplot(Acc_Don_Tot ~ IsDonor*Volunteer, data = AC_ppl_fakeID)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Model with interaction
+aov1 &amp;lt;- aov(Acc_Don_Tot ~ 
+            # IsDonor + Volunteer + IsDonor:Volunteer, 
+            IsDonor*Volunteer,
+                data = AC_ppl_fakeID)
+summary(aov1)
+
+# Additional information on model
+model.tables(aov1)
+model.tables(aov1, type = &amp;quot;means&amp;quot;)
+model.tables(aov1, type = &amp;quot;effects&amp;quot;)  # &amp;quot;effects&amp;quot; is default
+
+# Post-hoc test
+TukeyHSD(aov1)&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;comparing-means&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;COMPARING MEANS&lt;/h1&gt;
+&lt;div id=&#34;t-test-to-compare-means-of-independent-groups&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;T-test to compare means of independent groups&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Comparing means with the t-test
+
+# Load data
+# ?sleep
+sleep[1:5, ]
+sd &amp;lt;- sleep[, 1:2]  # Save just the first two variables
+sd[1:5, ]  # Show the first 5 cases
+
+# Some quick plots to check data
+hist(sd$extra, col = &amp;quot;lightgray&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;boxplot(extra ~ group, data = sd)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-13-2.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Independent 2-group t-test (with defaults)
+t.test(extra ~ group, data = sd)
+
+# t-test with options
+t.test(extra ~ group,
+       data = sd,
+       alternative = &amp;quot;less&amp;quot;,  # One-tailed test
+       conf.level = 0.80)  # 80% CI (vs. 95%)
+
+# Create two groups of random data in separate variables
+# Good because actual difference is known
+x &amp;lt;- rnorm(30, mean = 20, sd = 5)
+y &amp;lt;- rnorm(30, mean = 22, sd = 5)
+t.test(x, y)
+
+# rm(list = ls())  # Clean up&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;paired-t-test-to-compare-means-of-paired-groups-e.g.same-group-in-t1-and-t2&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Paired T-test to compare means of paired groups (e.g. same group in t1 and t2)&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Load data
+# Create random data
+t1 &amp;lt;- rnorm(50, mean = 52, sd = 6)  # Time 1
+dif &amp;lt;- rnorm(50, mean = 6, sd = 12)  # Difference
+t2 &amp;lt;- t1 + dif  # Time 2
+
+# Some quick plots to check data
+hist(t1)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;hist(dif)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-14-2.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;hist(t2)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-14-3.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;boxplot(t1, t2)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-14-4.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Save variables in dataframe and use &amp;quot;MASS&amp;quot;
+# to create parallel coordinate plot
+pairs &amp;lt;- data.frame(t1, t2)
+require(&amp;quot;MASS&amp;quot;)
+parcoord(pairs, var.label = TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-14-5.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Paired t-test (with defaults)
+t.test(t2, t1, paired = TRUE)
+
+# Paired t-test with options
+t.test(t2, t1, 
+       paired = TRUE,
+       mu = 6,  # Specify non-0 null value
+       alternative = &amp;quot;greater&amp;quot;,  # One-tailed test
+       conf.level = 0.99)  # 99% CI (vs. 95%)
+
+# Clean up
+detach(&amp;quot;package:MASS&amp;quot;, unload=TRUE)
+# rm(list = ls())&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;comparing-proportions&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;COMPARING PROPORTIONS&lt;/h1&gt;
+&lt;p&gt;(*) % of success across groups&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Comparing proportions
+
+# Load data
+# Need two vectors:
+# One specifies the total number of people in each group
+# This creates a vector with 5 100s in it, for 5 groups
+# Same as &amp;quot;number of trials&amp;quot;
+n5 &amp;lt;- c(rep(100, 5))
+# Another specifies the number of people who are in category
+# Same as &amp;quot;number of successes&amp;quot;
+x5 &amp;lt;- c(65, 60, 60, 50, 45)
+prop.test(x5, n5)
+
+# If there are only two groups, then it gives a confidence
+# interval for the difference between the groups; 
+# the default CI is .95
+n2 &amp;lt;- c(40, 40)  # Number of trials
+x2 &amp;lt;- c(30, 20)  # Number of successes
+prop.test(x2, n2, conf.level = .80)&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;cluster-analisys&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;CLUSTER ANALISYS&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Conducting a cluster analysis
+
+# Load data
+#?mtcars
+data(mtcars)
+mtcars[1:5, ]
+mtcars1 &amp;lt;- mtcars[, c(1:4, 6:7, 9:11)]  # Select variables
+mtcars1[1:5, ]
+
+# Three major kinds of clustering:
+#   1. Split into set number of clusters (e.g., kmeans)
+#   2. Hierarchical: Start separate and combine
+#   3. Dividing: Start with a single group and split
+
+# We&amp;#39;ll use hierarchical clustering
+# Need distance matrix (dissimilarity matrix)
+d &amp;lt;- dist(mtcars1)
+d  # Huge matrix
+
+# Use distance matrix for clustering
+c &amp;lt;- hclust(d)
+c
+
+# Plot dendrogram of clusters
+plot(c)
+
+# Put observations in groups
+# Need to specify either k = groups or h = height
+g3 &amp;lt;- cutree(c, k = 3)  # &amp;quot;g3&amp;quot; = &amp;quot;groups 3&amp;quot;
+# cutree(hcmt, h = 230) will give same result
+g3
+# Or do several levels of groups at once
+# &amp;quot;gm&amp;quot; = &amp;quot;groups/multiple&amp;quot;
+gm &amp;lt;- cutree(c, k = 2:5) # or k = c(2, 4)
+gm
+
+# Draw boxes around clusters
+rect.hclust(c, k = 2, border = &amp;quot;gray&amp;quot;)
+rect.hclust(c, k = 3, border = &amp;quot;blue&amp;quot;)
+rect.hclust(c, k = 4, border = &amp;quot;green4&amp;quot;)
+rect.hclust(c, k = 5, border = &amp;quot;darkred&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# k-means clustering
+km &amp;lt;- kmeans(mtcars1, 3)
+km
+
+# Graph based on k-means
+require(cluster)
+clusplot(mtcars1,  # data frame
+         km$cluster,  # cluster data
+         color = TRUE,  # color
+#          shade = TRUE,  # Lines in clusters
+         lines = 3,  # Lines connecting centroids
+         labels = 2)  # Labels clusters and cases&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-16-2.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;principal-component-analisys&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;PRINCIPAL COMPONENT ANALISYS&lt;/h1&gt;
+&lt;p&gt;From “psych” package documentation (p. 213) &lt;em&gt;“The primary empirical difference between a components versus a factor model is the treatment of the variances for each item. Philosophically, components are weighted composites of observed variables while in the factor model, variables are weighted composites of the factors.”&lt;/em&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Conducting a principal components/factor analysis
+
+# Load data 
+# ?mtcars
+data(mtcars)
+mtcars[1:5, ]
+mtcars1 &amp;lt;- mtcars[, c(1:4, 6:7, 9:11)]  # Select variables
+mtcars1[1:5, ]
+
+# ========= Principle components model using default method
+# If using entire data frame:
+pc &amp;lt;- prcomp(mtcars1,
+             center = TRUE,  # Centers means to 0 (optional)
+             scale = TRUE)  # Sets unit variance (helpful)
+
+# Or specify variables:
+# pc &amp;lt;- prcomp(~ mpg + cyl + disp + hp + wt + qsec + am + 
+#                gear + carb, data = mtcars, scale = TRUE)
+
+# ?prcomp  # Generally preferred
+# ?princomp  # Very slightly different method, similar to S
+
+# Get summary stats
+summary(pc)
+
+# Screeplot
+plot(pc)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-17-1.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Get standard deviations and how variables load on PCs
+pc
+
+# See how cases load on PCs
+predict(pc)
+
+# Biplot
+biplot(pc)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/source/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-17-2.png&#34; width=&#34;576&#34; style=&#34;display: block; margin: auto;&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# =========== Factor Analysis
+# Varimax rotation by default
+# Gives chi square test that number of factors
+# is sufficient to match data (want p &amp;gt; .05).
+# Also gives uniqueness values for variables,
+# variable loadings on factors, and variance
+# statistics.
+factanal(mtcars1, 1)
+factanal(mtcars1, 2)
+factanal(mtcars1, 3)
+factanal(mtcars1, 4)  # First w/p &amp;gt; .05&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;resources&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;RESOURCES&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.sthda.com/english/wiki/one-way-anova-test-in-r#what-is-one-way-anova-test&#34; class=&#34;uri&#34;&gt;http://www.sthda.com/english/wiki/one-way-anova-test-in-r#what-is-one-way-anova-test&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r&#34; class=&#34;uri&#34;&gt;http://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.sthda.com/english/wiki/correlation-matrix-a-quick-start-guide-to-analyze-format-and-visualize-a-correlation-matrix-using-r-software&#34; class=&#34;uri&#34;&gt;http://www.sthda.com/english/wiki/correlation-matrix-a-quick-start-guide-to-analyze-format-and-visualize-a-correlation-matrix-using-r-software&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggally/ggcorr/&#34; class=&#34;uri&#34;&gt;https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggally/ggcorr/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.linkedin.com/learning/r-statistics-essential-training/computing-a-bivariate-regression&#34; class=&#34;uri&#34;&gt;https://www.linkedin.com/learning/r-statistics-essential-training/computing-a-bivariate-regression&lt;/a&gt; (Linkedin Premium)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://thomasmock.netlify.com/post/a-gentle-guide-to-tidy-statistics-in-r/&#34; class=&#34;uri&#34;&gt;https://thomasmock.netlify.com/post/a-gentle-guide-to-tidy-statistics-in-r/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

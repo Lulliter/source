@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.0.0">
+  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="author" content="Lulliter">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="Write &amp; read multiple `.xlsx/.csv/.Rdata` files to/from R environment">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/source/tutorial/files-list-management/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css" crossorigin="anonymous">
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/source/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-128632724-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="/source/index.xml" type="application/rss+xml" title="Lulliter">
+  <link rel="feed" href="/source/index.xml" type="application/rss+xml" title="Lulliter">
+  
+
+  <link rel="manifest" href="/source/site.webmanifest">
+  <link rel="icon" type="image/png" href="/source/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/source/img/icon-192.png">
+
+  <link rel="canonical" href="/source/tutorial/files-list-management/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@lulliter">
+  <meta property="twitter:creator" content="@lulliter">
+  
+  <meta property="og:site_name" content="Lulliter">
+  <meta property="og:url" content="/source/tutorial/files-list-management/">
+  <meta property="og:title" content="2019-03-18 Files (and Lists) in Environment | Lulliter">
+  <meta property="og:description" content="Write &amp; read multiple `.xlsx/.csv/.Rdata` files to/from R environment">
+  
+  
+    
+  <meta property="og:image" content="/source/img/icon-192.png">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-03-18T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2019-03-18T00:00:00&#43;00:00">
+  
+
+  
+
+  
+
+  <title>2019-03-18 Files (and Lists) in Environment | Lulliter</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/source/">Lulliter</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/#about">
+            <i class='fa fa-home fa-fw'></i>
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/#posts">
+            <i class='fa fa-pen-nib fa-fw'></i>
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/tutorial/">
+            <i class='fa fa-shoe-prints fa-fw'></i>
+            <span>Tutorials</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/project/">
+            <i class="fab fa-r-project"></i>
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/#cv">
+            <i class='fa fa-file-pdf fa-fw'></i>
+            <span>CV</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">2019-03-18 Files (and Lists) in Environment</h1>
+
+  
+
+  
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lulliter">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2019-03-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+    <time datetime="2019-03-18 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+      Mar 18, 2019
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lulliter">
+  </span>
+
+  
+
+  
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="/source/categories/rtutorial/">Rtutorial</a>
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=2019-03-18%20Files%20%28and%20Lists%29%20in%20Environment&amp;url=%2fsource%2ftutorial%2ffiles-list-management%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fsource%2ftutorial%2ffiles-list-management%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fsource%2ftutorial%2ffiles-list-management%2f&amp;title=2019-03-18%20Files%20%28and%20Lists%29%20in%20Environment"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fsource%2ftutorial%2ffiles-list-management%2f&amp;title=2019-03-18%20Files%20%28and%20Lists%29%20in%20Environment"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=2019-03-18%20Files%20%28and%20Lists%29%20in%20Environment&amp;body=%2fsource%2ftutorial%2ffiles-list-management%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      </p>
+<div id="preliminary-steps" class="section level2">
+<h2>0) PRELIMINARY STEPS</h2>
+<div id="use-some-pre-loaded-r-datasets-save-as-dfs" class="section level4">
+<h4>Use some pre-loaded R datasets &amp; save as DFs</h4>
+<pre class="r"><code># data() 
+mtcars &lt;- as.data.frame(mtcars)
+iris &lt;- as.data.frame(iris)
+orange &lt;- as.data.frame(Orange)
+titanic &lt;- as.data.frame(Titanic)
+Orange &lt;- as.data.frame(Orange)
+OrchardSprays &lt;- as.data.frame(OrchardSprays)
+airquality &lt;- as.data.frame(airquality)
+airmiles &lt;- as.data.frame(airmiles)</code></pre>
+</div>
+<div id="create-a-list-list-with-names-2-ways-to-name-elements-of-list" class="section level4">
+<h4>Create a list <code>list</code> with names (2 ways to name elements of list)</h4>
+<pre class="r"><code># 1.a) Create a list of n data frames
+list_dfs &lt;- list(mtcars, iris ,  orange, titanic)
+list_dfs[1]
+
+# 1.b) Give names the data frames
+names(list_dfs) &lt;- c(&quot;mtcars&quot;,&quot;iris&quot;, &quot;orange&quot; , &quot;titanic&quot;) 
+
+# OR -----
+
+# 2) Create a list of n data frames WHILE giving them a  name
+list_dfs_N &lt;- list(mtcars = mtcars, iris = iris, orange = orange, titanic = titanic)
+list_dfs_N[[1]]</code></pre>
+</div>
+<div id="create-output-dir-file.path-in-a-proj-folder-e.g.-.staticpost" class="section level4">
+<h4>Create Output DIR <code>file.path</code> in a proj folder (e.g. “./static/post/…”)</h4>
+<pre class="r"><code># Create Output Dir... remember final&quot;/&quot;
+Outdf2csv &lt;- file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;df2csv/&quot;)
+dir.create(Outdf2csv)
+
+# Dir_pcr &lt;- file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;pcr/&quot;)
+# dir.create(Dir_pcr)</code></pre>
+<hr />
+</div>
+</div>
+<div id="task-1-write-maintaining-names" class="section level2">
+<h2>TASK 1) WRITE ?? (MAINTAINING NAMES)</h2>
+<div id="option-1.1a-write-list-of-envir-objects-as-.csv-using-ls-for" class="section level3">
+<h3>OPTION (1.1a) WRITE list of Envir objects as <strong>.csv</strong> using <code>ls</code> + <code>for</code></h3>
+<p><strong>NOTE</strong></p>
+<ul>
+<li>Not <del><code>length(list_loop_DF)</code></del> (lenght of the list), but <code>seq_along(list_loop_DF)</code> -&gt; <em>CORRECT</em>! (Generates a sequence long as the list)</li>
+<li><code>utils:write.table(x, file = &quot;&quot;)</code> where
+<ul>
+<li>x = <code>list_loop_DF[[i]]</code></li>
+<li>file = <code>paste0(Outdf2csv, names(list_loop_DF[i]), &quot;.csv&quot;)</code></li>
+</ul></li>
+</ul>
+<div id="list-of-envir-objects-many-csv-files" class="section level4">
+<h4>List of Envir objects –&gt; many csv files</h4>
+<pre class="r"><code># Create a list of NAMED dataframes
+list_loop_DF &lt;- list(airquality = airquality, airmiles = airmiles)
+
+# Write a .csv file with each
+for (i in seq_along(list_loop_DF)) {
+  # Outdf2csv &lt;- if (!dir.exists(&quot;./zzz_purrr/Output/&quot;)) {
+  #   dir.create(file.path(&quot;./zzz_purrr/Output/&quot;))
+  # } else {
+  #   print(&quot;Dir already exists!&quot;)
+  # }
+  write.csv(x = list_loop_DF[[i]], 
+             file = paste0(Outdf2csv, names(list_loop_DF[i]), &quot;.csv&quot;))
+}
+
+
+# or -----
+for (i in seq_along(list_loop_DF)) {
+  # Outdf2csv &lt;- if (!dir.exists(&quot;./zzz_purrr/Output/&quot;)) {
+  #   dir.create(file.path(&quot;./zzz_purrr/Output/&quot;))
+  # } else {
+  #   print(&quot;Dir already exists!&quot;)
+  # }
+  readr::write_csv(x = list_loop_DF[[i]], 
+             path = paste0(Outdf2csv, names(list_loop_DF[i]), &quot;.csv&quot;))
+}</code></pre>
+</div>
+</div>
+<div id="option-1.1b-write-list-of-envir-objects-as-.rdata-files-using-ls-for" class="section level3">
+<h3>OPTION (1.1b) WRITE list of Envir objects –&gt; as <strong>.Rdata</strong> files using <code>ls</code> + <code>for</code></h3>
+<blockquote>
+<p><strong>NOTE</strong> <code>save (list= ...., file = ...)</code> -&gt; <em>list instead of obj name</em>!</p>
+</blockquote>
+<pre class="r"><code># Create Output Dir... remember final&#39;/&#39;
+OutAPI &lt;- file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;SendGrid_API/&quot;)
+# dir.create(OutAPI)
+
+# List of files starting  with &lt;REcip_&gt;
+files_Recip &lt;- ls( pattern=&quot;^Recip_&quot;# &quot;^xx&quot; = &quot;starts with  xx&quot;
+                         # all.files = FALSE,
+                         # full.names = FALSE, recursive = FALSE,
+                         # ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
+)   
+
+# ====== LOOP for as many times as there are items in the listing (= LENGHT)
+for (i in 1:length(files_Recip)) {
+    # at each round  
+    save (list = (files_Recip[i]) ,  # ... take the name of an item from the list 
+            file = paste0(OutAPI, files_Recip[i], &quot;.Rdata&quot;))
+}</code></pre>
+</div>
+<div id="option-1.2-write-list-of-envir-objects-as-.csv-using-lapply-within-a-function" class="section level3">
+<h3>OPTION (1.2) WRITE list of Envir objects as <strong>.csv</strong> using <code>lapply</code> (within a function)</h3>
+<p><strong>NOTE</strong> I already created above landing Output dir <code>Outdf2csv</code> - becomes:</p>
+<pre class="r"><code># Create a list of NAMED dataframes
+list_lapply_DF &lt;- list(mtcars = mtcars, titanic = titanic ) # 
+
+# Write the function with arguments (DFlist)
+Func_list_lapply &lt;- function(list_lapply_DF) { # optional arg2 (Outdf2csv)
+    lapply(1:length(list_lapply_DF), 
+             function(i) write.csv(list_lapply_DF[[i]], 
+                                         file = paste0(Outdf2csv, 
+                                                          names(list_lapply_DF[i]), &quot;.csv&quot;), 
+                                         row.names = FALSE
+             )
+    )
+}
+
+# Call the function
+Func_list_lapply(list_lapply_DF)</code></pre>
+<hr />
+</div>
+<div id="option-1.3-write-list-of-envir-objects-as-.csv-using-purrrwalk-not-map" class="section level3">
+<h3>OPTION (1.3) WRITE list of Envir objects as <strong>.csv</strong> using <code>purrr:walk</code> (not <del>map</del> )</h3>
+<p><strong>NOTE</strong> Writing a file to a disk is considered to be a side-effect (we are not changing our data, only save it) so we must use <code>purrr:walk</code></p>
+<blockquote>
+<p>Specifically, we are using <code>purrr::walk2(.x, .y, .f, ...</code> where
+<code>.x</code> and <code>.y</code> are vectors of the same length
+<code>.f</code> is a 2-argument function</p>
+</blockquote>
+<pre class="r"><code>library(purrr)
+library(tidyverse)
+
+# Create a list of NAMED dataframes
+list_purrr_DF &lt;- list(Orange = Orange, OrchardSprays = OrchardSprays ) # 
+
+# Set the Output Dir to an object - done before... 
+  # Outdf2csv &lt;- if (!dir.exists(&quot;./zzz_purrr/Output/&quot;)) {
+  #   dir.create(file.path(&quot;./zzz_purrr/Output/&quot;))
+  # } else {
+  #   print(&quot;Dir already exists!&quot;)
+  # }
+
+# ... &amp; combine it with the complete file path
+path &lt;- file.path(paste0(Outdf2csv, names(list_purrr_DF), &quot;.csv&quot;))
+
+# run the function
+purrr::walk2(list_purrr_DF, path, write.csv)</code></pre>
+<hr />
+</div>
+</div>
+<div id="option-2-clean-write-as-.csvto-disk-group_by-group_map-purrrgroup_map" class="section level2">
+<h2>OPTION (2) CLEAN &amp;&amp; WRITE as <strong>.csv</strong>to disk <code>group_by + group_map + purrr::group_map</code></h2>
+<p><a href="https://luisdva.github.io/rstats/export-iteratively/">Luis Verde Arregoitia’s</a></p>
+<p>In this case, the five new files (one for each bat family) will end up in the working directory.
+<strong>NOTE</strong> We use <code>group_by</code> and <code>group_map</code> to create a grouped tibble and <code>apply</code> functions to each group.
++group_map returns a list, so we can use paste0 to create a path for each file to be written, including a custom prefix.</p>
+<pre class="r"><code># read csv from web
+batRecs &lt;- read.csv(&quot;https://raw.githubusercontent.com/luisDVA/codeluis/master/batRecords.csv&quot;,
+  stringsAsFactors = FALSE
+)
+# preview how many files we should be ending up with
+batRecs %&gt;% count(family)
+
+# drop na,
+batRecs %&gt;% na.omit() %&gt;%
+  # split to create a list of data frames for each group,
+  group_by(family) %&gt;%
+  # then map to apply functions to each list element. I
+  group_map(~ distinct(.x, decimal_latitude, decimal_longitude, .keep_all = TRUE), keep = TRUE) %&gt;%
+  # walk because write.csv returns nothing and creates the csv file as a side effect
+  walk(~ .x %&gt;% 
+        write_csv(path = paste0(Outdf2csv, &quot;nov1_&quot;, unique(.x$family), &quot;.csv&quot;), 
+                     append = F))</code></pre>
+<hr />
+<hr />
+</div>
+<div id="task-2-reverse-topic-read-into-environment" class="section level2">
+<h2>TASK 2) Reverse topic: READ into Environment</h2>
+<div id="option-2.1-read-list-of-.csv-into-r-environment-list.files-for-loop-custom-function" class="section level3">
+<h3>OPTION (2.1) READ list of *.csv into R environment <code>list.files</code> + <code>for</code> loop {<code>custom function</code>}</h3>
+<p>Here, I want to read all .csv files into R and create a DF for each (keeping the original csv file name
+minus “spaces and”.csv&quot;.</p>
+<pre class="r"><code># path
+path &lt;- file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;df2csv/&quot;)
+# list of files 
+list_2read &lt;-  list.files(path = path, 
+                        # pattern = c(&#39;^Send&#39;,&#39;.csv$&#39; ), 
+                    full.names = F,  
+                        all.files = FALSE,  # def (= only visible)
+                  recursive = FALSE,  # def  (= no inside sub-dir )
+                  ignore.case = TRUE, # (= pattern-matching be case-insensitive)
+                  include.dirs = FALSE, # def (subdir names NOT be included in recursive listings)
+                  no.. = FALSE) %&gt;% # def (both &quot;.&quot; and &quot;..&quot; be excluded also from non-recursive listings) 
+            sort(decreasing = FALSE) 
+
+# CSV_read FUNCTION
+for (file in list_2read) {
+  order &lt;- which( # Give the TRUE indices of a logical object
+    strsplit(file, &quot;&quot;)[[1]] == &quot;.&quot;
+  ) # Split the elements of a character vector &quot;file&quot; to the matches to substring split
+  
+  assign( # Assign a value to a name in an environment.
+    gsub(&quot; &quot;, &quot;&quot;, substr(file, 1, order - 1)), # x = a variable name
+    # read.csv(paste(path,file,sep=&quot;&quot;), stringsAsFactors = F) # value = to be assigned to x
+    read_csv(paste(path, file, sep = &quot;&quot;))
+  )
+}</code></pre>
+</div>
+<div id="option-2.2-read-list-of-.csv-into-r-environment-list.files-stringr-map" class="section level3">
+<h3>OPTION (2.2) READ list of *.csv into R environment <code>list.files</code> + <code>stringr</code>+ <code>map</code></h3>
+<p>Elegant version of above</p>
+<pre class="r"><code># path
+path &lt;- file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;df2csv/&quot;)
+# list of files 
+list_2read &lt;-  list.files(path = path, 
+                        # pattern = c(&#39;^Send&#39;,&#39;.csv$&#39; ), 
+                    full.names = F,  
+                        all.files = FALSE,  # def (= only visible)
+                  recursive = FALSE,  # def  (= no inside sub-dir )
+                  ignore.case = TRUE, # (= pattern-matching be case-insensitive)
+                  include.dirs = FALSE, # def (subdir names NOT be included in recursive listings)
+                  no.. = FALSE) %&gt;% # def (both &quot;.&quot; and &quot;..&quot; be excluded also from non-recursive listings) 
+            sort(decreasing = FALSE) 
+
+# select only 2
+list_2read %&gt;% 
+    .[stringr::str_detect(., &quot;air&quot;)] -&gt; csv_files
+
+ 
+# Load everything into the Global Environment
+csv_files %&gt;%
+  purrr::map(function(file_name){ # iterate through each file name
+  # Give a name to :    
+  assign(x = stringr::str_remove(file_name, &quot;.csv&quot;), # x = file, but without &quot;.csv&quot;)
+         value = read_csv(paste0(path, file_name)), # value -&gt; it will take in env
+         envir = .GlobalEnv) # (where)
+})</code></pre>
+<hr />
+</div>
+</div>
+<div id="task-3-render-multiple-.rmd-files-saving-outputs-in-separate-dir-using-baselist.files-purrrwalk" class="section level2">
+<h2>TASK 3) Render multiple .Rmd files saving outputs in separate DIR using <code>base::list.files + purrr::walk</code></h2>
+<p>This is the case in which I have several <code>.Rmd</code> files in the working directory and I want to render them all in one go.
+<strong>NOTE</strong> The output types were specifies in the .Rmd files themselves like so :</p>
+<blockquote>
+<p>uses {base::list.files + purrr::walk}</p>
+</blockquote>
+<pre class="r"><code>#======  DIRECTORIES PATHS  
+root_DIR &lt;- fs::path_abs(&quot;.&quot;)
+reports_DIR &lt;- fs::path_abs(&quot;./reports&quot;) # output reports 
+
+# ======== LIST THE FILES I NEED TO RENDER   
+filesRmd &lt;- list.files(path = &quot;.&quot;, 
+                              pattern=&quot;.Rmd$&quot;,
+                              all.files = FALSE,  # def (= only visible)
+                              full.names = TRUE,  # I NEED dir name prepended
+                              recursive = FALSE,  # def  (= no inside sub-dir )
+                              ignore.case = TRUE, # (= pattern-matching be case-insensitive)
+                              include.dirs = FALSE, # def (subdirectory names NOT be included in recursive listings)
+                              no.. = FALSE)   # def (both &quot;.&quot; and &quot;..&quot; be excluded also from non-recursive listings) 
+ 
+
+# Execute them them in the environment
+purrr::walk(filesRmd, rmarkdown::render,
+    output_file = NULL, #  If using NULL then the output filename will be based on filename for the input file
+    output_format = &quot;all&quot;, # because I specify it in the .Rmd files (Html &amp; pdf) 
+    output_dir = reports_DIR,
+    envir = new.env(), # The environment in which the code chunks are to be evaluated during knitting
+    encoding = &quot;UTF-8&quot;
+)</code></pre>
+<hr />
+</div>
+<div id="acknowledgments" class="section level2">
+<h2>ACKNOWLEDGMENTS</h2>
+<ul>
+<li><a href="https://luisdva.github.io/rstats/export-iteratively/">More operations</a></li>
+<li><a href="https://lsru.github.io/tv_course/TD_purrr_solution.html">Following this post</a></li>
+<li>Prof Claus Wilke has a <a href="https://serialmentor.com/blog/2016/6/13/reading-and-combining-many-tidy-data-files-in-R">Useful tutorial</a></li>
+<li><a href="https://martinctc.github.io/blog/vignette-write-and-read-multiple-excel-files-with-purrr/">Martin Chan’s post</a></li>
+</ul>
+</div>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/source/tags/readxl/">readxl</a>
+  
+  <a class="badge badge-light" href="/source/tags/purrr/">purrr</a>
+  
+  <a class="badge badge-light" href="/source/tags/forloop/">forloop</a>
+  
+  <a class="badge badge-light" href="/source/tags/lists/">lists</a>
+  
+</div>
+
+
+
+    
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="/source/img/portrait.png" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/source/">Lulliter</a></h5>
+    <h6 class="card-subtitle">Chief of Procrastination</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      <li>
+        <a itemprop="sameAs" href="mailto:lmm76@georgetown.edu" >
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/Lulliter" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.linkedin.com/in/luisa-m-mimmi/" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://scholar.google.com/citations?user=OBYla5gAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">
+          <i class="ai ai-google-scholar"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.researchgate.net/profile/Luisa_Mimmi" target="_blank" rel="noopener">
+          <i class="ai ai-researchgate"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/Lulliter" >
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/source/tutorial/working-with-project-s-directories-and-lists-of-files-in-r/">Working with project&#39;s directories and lists of files in R</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/source/privacy/">CC BY-SA 4.0</a>
+  </p>
+  
+
+  <p class="powered-by">
+    &copy; Luisa M. Mimmi, 2019 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    
+    <script src="/source/js/mathjax-config.500a6cbb2c0f345fcecc21b3116d6637aa78f1f11db8081ea581abe05390c2e8f3bbffe61be3cf0217baf785c40efceabe51050a4f007e69af94efd3643260e8.js" integrity="sha512-UApsuywPNF/OzCGzEW1mN6p48fEduAgepYGr4FOQwujzu//mG&#43;PPAhe694XEDvzqvlEFCk8AfmmvlO/TZDJg6A=="></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cs.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/markdown.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/xml.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    <script src="/source/js/hugo-academic.js"></script>
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/source/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "Search Results",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    <script src="/source/js/search.js"></script>
+    
+
+    
+    
+
+  </body>
+</html>
+

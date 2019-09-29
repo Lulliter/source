@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>resilience on Lulliter</title>
+    <link>/source/tags/resilience/</link>
+    <description>Recent content in resilience on Lulliter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Luisa M. Mimmi, 2019</copyright>
+    <lastBuildDate>Tue, 15 Nov 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/source/tags/resilience/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Open spatial data for resilience in Tanzania: Lessons learned from &#39;Dar Ramani Huria&#39;</title>
+      <link>/source/post/2016-11-15_ramani-huria/</link>
+      <pubDate>Tue, 15 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/source/post/2016-11-15_ramani-huria/</guid>
+      <description>Community Mapping For Flood Resilience “Dar Ramani Huria” (Swahili for “Dar Open Map”) is the name of a community-based mapping project in Dar es Salaam, Tanzania. This project brought together international agencies, local university students and community members with the aim of putting the city’s most flood- prone areas “on the map” for the first time, an endeavor made possible by the coordinated adoption of a host of geospatial and open data tools.</description>
+    </item>
+    
+  </channel>
+</rss>

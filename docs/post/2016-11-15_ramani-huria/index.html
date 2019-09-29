@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.0.0">
+  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="author" content="Lulliter">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="Community Mapping For Flood Resilience “Dar Ramani Huria” (Swahili for “Dar Open Map”) is the name of a community-based mapping project in Dar es Salaam, Tanzania. This project brought together international agencies, local university students and community members with the aim of putting the city’s most flood- prone areas “on the map” for the first time, an endeavor made possible by the coordinated adoption of a host of geospatial and open data tools.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/source/post/2016-11-15_ramani-huria/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css" crossorigin="anonymous">
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/source/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-128632724-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="/source/index.xml" type="application/rss+xml" title="Lulliter">
+  <link rel="feed" href="/source/index.xml" type="application/rss+xml" title="Lulliter">
+  
+
+  <link rel="manifest" href="/source/site.webmanifest">
+  <link rel="icon" type="image/png" href="/source/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/source/img/icon-192.png">
+
+  <link rel="canonical" href="/source/post/2016-11-15_ramani-huria/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@lulliter">
+  <meta property="twitter:creator" content="@lulliter">
+  
+  <meta property="og:site_name" content="Lulliter">
+  <meta property="og:url" content="/source/post/2016-11-15_ramani-huria/">
+  <meta property="og:title" content="Open spatial data for resilience in Tanzania: Lessons learned from &#39;Dar Ramani Huria&#39; | Lulliter">
+  <meta property="og:description" content="Community Mapping For Flood Resilience “Dar Ramani Huria” (Swahili for “Dar Open Map”) is the name of a community-based mapping project in Dar es Salaam, Tanzania. This project brought together international agencies, local university students and community members with the aim of putting the city’s most flood- prone areas “on the map” for the first time, an endeavor made possible by the coordinated adoption of a host of geospatial and open data tools.">
+  
+  
+    
+  <meta property="og:image" content="/source/img/headers/RamHuria.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2016-11-15T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2016-11-15T00:00:00&#43;00:00">
+  
+
+  
+
+  
+
+  <title>Open spatial data for resilience in Tanzania: Lessons learned from &#39;Dar Ramani Huria&#39; | Lulliter</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/source/">Lulliter</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/#about">
+            <i class='fa fa-home fa-fw'></i>
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/#posts">
+            <i class='fa fa-pen-nib fa-fw'></i>
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/tutorial/">
+            <i class='fa fa-shoe-prints fa-fw'></i>
+            <span>Tutorials</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/project/">
+            <i class="fab fa-r-project"></i>
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/#cv">
+            <i class='fa fa-file-pdf fa-fw'></i>
+            <span>CV</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+<div class="article-header">
+  
+  
+  <img src="/source/img/headers/RamHuria.jpg" class="article-banner" itemprop="image" alt="">
+  
+
+  <span class="article-header-caption">Image credit: <a href="http://ramanihuria.org/" target="_blank"><strong>Ramani Huria website</strong></a></span>
+</div>
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">Open spatial data for resilience in Tanzania: Lessons learned from &#39;Dar Ramani Huria&#39;</h1>
+
+  
+
+  
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lulliter">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2016-11-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+    <time datetime="2016-11-15 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+      Nov 15, 2016
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lulliter">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="">Short Paper</a>
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Open%20spatial%20data%20for%20resilience%20in%20Tanzania%3a%20Lessons%20learned%20from%20%27Dar%20Ramani%20Huria%27&amp;url=%2fsource%2fpost%2f2016-11-15_ramani-huria%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fsource%2fpost%2f2016-11-15_ramani-huria%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fsource%2fpost%2f2016-11-15_ramani-huria%2f&amp;title=Open%20spatial%20data%20for%20resilience%20in%20Tanzania%3a%20Lessons%20learned%20from%20%27Dar%20Ramani%20Huria%27"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fsource%2fpost%2f2016-11-15_ramani-huria%2f&amp;title=Open%20spatial%20data%20for%20resilience%20in%20Tanzania%3a%20Lessons%20learned%20from%20%27Dar%20Ramani%20Huria%27"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Open%20spatial%20data%20for%20resilience%20in%20Tanzania%3a%20Lessons%20learned%20from%20%27Dar%20Ramani%20Huria%27&amp;body=%2fsource%2fpost%2f2016-11-15_ramani-huria%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<!-- ![Dar Ramani Huria logo](../../static/post/RamHuria.jpg) -->
+
+<h2 id="community-mapping-for-flood-resilience">Community Mapping For Flood Resilience</h2>
+
+<p>“Dar Ramani Huria” (Swahili for “Dar Open Map”) is the name of a community-based mapping project in Dar es Salaam, Tanzania. This project brought together international agencies, local university students and community members with the aim of putting the city’s most flood- prone areas “on the map” for the first time, an endeavor made possible by the coordinated adoption of a host of geospatial and open data tools.
+Dar es Salaam is one of the fastest growing cities in Africa, with an annual population growth of about 5%. Urbanization is largely unplanned and over half of city residents live in informal settlements. Every year during the rainy seasons, the coastal city endures floods and heavy rains that cause great damage and economic loss, even death. As is often the case, the poorest citizens living in informal areas suffer disproportionally from these hazardous events. Damaged roads and footpaths force business and services to close for days and, after flooding, unplanned settlements become more vulnerable to diseases such as cholera. Because of the city’s largely unregulated growth, available maps are highly inaccurate, which hampers both the immediate response attempts and adequate long-term planning to improve disaster preparedness.
+Dar Ramani Huria is a multi-partner collaboration facilitated by Tanzania’s 2011 commitment to the Open Government Partnership (OGP), an international initiative in which governments have pledged to become more open, accountable and responsive to citizens. Under the auspices of the Tanzania government, and in line with its new commitment to transparency and citizen engagement, the project is supported by the Tanzania Commission for Science and Technology (COSTECH), the World Bank’s Global Facility for Disaster Reduction and Recovery (GFDRR), and the Red Cross. The key operational responsibility lies with Humanitarian OpenStreetMap Team (HOT) and such local partners as municipal councils and planning agencies. Playing another fundamental role in giving legitimacy and stability to the project, two local universities (University of Dar es Salaam and Ardhi University) seized this opportunity to teach valuable geospatial analysis skills to students, who make up most of the mapping teams.
+Since January 2015, the project has covered 29 neighborhoods (locally known as wards) within four districts of Dar es Salaam, encompassing the most flood-prone areas of the city.
+The project operations follow these main steps:
+1) Building on drone-generated Very High Resolution (VHR) imagery, mappers capture features like drainage lines, water and sanitation facilities, roads and footpaths, buildings and key landmarks.
+ 2) The detailed data captured in the various wards through GPS devices are digitized using the OpenStreetMap platform.
+3) Risk assessment is performed by InaSAFE software, an open-source tool piloted in Indonesia that is provided as a plugin for QGIS and enables users to run natural disaster scenarios for better impact assessment and response planning.</p>
+
+<h2 id="key-lessons-learned">Key Lessons Learned</h2>
+
+<h3 id="ripple-effects-of-an-open-data-initiative-for-resilience">Ripple effects of an open data initiative for resilience</h3>
+
+<p>During a conversation about the project, two executives of Ramani Huria (Edward Anderson, Senior Disaster Risk Management Specialist at the World Bank, and Mark Iliffe, a geospatial expert) first remarked that from the outset the benefits of mapping started multiplying in areas of interventions beyond the original intended goals. The project website reports several interviews with Ward Executive Officers of the involved neighborhoods, illustrating how quickly they turned into the most enthusiastic advocates of the initiative – most of them, the interviewer reported, proudly display printouts of the maps in the office. These local officials can now use the extremely accurate ward maps to present projects to the municipality, or to plan roads and drainage construction. Covered wards have also benefited from these maps in unexpected ways, such as promoting adhesion to the national addressing system, planning for better provision of services like health centers and schools, or directing the work of local NGOs. Such unintended effects of the initiative echo the very justification of open data, which is to make curated information accessible, understandable and usable for a broad array of users, potentially serving purposes unforeseen by the data creators. Furthermore, maps and data are now available for anyone interested in doing research or developing applications that can improve the livelihoods of citizens.
+Another fascinating aspect of the project, which extends beyond disaster response, is how well this approach to mapping matches the reality of a city growing at a fast pace in a mostly unplanned fashion. While lacking or outdated maps are often cited as one huge obstacle to systematic upgrading of urban informal areas, this community-mapping initiative (facilitated by the OSM platform) empowers the very residents of these communities – who are both the experts and ultimate beneficiaries – giving them a voice in the identification and prioritization of their actual needs. In a peculiar role switch, the data deficit caused by Dar’s inadequate institutional capacity is gradually being filled from the bottom up.</p>
+
+<h3 id="triggering-a-global-collaborative-network">Triggering a global collaborative network</h3>
+
+<p>As noted by Patrick Meier in a very thought-provoking talk on creating resilience through big data: “The term resilience is important because it focuses not on the development and disaster response community, but rather on local at-risk communities” and their own coping mechanisms. Within the long-standing debate about the effectiveness (or lack thereof) of top-
+ 4) Maps and underlying data collected within Ramani Huria are free and accessible for anyone
+ on OpenStreetMap (OSM) and on the project website. As the project is rolled out in multiples
+ wards, various technical workshops, kickoff events and ‘maphatons’ are effectively keeping the
+ communities engaged and promoting the dissemination of results in different forum.
+ down approaches in development, Dar Ramani Huria is a remarkable example of how a broad array of involved parties can be successfully mobilized in a multi-polar scheme. Clearly, a complex partnership like Dar Ramani Huria benefited from a fortunate combination of enabling conditions, including the government’s timely commitment towards open data, the backing of universities and the political will of local officials. Nevertheless, the unprecedented growth of geospatial and analytical open-source software plays an indisputable “crowdsourcing” role. Nowadays, a highly complex issue such as improving resilience in unplanned urban areas can be tackled within a paradigm of distributed problem solving, where local civil society can join international geospatial experts and software designers to contribute to critical urban-planning decisions. Another interesting byproduct of open data is the creation of “virtual communities” that effectively connect people who would not seem associated by location or cultural proximity. A case in point is the InaSAFE tool for disaster risk analysis, initially designed in Indonesia, which was seamlessly combined with Ramani Huria-generated maps for flooding risk analysis.
+The desire to help when natural hazards hit (we are sadly witnessing stronger and more frequent earthquakes, floods and hurricanes all over the world) is probably a universal human reaction, particularly when such events strike close to home or we perceive a personal connection to the victims. Yet, our globalized and constantly connected world can leave us a sense of frustration when we struggle to identify an effective way to help or fail to see the fruits of our contribution. The multiplication of open access platforms (OpenStreetMaps, Ushahidi, WorldPop and the likes) and, to some extent, social media have this promising power to directly match people in need with individuals or groups that have the right skills to help. It is well documented how many digital volunteers and geospatial experts mobilized to help after the recent earthquakes in Haiti and Nepal, working together (remotely or in loco) contributing coding skills, updating web documents and maps, or simply posting tweets and photos to fill critical information gaps. While GIS and geospatial analysis still require a significant degree of technical skills for certain steps along the data pipeline, there are increasing opportunities for basic users to perform key data collection tasks, also owing to the huge role of mobile technology in bridging the digital divide.
+Certainly, open data does not mean “unregulated,” and issues of security or privacy protection deserve adequate consideration at the international and local levels. Nonetheless Dar Ramani Huria is yet another demonstration of the undeniable potential of open-data platforms to effectively promote a transparent, collaborative and incremental creation of vital information to improve lives.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li><p>Davies, Tim. 2014. &ldquo;Open Data in Developing Countries – Emerging insights from Phase I”. Web Foundation, Berlin.</p></li>
+
+<li><p>Deogawanka, Sangeeta. 2015, May 9. How Crowdsourced Mapping is Supporting Relief Efforts in Nepal [Blog post]. Retrieved from <a href="https://www.gislounge.com/how-crowdsourced-" target="_blank">https://www.gislounge.com/how-crowdsourced-</a> mapping-is-supporting-relief-efforts-in-nepal/
+Humanitarian OpenStreetMap Team. 2015. &ldquo;Flood Resilience in Dar es Salaam Second Quarterly Report”. HOT, Washington, DC.</p></li>
+
+<li><p>Meier, Patrick. 2013, January 11. How to Create Resilience Through Big Data [Blog
+post]. Retrieved from <a href="https://irevolutions.org/2013/01/11/disaster-resilience-2-0/" target="_blank">https://irevolutions.org/2013/01/11/disaster-resilience-2-0/</a></p></li>
+
+<li><p>UN Committee of Experts on Global Geospatial Information Management. 2015. &ldquo;Future trends in geospatial information management: the five to ten year vision”. UN-GGIM, New York.</p></li>
+</ul>
+
+<h2 id="web-sites-and-software">Web sites and software</h2>
+
+<ul>
+<li><p>Ramani Huria (<a href="http://ramanihuria.org/" target="_blank">http://ramanihuria.org/</a>) - Dar Ramani Huria project website providing description, access to data and news.</p></li>
+
+<li><p>InaSAFE (<a href="http://inasafe.org" target="_blank">http://inasafe.org</a>) - an extension for QGIS that allows disaster managers to do better contingency planning for disasters.</p></li>
+
+<li><p>OpenStreetMap (<a href="https://www.openstreetmap.org/" target="_blank">https://www.openstreetmap.org/</a>) - The Free Wiki World Map – An openly licensed map of the world being created by volunteers using local knowledge, GPS tracks and donated sources.</p></li>
+
+<li><p>QGIS (<a href="https://www.qgis.org/" target="_blank">https://www.qgis.org/</a>) - is a cross-platform free and open-source desktop geographic information system (GIS) application that provides data viewing, editing, and analysis.</p></li>
+
+<li><p>Ushahidi (<a href="https://www.ushahidi.com/" target="_blank">https://www.ushahidi.com/</a>) - a non-profit software company that develops free and open-source software (LGPL) for information collection, visualisation, and interactive
+mapping.</p></li>
+
+<li><p>WorldPop (<a href="http://www.worldpop.org.uk/" target="_blank">http://www.worldpop.org.uk/</a>) - open platform for spatial demographic data</p></li>
+</ul>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="">open data</a>
+  
+  <a class="badge badge-light" href="/source/tags/resilience/">resilience</a>
+  
+  <a class="badge badge-light" href="">spatial data</a>
+  
+</div>
+
+
+
+    
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="/source/img/portrait.png" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/source/">Lulliter</a></h5>
+    <h6 class="card-subtitle">Chief of Procrastination</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      <li>
+        <a itemprop="sameAs" href="mailto:lmm76@georgetown.edu" >
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/Lulliter" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.linkedin.com/in/luisa-m-mimmi/" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://scholar.google.com/citations?user=OBYla5gAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">
+          <i class="ai ai-google-scholar"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.researchgate.net/profile/Luisa_Mimmi" target="_blank" rel="noopener">
+          <i class="ai ai-researchgate"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/Lulliter" >
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/source/privacy/">CC BY-SA 4.0</a>
+  </p>
+  
+
+  <p class="powered-by">
+    &copy; Luisa M. Mimmi, 2019 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    
+    <script src="/source/js/mathjax-config.500a6cbb2c0f345fcecc21b3116d6637aa78f1f11db8081ea581abe05390c2e8f3bbffe61be3cf0217baf785c40efceabe51050a4f007e69af94efd3643260e8.js" integrity="sha512-UApsuywPNF/OzCGzEW1mN6p48fEduAgepYGr4FOQwujzu//mG&#43;PPAhe694XEDvzqvlEFCk8AfmmvlO/TZDJg6A=="></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cs.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/markdown.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/xml.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    <script src="/source/js/hugo-academic.js"></script>
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/source/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "Search Results",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    <script src="/source/js/search.js"></script>
+    
+
+    
+    
+
+  </body>
+</html>
+

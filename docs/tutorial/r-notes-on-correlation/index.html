@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.0.0">
+  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="author" content="Lulliter">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="Recap of correlation between different types of variables - UNFINISHED">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/source/tutorial/r-notes-on-correlation/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css" crossorigin="anonymous">
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/source/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-128632724-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="/source/index.xml" type="application/rss+xml" title="Lulliter">
+  <link rel="feed" href="/source/index.xml" type="application/rss+xml" title="Lulliter">
+  
+
+  <link rel="manifest" href="/source/site.webmanifest">
+  <link rel="icon" type="image/png" href="/source/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/source/img/icon-192.png">
+
+  <link rel="canonical" href="/source/tutorial/r-notes-on-correlation/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@lulliter">
+  <meta property="twitter:creator" content="@lulliter">
+  
+  <meta property="og:site_name" content="Lulliter">
+  <meta property="og:url" content="/source/tutorial/r-notes-on-correlation/">
+  <meta property="og:title" content="R Notes on Correlation, Association Measures, etc. | Lulliter">
+  <meta property="og:description" content="Recap of correlation between different types of variables - UNFINISHED">
+  
+  
+    
+  <meta property="og:image" content="/source/img/icon-192.png">
+  <meta property="og:locale" content="en-us">
+  
+  
+  
+  
+
+  
+
+  
+
+  <title>R Notes on Correlation, Association Measures, etc. | Lulliter</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/source/">Lulliter</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/#about">
+            <i class='fa fa-home fa-fw'></i>
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/#posts">
+            <i class='fa fa-pen-nib fa-fw'></i>
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/tutorial/">
+            <i class='fa fa-shoe-prints fa-fw'></i>
+            <span>Tutorials</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/project/">
+            <i class="fab fa-r-project"></i>
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/#cv">
+            <i class='fa fa-file-pdf fa-fw'></i>
+            <span>CV</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">R Notes on Correlation, Association Measures, etc.</h1>
+
+  
+
+  
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lulliter">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="" itemprop="datePublished">
+    <time datetime="" itemprop="dateModified">
+      Jan 1, 0001
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lulliter">
+  </span>
+
+  
+
+  
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="/source/categories/rtutorial/">Rtutorial</a>
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=R%20Notes%20on%20Correlation%2c%20Association%20Measures%2c%20etc.&amp;url=%2fsource%2ftutorial%2fr-notes-on-correlation%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fsource%2ftutorial%2fr-notes-on-correlation%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fsource%2ftutorial%2fr-notes-on-correlation%2f&amp;title=R%20Notes%20on%20Correlation%2c%20Association%20Measures%2c%20etc."
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fsource%2ftutorial%2fr-notes-on-correlation%2f&amp;title=R%20Notes%20on%20Correlation%2c%20Association%20Measures%2c%20etc."
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=R%20Notes%20on%20Correlation%2c%20Association%20Measures%2c%20etc.&amp;body=%2fsource%2ftutorial%2fr-notes-on-correlation%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<div id="TOC">
+<ul>
+<li><a href="#correlation-and-how-to-measure-it-depending-on-type-of-variables">CORRELATION AND HOW TO MEASURE IT DEPENDING ON TYPE OF VARIABLE(S)</a><ul>
+<li><a href="#set-up">Set UP</a></li>
+<li><a href="#between-2-continuous-variables">Between 2 CONTINUOUS variables</a><ul>
+<li><a href="#pearson-correlation-r">Pearson correlation (r)</a></li>
+</ul></li>
+<li><a href="#between-2-ordinal-interval-or-ratio-variables-x-and-y">Between 2 ORDINAL, INTERVAL or RATIO variables (x and y)</a><ul>
+<li><a href="#a-spearman-rank-order-correlation">a) Spearman rank-order correlation</a></li>
+<li><a href="#b-kendall-tau">b) Kendall tau</a></li>
+</ul></li>
+<li><a href="#between-2-categorical-variables">Between 2 CATEGORICAL variables</a><ul>
+<li><a href="#chi-squared-test-for-crosstabs-with-categorical-variables">Chi Squared test for Crosstabs with categorical variables</a></li>
+<li><a href="#chi-squared-tests-crammers-v-for-testing-relationships-between-2-categorical-variables">Chi-Squared Tests + Crammer’s V for testing relationships between 2 Categorical variables</a></li>
+</ul></li>
+<li><a href="#between-1-continuous-variable-and-1-categorical-variable">Between 1 CONTINUOUS variable AND 1 CATEGORICAL variable</a><ul>
+<li><a href="#a-one-way-anova-f-test">a) One-Way ANOVA (F-Test)</a></li>
+<li><a href="#b-multiple-pairwise-comparison-between-the-groups-means-anova">b) Multiple pairwise-comparison between the groups’ means ANOVA</a></li>
+<li><a href="#a-two-factor-anova-f-test">a) Two-Factor ANOVA (F-Test)</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#comparing-means">COMPARING MEANS</a><ul>
+<li><a href="#t-test-to-compare-means-of-independent-groups">T-test to compare means of independent groups</a></li>
+<li><a href="#paired-t-test-to-compare-means-of-paired-groups-e.g.same-group-in-t1-and-t2">Paired T-test to compare means of paired groups (e.g. same group in t1 and t2)</a></li>
+</ul></li>
+<li><a href="#comparing-proportions">COMPARING PROPORTIONS</a></li>
+<li><a href="#cluster-analisys">CLUSTER ANALISYS</a></li>
+<li><a href="#principal-component-analisys">PRINCIPAL COMPONENT ANALISYS</a><ul>
+<li><a href="#resources">RESOURCES</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="correlation-and-how-to-measure-it-depending-on-type-of-variables" class="section level1">
+<h1>CORRELATION AND HOW TO MEASURE IT DEPENDING ON TYPE OF VARIABLE(S)</h1>
+<div id="set-up" class="section level3">
+<h3>Set UP</h3>
+<pre class="r"><code># I am  executing bc it for the blog post 
+knitr::opts_chunk$set(eval = TRUE, 
+                             echo = TRUE, 
+                             tidy = FALSE, 
+                             results=&#39;hide&#39;,  
+                             message = FALSE, 
+                             warning = FALSE , fig.show=&#39;asis&#39;, fig.align=&#39;center&#39;, 
+                             fig.width=6, fig.height=6)
+
+# POV is where .toml is? 
+load(here::here(&quot;content&quot;,&quot;tutorial&quot;, &quot;AC_ppl_fakeID.Rdata&quot;), verbose = T)</code></pre>
+<pre><code>## Loading objects:
+##   AC_ppl_fakeID</code></pre>
+<pre class="r"><code>if (!require(&quot;PerformanceAnalytics&quot;)) install.packages(&quot;PerformanceAnalytics&quot;)
+if (!require(&quot;ggcorrplot&quot;)) install.packages(&quot;ggcorrplot&quot;)
+if (!require(&quot;GGally&quot;)) install.packages(&quot;GGally&quot;) # Ext to ggplot2 
+if (!require(&quot;ggpubr&quot;)) install.packages(&quot;ggpubr&quot;)
+if (!require(&quot;kableExtra&quot;)) install.packages(&quot;kableExtra&quot;)
+if (!require(&quot;pander&quot;)) install.packages(&quot;pander&quot;) </code></pre>
+</div>
+<div id="between-2-continuous-variables" class="section level2">
+<h2>Between 2 CONTINUOUS variables</h2>
+<div id="pearson-correlation-r" class="section level3">
+<h3>Pearson correlation (r)</h3>
+<p>Pearson correlation (r) measures a linear dependence between 2 CONTINUOUS variables (x and y) / or 2 dichotomous var
+&gt; It’s also known as a parametric correlation test because it depends to the distribution of the data.
+&gt; The Pearson correlation evaluates the linear relationship between two continuous variables.</p>
+<div id="formula" class="section level4">
+<h4>FORMULA</h4>
+<p>In the formula below,</p>
+<p>= <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are two vectors of length <span class="math inline">\(n\)</span>
+= <span class="math inline">\(m_x\)</span> and <span class="math inline">\(m_y\)</span> corresponds to the means of x and y, respectively.</p>
+<p><span class="math display">\[ r = \frac{\sum{(x-m_x)(y-m_y)}}{\sqrt{\sum(x-m_x)^2\sum(y-m_y)^2}} \]</span></p>
+<p>The p-value (significance level) of the correlation can be determined :</p>
+<p>by calculating the t value as follow:</p>
+<p><span class="math display">\[ t={\frac{r}{\sqrt{(1−r^2)}}}\sqrt{n−2}\]</span></p>
+<p>In the case 2) the corresponding p-value is determined using t distribution table for df=n−2</p>
+<pre class="r"><code># For example 
+
+# x = &quot;Acc_Don_NYE2019__c&quot;  
+# y = &quot;Acc_Don_NYE2011__c&quot;
+cor(AC_ppl_fakeID$Acc_Don_NYE2011__c, AC_ppl_fakeID$Acc_Don_NYE2019__c, 
+     method = c(&quot;pearson&quot; )) # 0.17
+cor(AC_ppl_fakeID$Acc_Don_NYE2018__c, AC_ppl_fakeID$Acc_Don_NYE2019__c, 
+     method = c(&quot;pearson&quot; )) # 0.68
+
+# Pearson correlation test 
+res11 &lt;- cor.test(AC_ppl_fakeID$Acc_Don_NYE2011__c, AC_ppl_fakeID$Acc_Don_NYE2019__c, 
+                        method = &quot;pearson&quot;)
+res11
+
+res18 &lt;- cor.test(AC_ppl_fakeID$Acc_Don_NYE2018__c, AC_ppl_fakeID$Acc_Don_NYE2019__c, 
+                        method = &quot;pearson&quot;)
+res18
+
+# Visualize your data using scatter plots
+library(&quot;ggpubr&quot;)
+ggscatter(AC_ppl_fakeID, x = &quot;Acc_Don_NYE2011__c&quot;, y = &quot;Acc_Don_NYE2019__c&quot;, 
+             add = &quot;reg.line&quot;, conf.int = TRUE, 
+             cor.coef = TRUE, cor.method = &quot;pearson&quot;,
+             xlab = &quot;Acc_Don_NYE2011__c&quot;, ylab = &quot;Acc_Don_NYE2019__c&quot;)</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-2-1.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>library(&quot;ggpubr&quot;)
+ggscatter(AC_ppl_fakeID, x = &quot;Acc_Don_NYE2018__c&quot;, y = &quot;Acc_Don_NYE2019__c&quot;, 
+             add = &quot;reg.line&quot;, conf.int = TRUE, 
+             cor.coef = TRUE, cor.method = &quot;pearson&quot;,
+             xlab = &quot;Acc_Don_NYE2018__c&quot;, ylab = &quot;Acc_Don_NYE2019__c&quot;)</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-2-2.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+<div id="more-visualization" class="section level4">
+<h4>More Visualization</h4>
+<pre class="r"><code># SELECT A FEW NUMER 
+data_numeric &lt;- AC_ppl_fakeID[ , purrr::map_lgl(AC_ppl_fakeID, is.numeric)] 
+
+data_numeric2 &lt;- data_numeric %&gt;% 
+    dplyr::filter(Acc_Don_Tot &gt;0) %&gt;% 
+    dplyr::select( 4:12)
+
+# === modo A) 
+library(PerformanceAnalytics)
+cormat &lt;- chart.Correlation(data_numeric2, histogram=TRUE, pch=19)</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-3-1.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># === modo B)  
+    # 1) Compute a matrix of correlation p-values
+    library(ggcorrplot)
+    p.mat &lt;- cor_pmat(data_numeric2)
+    p.mat 
+
+    # 2) Compute a correlation matrix
+corr.mat &lt;- round(cor(data_numeric2, use = &quot;pairwise.complete.obs&quot;), # USE everything&quot;, &quot;all.obs&quot;, &quot;complete.obs&quot;, &quot;na.or.complete&quot;
+                        digits = 1)
+corr.mat
+    # 3) Visualize the correlation matrix
+ggcorrplot(corr.mat , hc.order = F, type = &quot;lower&quot;, method = &quot;square&quot;, #method = &quot;circle&quot;
+   outline.col = &quot;white&quot;,
+   ggtheme = ggplot2::theme_gray,
+   colors = c(&quot;#6D9EC1&quot;, &quot;white&quot;, &quot;#E46726&quot;),lab = TRUE, p.mat = p.mat)</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-3-2.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># === modo C) 
+library(GGally)
+ GGally::ggcorr(data = data_numeric2 ,
+    # geom object to use. Accepts either &quot;tile&quot;, &quot;circle&quot;, &quot;text&quot; or &quot;blank&quot;
+    geom = &quot;tile&quot; , label = TRUE,   label_alpha = T, hjust = 0.9, layout.exp = 2
+    )  </code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-3-3.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+<div id="between-2-ordinal-interval-or-ratio-variables-x-and-y" class="section level2">
+<h2>Between 2 ORDINAL, INTERVAL or RATIO variables (x and y)</h2>
+<div id="a-spearman-rank-order-correlation" class="section level3">
+<h3>a) Spearman rank-order correlation</h3>
+<blockquote>
+<p>The Spearman’s rank-order correlation is the nonparametric version of the Pearson product-moment correlation. Spearman’s correlation coefficient, (ρ, also signified by rs) measures the strength and direction of association between two ranked variables.</p>
+</blockquote>
+<p>Also called <code>Spearman's rank-order correlation</code></p>
+<div id="formula-1" class="section level4">
+<h4>FORMULA</h4>
+<blockquote>
+<p>add from <a href="http://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r#what-is-correlation-test">here</a>
+…</p>
+</blockquote>
+<p>Ordinal (growing class of Donor) vs ordinal (growing most recent email opened)</p>
+<pre class="r"><code># USING  DON CLASSES AS PER JOSES&#39;
+skimr::sorted_count(AC_ppl_fakeID$DonorClass) # ordine crescete (highere more generous)
+# AND FACTOR RECENT OPEN EMAIL 
+skimr::sorted_count(AC_ppl_fakeID$EmLastMostRecent)# ordine crescete (higher more recent )
+table(AC_ppl_fakeID$EmLastMostRecent, AC_ppl_fakeID$DonorClass)
+
+# ============Spearman’s rho statistic 
+
+corr1 &lt;- cor.test(AC_ppl_fakeID$DonorClass, as.numeric(AC_ppl_fakeID$EmLastMostRecent),  method = &quot;spearman&quot; )
+corr1
+
+# library(&quot;Hmisc&quot;)
+# corr1b &lt;- rcorr(AC_ppl3$Acc_Don_Tot, AC_ppl3$EmLastMostRecent,type = &quot;spearman&quot; )
+# corr1b
+
+library(&quot;ggpubr&quot;)
+ggscatter(AC_ppl_fakeID, x = &quot;EmLastMostRecent&quot;, y = &quot;DonorClass&quot;, 
+          add = &quot;reg.line&quot;, conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = &quot;pearson&quot;,
+          xlab = &quot;How recently opened an email&quot;, ylab = &quot;Class Donor&quot;)</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-4-1.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Very week negative correlation rho ~ -0.06094809</code></pre>
+</div>
+</div>
+<div id="b-kendall-tau" class="section level3">
+<h3>b) Kendall tau</h3>
+<p>Kendall tau is another rank-based correlation coefficients (non-parametric)
+&gt; The Kendall rank correlation coefficient or Kendall’s tau statistic is used to estimate a rank-based measure of association. This test may be used if the data do not necessarily come from a bivariate normal distribution.</p>
+<p>The Kendall correlation method measures the correspondence between the ranking of x and y variables. The total number of possible pairings of x with y observations is n(n−1)/2, where n is the size of x and y.</p>
+<p>The procedure is as follow:
++ Begin by ordering the pairs by the x values. If x and y are correlated, then they would have the same relative rank orders.
++ Now, for each yi, count the number of <span class="math inline">\({y_{j}}\)</span> &gt; <span class="math inline">\({y_{i}}\)</span> (<strong>concordant pairs (c)</strong>) and the number of <span class="math inline">\({y_{j}}\)</span>&lt;<span class="math inline">\({y_{i}}\)</span> (<strong>discordant pairs (d)</strong>).</p>
+<div id="formula-2" class="section level4">
+<h4>FORMULA</h4>
+<p>Kendall correlation distance is defined as follow:</p>
+<p><span class="math display">\[tau=\frac{n_{c}-n_{d}}{\frac{1}{2}n(n-1)}\]</span></p>
+<p>Where
+<span class="math inline">\({n_{c}}\)</span>: total number of concordant pairs
+<span class="math inline">\({n_{d}}\)</span>: total number of discordant pairs
+<span class="math inline">\({n}\)</span>: size of x and y</p>
+<blockquote>
+<p>from <a href="http://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r#what-is-correlation-test">kendall</a></p>
+</blockquote>
+<pre class="r"><code>corrKend &lt;- cor.test(AC_ppl_fakeID$Acc_Don_Tot, as.numeric(AC_ppl_fakeID$EmLastMostRecent),  method = &quot;kendall&quot; )
+corrKend
+# Very week negative correlation tau ~ -0.09864503 
+
+corrKend2 &lt;- cor.test(AC_ppl_fakeID$DonorClass, as.numeric(AC_ppl_fakeID$EmLastMostRecent),  method = &quot;kendall&quot; )
+corrKend2
+# Very week negative correlation tau ~ -0.05578083 </code></pre>
+</div>
+</div>
+</div>
+<div id="between-2-categorical-variables" class="section level2">
+<h2>Between 2 CATEGORICAL variables</h2>
+<p>When data includes 2 categorical variables, the most common test for that association is going to be the <strong>Chi Squared test for Independence</strong> (sometimes called <code>Crosstabs</code>).</p>
+<div id="chi-squared-test-for-crosstabs-with-categorical-variables" class="section level3">
+<h3>Chi Squared test for Crosstabs with categorical variables</h3>
+<p>EXE 1 : from titanic</p>
+<p>(*) Quickly check with <code>stats::ftable(..., exclude = c(NA, NaN), row.vars = NULL,col.vars = NULL)</code></p>
+<pre class="r"><code># smaller 
+AC_red&lt;- AC_ppl_fakeID %&gt;% 
+    dplyr::select(IsDonor, HasEmail)
+
+
+
+# Creating crosstabs for categorical variables
+
+# Load data
+ftable(AC_red)  # Makes &quot;flat&quot; table
+
+ttab &lt;- table(AC_red$IsDonor, AC_red$HasEmail)
+# Call also get cell, row, and column %
+# With rounding to get just 2 decimal places
+# Multiplied by 100 to make %
+round(prop.table(ttab, 1), 2) * 100 # row %
+round(prop.table(ttab, 2), 2) * 100 # column %
+round(prop.table(ttab), 2) * 100    # cell %
+
+# Chi-squared test
+# (Test of association to see if 
+# H0: the 2 cat var (Class &amp; Survived) are independent
+# H1: the 2 cat var are correlated in __some way__
+
+ 
+tchi &lt;- chisq.test(ttab)
+tchi
+# RESULTS  p-value &lt; 0.00000000000000022 --&gt; We reject the null hypothesis that the class is independent of survival
+# (see the row % --&gt; the higher the class, the higher the % surv)
+
+# Additional tables (from results)
+tchi$observed   # Observed frequencies (same as ttab)
+tchi$expected   # Expected frequencies
+tchi$residuals  # Pearson&#39;s residual
+tchi$stdres     # Standardized residual</code></pre>
+</div>
+<div id="chi-squared-tests-crammers-v-for-testing-relationships-between-2-categorical-variables" class="section level3">
+<h3>Chi-Squared Tests + Crammer’s V for testing relationships between 2 Categorical variables</h3>
+<p>EXE 2 : “IsDonor” (binary var) vs. (“HasValidEmail” or “HasValidEmailUnsubscr”)</p>
+<blockquote>
+<p>Theory
+# <a href="https://datascience.stackexchange.com/questions/893/how-to-get-correlation-between-two-categorical-variable-and-a-categorical-variab" class="uri">https://datascience.stackexchange.com/questions/893/how-to-get-correlation-between-two-categorical-variable-and-a-categorical-variab</a>
+# <a href="https://www.spss-tutorials.com/cramers-v-what-and-why/" class="uri">https://www.spss-tutorials.com/cramers-v-what-and-why/</a></p>
+</blockquote>
+<blockquote>
+<p>Also known as Cramér’s phi (coefficient) –&gt; <span class="math inline">\(\phi_{c}\)</span> denotes Cramér’s V</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li>Checking if two categorical variables are independent –&gt; This is a typical Chi-Square test: if we assume that two variables are independent, then the values of the contingency table for these variables should be distributed uniformly.</li>
+<li>Crammer’s V that is a measure of correlation that follows from this test</li>
+</ol>
+<p>H0: the 2 cat var are independent
+H1: the 2 cat var are correlated in some way</p>
+<div id="crammers-v-correlation-formula" class="section level4">
+<h4>Crammer’s V CORRELATION FORMULA</h4>
+<p><span class="math display">\[\phi_{c}=\sqrt{\frac{\chi^2}{N(k-1)}} \]</span></p>
+<p>where:</p>
+<p><span class="math inline">\(\phi_{c}\)</span> denotes Cramér’s V <em>(“phi” coefficient)</em>
+<span class="math inline">\(\chi^2\)</span> is the Pearson chi-square statistic from the aforementioned test;
+<span class="math inline">\(N\)</span> is the sample size involved in the test and
+<span class="math inline">\(k\)</span> is the lesser number of categories of either variable.</p>
+<p>Creating a function and calculating Cramér V / Phi</p>
+<pre class="r"><code># Two Categorical Variables &quot;IsDonor&quot; VS &quot;HasValidEmail&quot;        OR      &quot;HasValidEmailUnsubscr&quot; 
+
+##======== 1) Chi-Squared test of independence.
+ChisqStat &lt;- chisq.test(AC_ppl_fakeID$DonorClass,AC_ppl_fakeID$HasValidEmail , correct=FALSE) 
+ChisqStat$statistic[1] # 36.94155 
+ChisqStat$p.value[1]  # 1.851939e-07  --&gt; yes independent! 
+
+
+##==========2) a Crammer&#39;s V that is a measure of correlation that follows from this test
+# Function
+cv.test = function(x,y) {
+  ### = Square root of the Pearson chi-square (without the Yates correction) 
+    Chi2stat = chisq.test(x, y, correct=FALSE)$statistic
+    Chi2p = chisq.test(x, y, correct=FALSE)$p.value
+    CV = sqrt(Chi2stat / 
+                        (length(x) * # is divided by N = the sample size  ...
+                        (min(length(unique(x)),length(unique(y))) - 1))) # *k = (smallest b/t categories (row or column) -1)
+#   print.noquote(&quot;Cramér V / Phi:&quot;) # “phi coefficient”
+#   return(as.numeric(CV))
+  return(list(Chi2stat = as.numeric(Chi2stat), Chi2p = as.numeric(Chi2p), CVphi = round(as.numeric(CV), 4)))
+    
+}
+                    # with(top3cit, cv.test(x, y)) # [1] Cramér V / Phi: 0.09052046
+
+## =========3)  call Cramer V function 
+# DOnor class &amp; ... 
+with(AC_ppl_fakeID, cv.test(DonorClass, ConnectionLevel__c_NA)) #  [1] Cramér V / Phi:0.2168275 !!
+with(AC_ppl_fakeID, cv.test(DonorClass, HasValidEmail)) #   [1] Cramér V / Phi:0.0527</code></pre>
+<p>Calculating (many) of them and rendering in a table for the presentation</p>
+<pre class="r"><code>ConnectionPhi &lt;- cv.test(AC_ppl_fakeID$IsDonor, AC_ppl_fakeID$ConnectionLevel__c_NA) 
+# Gender__cPhi &lt;- cv.test2(AC_ppl_fakeID$IsDonor, AC_ppl_fakeID$Gender__c) 
+VIP_Phi &lt;- cv.test(AC_ppl_fakeID$IsDonor, AC_ppl_fakeID$VIP) 
+SPeakerPhi &lt;- cv.test(AC_ppl_fakeID$IsDonor, AC_ppl_fakeID$Speaker) 
+VolPhi &lt;- cv.test(AC_ppl_fakeID$IsDonor, AC_ppl_fakeID$Volunteer) 
+HasEmailPhi &lt;- cv.test(AC_ppl_fakeID$IsDonor, AC_ppl_fakeID$HasEmail) 
+HasValidEmaiPhi &lt;- cv.test(AC_ppl_fakeID$IsDonor, AC_ppl_fakeID$HasValidEmail) 
+HAsEmVAlUnsubsPhi &lt;- cv.test(AC_ppl_fakeID$IsDonor, AC_ppl_fakeID$HasValidEmailUnsubscr) 
+LASTOPENED &lt;- cv.test(AC_ppl_fakeID$IsDonor, AC_ppl_fakeID$EmLastOpenFactor)
+
+
+PhiResults &lt;- c(print(ConnectionPhi[[3]]),   print(VIP_Phi[[3]]), print(SPeakerPhi[[3]]), 
+                     print(VolPhi[[3]]), print(HasEmailPhi[[3]]), print(HasValidEmaiPhi[[3]]), print(HAsEmVAlUnsubsPhi[[3]]), print(LASTOPENED[[3]]))
+
+CatXs &lt;- c( &quot;Connection&quot;,
+                # &quot;Gender&quot;, 
+                &quot;VIP status&quot;, 
+                &quot;Speaker status&quot;,
+                &quot;Volunteer status&quot;,
+                &quot;Has Email&quot;, 
+                &quot;Has Valid Email&quot;, 
+                &quot;Has Valid Email but Unsubscribed&quot;,
+                &quot;How recently Opened Last Email&quot;)
+
+CramerVResults &lt;- cbind(PhiResults, CatXs)
+colnames(CramerVResults) &lt;- c(&quot;Cramer&#39;s V phi statistic&quot; , &quot;Categorical Var&quot;)
+
+CramerVs &lt;- knitr::kable(CramerVResults, 
+                                 caption = &quot;Measure of association between \&quot;Is Donor\&quot; and some Categorical Variables&quot;) %&gt;%
+    kableExtra::kable_styling(&quot;striped&quot;, full_width = F, latex_options = &quot;scale_down&quot;,position = &quot;center&quot;) %&gt;%
+    row_spec(1 , background = &quot;yellow&quot;) %&gt;%
+    row_spec(5:6, background = &quot;yellow&quot;) %&gt;%
+    row_spec(8, background = &quot;yellow&quot;) # %&gt;%
+# as_image(., width = NULL, height = NULL, file = &quot;./figures/CramerVs.png&quot; ) 
+
+CramerVs</code></pre>
+<p>Then seeing it graphically with BoxPlots</p>
+<pre class="r"><code># ======= Connection
+# average PER YEAR 
+plot1 &lt;- ggplot(AC_ppl_fakeID) +
+  aes(x = ConnectionLevel__c_NA) + 
+  aes(y = Acc_Don_NYE2019__c) +
+  geom_jitter(alpha = .5, height = 0, width = .25) +
+  aes(col = ConnectionLevel__c_NA) +
+  geom_boxplot(alpha = .25) +
+  aes(fill = ConnectionLevel__c_NA) +
+    ylim(0,30000) +
+ggthemes::theme_hc() + ggthemes::scale_color_pander() +  #scale_color_colorblind() + # scale_color_hc() # scale_colour_ptol()  +
+labs(x = &quot;&quot;) + labs(y = &quot;Us Dollars&quot;) +
+theme(legend.position=&quot;none&quot;) + # remove legent &amp; ... 
+labs(title = &quot;Contributions to NYE 2019&quot;) +
+labs(subtitle = &quot;Stratified by \&quot;Connection level\&quot; of Individual/Households&quot;) +
+labs(caption = paste0(&quot;Created on &quot;, Sys.Date())) +
+    coord_flip()  
+
+plot1</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-9-1.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Acc_Don_Tot
+plot2 &lt;-ggplot(AC_ppl_fakeID) +
+  aes(x = ConnectionLevel__c_NA) + 
+  aes(y = Acc_Don_Tot) +
+  geom_jitter(alpha = .5, height = 0, width = .25) +
+  aes(col = ConnectionLevel__c_NA) +
+  geom_boxplot(alpha = .25) +
+  aes(fill = ConnectionLevel__c_NA) +
+    ylim(0,30000) +
+ggthemes::theme_hc() + ggthemes::scale_color_pander() +  #scale_color_colorblind() + # scale_color_hc() # scale_colour_ptol()  +
+labs(x = &quot;&quot;) + labs(y = &quot;Us Dollars&quot;) +
+labs(title = &quot;TOTAL Contributions between NYE 2011 - NYE 2019&quot;) +
+labs(subtitle = &quot;Stratified by \&quot;Connection level\&quot; of Individual/Households&quot;) +
+labs(caption = paste0(&quot;Created on &quot;, Sys.Date())) +
+    coord_flip()
+
+plot2</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-9-2.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># save the 2 together 
+#ggsave(&quot;./figures/BoxPLOTConnection_ALL.png&quot;, gridExtra::arrangeGrob(plot1, plot2))</code></pre>
+</div>
+</div>
+</div>
+<div id="between-1-continuous-variable-and-1-categorical-variable" class="section level2">
+<h2>Between 1 CONTINUOUS variable AND 1 CATEGORICAL variable</h2>
+<p>EXE: Donation amount and ConnectionLevel__c_NA</p>
+<div id="a-one-way-anova-f-test" class="section level3">
+<h3>a) One-Way ANOVA (F-Test)</h3>
+<p>ANOVA and One-Way ANOVA F-Test for testing relationships between Numerical and Categorical variables
+FOLLOWING: <a href="http://www.sthda.com/english/wiki/one-way-anova-test-in-r#what-is-one-way-anova-test" class="uri">http://www.sthda.com/english/wiki/one-way-anova-test-in-r#what-is-one-way-anova-test</a>
+CHECK also: <a href="https://thomasmock.netlify.com/post/a-gentle-guide-to-tidy-statistics-in-r/" class="uri">https://thomasmock.netlify.com/post/a-gentle-guide-to-tidy-statistics-in-r/</a>
+CHECK also: <a href="https://ademos.people.uic.edu/Chapter20.html" class="uri">https://ademos.people.uic.edu/Chapter20.html</a></p>
+<p>GOAL: for comparing means in a situation where there are more than two groups</p>
+<p><span class="math inline">\(H_0\)</span> : Null Hyp = the means of the different groups are the same
+<span class="math inline">\(H_1\)</span> : Alternative hyp = At least one sample mean is not equal to the others.</p>
+<p>NOTE:
++ It only looks if <strong>in general</strong> the groups differ (but not specifically by how much and which of them)
++ Better to have data in long form</p>
+<pre class="r"><code># --------One-Way ANOVA F-Test
+# Show the levels
+levels(AC_ppl_fakeID$ConnectionLevel__c_NA)
+
+aov1 = aov( Acc_Don_NYE2019__c ~ ConnectionLevel__c_NA, data = AC_ppl_fakeID)
+summary(aov1) # diff between the groups significant at 0.001
+
+aov2 = aov(Acc_Don_NYE2019__c ~ HasEmail, data = AC_ppl_fakeID )
+summary(aov2) # diff between the groups significant at 0.001
+
+aov3 = aov(Acc_Don_NYE2019__c ~ EmLastOpenFactor, data = AC_ppl_fakeID )
+summary(aov3)  # diff between the groupsnot sig </code></pre>
+</div>
+<div id="b-multiple-pairwise-comparison-between-the-groups-means-anova" class="section level3">
+<h3>b) Multiple pairwise-comparison between the groups’ means ANOVA</h3>
+<p><strong>Tukey multiple pairwise-comparisons</strong> for post-hoc comparison</p>
+<p>GOAL: As the ANOVA test is significant, we can compute Tukey HSD (Tukey Honest Significant Differences, R function: TukeyHSD()) for performing multiple pairwise-comparison between the means of groups.</p>
+<p>The function TukeyHD() takes the fitted ANOVA as an argument.</p>
+<p>INTERPRETATION:
+<strong>diff</strong>: difference between means of the two groups
+<strong>lwr, upr</strong>: the lower and the upper end point of the confidence interval at 95% (default)
+<strong>p adj</strong>: p-value after adjustment for the multiple comparisons.</p>
+<pre class="r"><code># ==== Group by group across ConnectionLevel__c_NA
+# aov1 = aov( Acc_Don_NYE2019__c ~ ConnectionLevel__c_NA, data = AC_ppl_fakeID)
+TukeyRes &lt;- stats::TukeyHSD(aov1, ordered = F)  
+
+# ==== Show table
+# OR 
+# TukeyResTukeyRes[1:1] # 
+TukeyRes_df &lt;- as.data.frame(TukeyRes$ConnectionLevel__c_NA) 
+
+# # ==== Display 
+caption &lt;- &quot;Pairwise-comparison between the means of groups (ConnectionLevel Types)&quot;
+TukeyRes_df_table &lt;- pandoc.table.return(TukeyRes_df, 
+                                                      keep.line.breaks = TRUE, 
+                                                      style = &quot;simple&quot;, 
+                                                      justify = &quot;lrrrr&quot;, 
+                                                      caption = caption)
+cat(TukeyRes_df_table)</code></pre>
+</div>
+<div id="a-two-factor-anova-f-test" class="section level3">
+<h3>a) Two-Factor ANOVA (F-Test)</h3>
+<p><strong>Show also an interaction.</strong> The beauty of a two factor model is that you can see, not only how factor A affects the mean and factor B affects the mean but the interplay of A and B, specifically to see if the effect of one factor is moderated by the levels of another factor.</p>
+<pre class="r"><code># Comparing means with a two-factor ANOVA
+
+# Get an Idea... 
+boxplot(Acc_Don_Tot ~ IsDonor*Volunteer, data = AC_ppl_fakeID)</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Model with interaction
+aov1 &lt;- aov(Acc_Don_Tot ~ 
+            # IsDonor + Volunteer + IsDonor:Volunteer, 
+            IsDonor*Volunteer,
+                data = AC_ppl_fakeID)
+summary(aov1)
+
+# Additional information on model
+model.tables(aov1)
+model.tables(aov1, type = &quot;means&quot;)
+model.tables(aov1, type = &quot;effects&quot;)  # &quot;effects&quot; is default
+
+# Post-hoc test
+TukeyHSD(aov1)</code></pre>
+<hr />
+</div>
+</div>
+</div>
+<div id="comparing-means" class="section level1">
+<h1>COMPARING MEANS</h1>
+<div id="t-test-to-compare-means-of-independent-groups" class="section level2">
+<h2>T-test to compare means of independent groups</h2>
+<pre class="r"><code># Comparing means with the t-test
+
+# Load data
+# ?sleep
+sleep[1:5, ]
+sd &lt;- sleep[, 1:2]  # Save just the first two variables
+sd[1:5, ]  # Show the first 5 cases
+
+# Some quick plots to check data
+hist(sd$extra, col = &quot;lightgray&quot;)</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-13-1.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>boxplot(extra ~ group, data = sd)</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-13-2.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Independent 2-group t-test (with defaults)
+t.test(extra ~ group, data = sd)
+
+# t-test with options
+t.test(extra ~ group,
+       data = sd,
+       alternative = &quot;less&quot;,  # One-tailed test
+       conf.level = 0.80)  # 80% CI (vs. 95%)
+
+# Create two groups of random data in separate variables
+# Good because actual difference is known
+x &lt;- rnorm(30, mean = 20, sd = 5)
+y &lt;- rnorm(30, mean = 22, sd = 5)
+t.test(x, y)
+
+# rm(list = ls())  # Clean up</code></pre>
+</div>
+<div id="paired-t-test-to-compare-means-of-paired-groups-e.g.same-group-in-t1-and-t2" class="section level2">
+<h2>Paired T-test to compare means of paired groups (e.g. same group in t1 and t2)</h2>
+<pre class="r"><code># Load data
+# Create random data
+t1 &lt;- rnorm(50, mean = 52, sd = 6)  # Time 1
+dif &lt;- rnorm(50, mean = 6, sd = 12)  # Difference
+t2 &lt;- t1 + dif  # Time 2
+
+# Some quick plots to check data
+hist(t1)</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-14-1.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>hist(dif)</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-14-2.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>hist(t2)</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-14-3.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>boxplot(t1, t2)</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-14-4.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Save variables in dataframe and use &quot;MASS&quot;
+# to create parallel coordinate plot
+pairs &lt;- data.frame(t1, t2)
+require(&quot;MASS&quot;)
+parcoord(pairs, var.label = TRUE)</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-14-5.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Paired t-test (with defaults)
+t.test(t2, t1, paired = TRUE)
+
+# Paired t-test with options
+t.test(t2, t1, 
+       paired = TRUE,
+       mu = 6,  # Specify non-0 null value
+       alternative = &quot;greater&quot;,  # One-tailed test
+       conf.level = 0.99)  # 99% CI (vs. 95%)
+
+# Clean up
+detach(&quot;package:MASS&quot;, unload=TRUE)
+# rm(list = ls())</code></pre>
+</div>
+</div>
+<div id="comparing-proportions" class="section level1">
+<h1>COMPARING PROPORTIONS</h1>
+<p>(*) % of success across groups</p>
+<pre class="r"><code># Comparing proportions
+
+# Load data
+# Need two vectors:
+# One specifies the total number of people in each group
+# This creates a vector with 5 100s in it, for 5 groups
+# Same as &quot;number of trials&quot;
+n5 &lt;- c(rep(100, 5))
+# Another specifies the number of people who are in category
+# Same as &quot;number of successes&quot;
+x5 &lt;- c(65, 60, 60, 50, 45)
+prop.test(x5, n5)
+
+# If there are only two groups, then it gives a confidence
+# interval for the difference between the groups; 
+# the default CI is .95
+n2 &lt;- c(40, 40)  # Number of trials
+x2 &lt;- c(30, 20)  # Number of successes
+prop.test(x2, n2, conf.level = .80)</code></pre>
+<hr />
+</div>
+<div id="cluster-analisys" class="section level1">
+<h1>CLUSTER ANALISYS</h1>
+<pre class="r"><code># Conducting a cluster analysis
+
+# Load data
+#?mtcars
+data(mtcars)
+mtcars[1:5, ]
+mtcars1 &lt;- mtcars[, c(1:4, 6:7, 9:11)]  # Select variables
+mtcars1[1:5, ]
+
+# Three major kinds of clustering:
+#   1. Split into set number of clusters (e.g., kmeans)
+#   2. Hierarchical: Start separate and combine
+#   3. Dividing: Start with a single group and split
+
+# We&#39;ll use hierarchical clustering
+# Need distance matrix (dissimilarity matrix)
+d &lt;- dist(mtcars1)
+d  # Huge matrix
+
+# Use distance matrix for clustering
+c &lt;- hclust(d)
+c
+
+# Plot dendrogram of clusters
+plot(c)
+
+# Put observations in groups
+# Need to specify either k = groups or h = height
+g3 &lt;- cutree(c, k = 3)  # &quot;g3&quot; = &quot;groups 3&quot;
+# cutree(hcmt, h = 230) will give same result
+g3
+# Or do several levels of groups at once
+# &quot;gm&quot; = &quot;groups/multiple&quot;
+gm &lt;- cutree(c, k = 2:5) # or k = c(2, 4)
+gm
+
+# Draw boxes around clusters
+rect.hclust(c, k = 2, border = &quot;gray&quot;)
+rect.hclust(c, k = 3, border = &quot;blue&quot;)
+rect.hclust(c, k = 4, border = &quot;green4&quot;)
+rect.hclust(c, k = 5, border = &quot;darkred&quot;)</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-16-1.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># k-means clustering
+km &lt;- kmeans(mtcars1, 3)
+km
+
+# Graph based on k-means
+require(cluster)
+clusplot(mtcars1,  # data frame
+         km$cluster,  # cluster data
+         color = TRUE,  # color
+#          shade = TRUE,  # Lines in clusters
+         lines = 3,  # Lines connecting centroids
+         labels = 2)  # Labels clusters and cases</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-16-2.png" width="576" style="display: block; margin: auto;" /></p>
+</div>
+<div id="principal-component-analisys" class="section level1">
+<h1>PRINCIPAL COMPONENT ANALISYS</h1>
+<p>From “psych” package documentation (p. 213) <em>“The primary empirical difference between a components versus a factor model is the treatment of the variances for each item. Philosophically, components are weighted composites of observed variables while in the factor model, variables are weighted composites of the factors.”</em></p>
+<pre class="r"><code># Conducting a principal components/factor analysis
+
+# Load data 
+# ?mtcars
+data(mtcars)
+mtcars[1:5, ]
+mtcars1 &lt;- mtcars[, c(1:4, 6:7, 9:11)]  # Select variables
+mtcars1[1:5, ]
+
+# ========= Principle components model using default method
+# If using entire data frame:
+pc &lt;- prcomp(mtcars1,
+             center = TRUE,  # Centers means to 0 (optional)
+             scale = TRUE)  # Sets unit variance (helpful)
+
+# Or specify variables:
+# pc &lt;- prcomp(~ mpg + cyl + disp + hp + wt + qsec + am + 
+#                gear + carb, data = mtcars, scale = TRUE)
+
+# ?prcomp  # Generally preferred
+# ?princomp  # Very slightly different method, similar to S
+
+# Get summary stats
+summary(pc)
+
+# Screeplot
+plot(pc)</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-17-1.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Get standard deviations and how variables load on PCs
+pc
+
+# See how cases load on PCs
+predict(pc)
+
+# Biplot
+biplot(pc)</code></pre>
+<p><img src="/tutorial/2019-03-22-r-notes-on-correlation_files/figure-html/unnamed-chunk-17-2.png" width="576" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># =========== Factor Analysis
+# Varimax rotation by default
+# Gives chi square test that number of factors
+# is sufficient to match data (want p &gt; .05).
+# Also gives uniqueness values for variables,
+# variable loadings on factors, and variance
+# statistics.
+factanal(mtcars1, 1)
+factanal(mtcars1, 2)
+factanal(mtcars1, 3)
+factanal(mtcars1, 4)  # First w/p &gt; .05</code></pre>
+<div id="resources" class="section level3">
+<h3>RESOURCES</h3>
+<ul>
+<li><a href="http://www.sthda.com/english/wiki/one-way-anova-test-in-r#what-is-one-way-anova-test" class="uri">http://www.sthda.com/english/wiki/one-way-anova-test-in-r#what-is-one-way-anova-test</a></li>
+<li><a href="http://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r" class="uri">http://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r</a></li>
+<li><a href="http://www.sthda.com/english/wiki/correlation-matrix-a-quick-start-guide-to-analyze-format-and-visualize-a-correlation-matrix-using-r-software" class="uri">http://www.sthda.com/english/wiki/correlation-matrix-a-quick-start-guide-to-analyze-format-and-visualize-a-correlation-matrix-using-r-software</a></li>
+<li><a href="https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggally/ggcorr/" class="uri">https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggally/ggcorr/</a></li>
+<li><a href="https://www.linkedin.com/learning/r-statistics-essential-training/computing-a-bivariate-regression" class="uri">https://www.linkedin.com/learning/r-statistics-essential-training/computing-a-bivariate-regression</a> (Linkedin Premium)</li>
+<li><a href="https://thomasmock.netlify.com/post/a-gentle-guide-to-tidy-statistics-in-r/" class="uri">https://thomasmock.netlify.com/post/a-gentle-guide-to-tidy-statistics-in-r/</a></li>
+</ul>
+</div>
+</div>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/source/tags/corr/">corr</a>
+  
+  <a class="badge badge-light" href="/source/tags/t-test/">t-test</a>
+  
+  <a class="badge badge-light" href="/source/tags/anova/">ANOVA</a>
+  
+</div>
+
+
+
+    
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="/source/img/portrait.png" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/source/">Lulliter</a></h5>
+    <h6 class="card-subtitle">Chief of Procrastination</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      <li>
+        <a itemprop="sameAs" href="mailto:lmm76@georgetown.edu" >
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/Lulliter" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.linkedin.com/in/luisa-m-mimmi/" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://scholar.google.com/citations?user=OBYla5gAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">
+          <i class="ai ai-google-scholar"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.researchgate.net/profile/Luisa_Mimmi" target="_blank" rel="noopener">
+          <i class="ai ai-researchgate"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/Lulliter" >
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/source/privacy/">CC BY-SA 4.0</a>
+  </p>
+  
+
+  <p class="powered-by">
+    &copy; Luisa M. Mimmi, 2019 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    
+    <script src="/source/js/mathjax-config.500a6cbb2c0f345fcecc21b3116d6637aa78f1f11db8081ea581abe05390c2e8f3bbffe61be3cf0217baf785c40efceabe51050a4f007e69af94efd3643260e8.js" integrity="sha512-UApsuywPNF/OzCGzEW1mN6p48fEduAgepYGr4FOQwujzu//mG&#43;PPAhe694XEDvzqvlEFCk8AfmmvlO/TZDJg6A=="></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cs.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/markdown.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/xml.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    <script src="/source/js/hugo-academic.js"></script>
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/source/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "Search Results",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    <script src="/source/js/search.js"></script>
+    
+
+    
+    
+
+  </body>
+</html>
+

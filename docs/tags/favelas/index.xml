@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>favelas on Lulliter</title>
+    <link>/source/tags/favelas/</link>
+    <description>Recent content in favelas on Lulliter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Luisa M. Mimmi, 2019</copyright>
+    <lastBuildDate>Sat, 21 Feb 2009 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/source/tags/favelas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2 Sussidiarietà e sviluppo: l’elettricità nelle favelas dell’America Latina</title>
+      <link>/source/post/sussidiariet%C3%A0-e-sviluppo/</link>
+      <pubDate>Sat, 21 Feb 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/source/post/sussidiariet%C3%A0-e-sviluppo/</guid>
+      <description>I prepared this blog post as a reflection on the experience as a graduate student and summer intern in a NGO working in Brazil
+ Uno dei temi che hanno maggiormente animato il recente dibattito sulla cooperazione allo sviluppo è la critica rivolta a governi e istituzioni multilaterali (Banca Mondiale, Fondo Monetario Internazionale e varie agenzie ONU in primis), di gestire gli aiuti ai paesi in via di sviluppo in modo arbitrario, assitenzialista e ultimamente inefficace (in sintesi con un approccio top-down).</description>
+    </item>
+    
+  </channel>
+</rss>

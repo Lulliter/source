@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.0.0">
+  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="author" content="Lulliter">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="Recap of Classification - UNFINISHED">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/source/tutorial/r-notes-on-classification/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css" crossorigin="anonymous">
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/source/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-128632724-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="/source/index.xml" type="application/rss+xml" title="Lulliter">
+  <link rel="feed" href="/source/index.xml" type="application/rss+xml" title="Lulliter">
+  
+
+  <link rel="manifest" href="/source/site.webmanifest">
+  <link rel="icon" type="image/png" href="/source/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/source/img/icon-192.png">
+
+  <link rel="canonical" href="/source/tutorial/r-notes-on-classification/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@lulliter">
+  <meta property="twitter:creator" content="@lulliter">
+  
+  <meta property="og:site_name" content="Lulliter">
+  <meta property="og:url" content="/source/tutorial/r-notes-on-classification/">
+  <meta property="og:title" content="R Notes on Classification, Clustering, etc. | Lulliter">
+  <meta property="og:description" content="Recap of Classification - UNFINISHED">
+  
+  
+    
+  <meta property="og:image" content="/source/img/icon-192.png">
+  <meta property="og:locale" content="en-us">
+  
+  
+  
+  
+
+  
+
+  
+
+  <title>R Notes on Classification, Clustering, etc. | Lulliter</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/source/">Lulliter</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/#about">
+            <i class='fa fa-home fa-fw'></i>
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/#posts">
+            <i class='fa fa-pen-nib fa-fw'></i>
+            <span>Posts</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/tutorial/">
+            <i class='fa fa-shoe-prints fa-fw'></i>
+            <span>Tutorials</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/project/">
+            <i class="fab fa-r-project"></i>
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/source/#cv">
+            <i class='fa fa-file-pdf fa-fw'></i>
+            <span>CV</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">R Notes on Classification, Clustering, etc.</h1>
+
+  
+
+  
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lulliter">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="" itemprop="datePublished">
+    <time datetime="" itemprop="dateModified">
+      Jan 1, 0001
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lulliter">
+  </span>
+
+  
+
+  
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    
+    <a href="/source/categories/rtutorial/">Rtutorial</a>
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=R%20Notes%20on%20Classification%2c%20Clustering%2c%20etc.&amp;url=%2fsource%2ftutorial%2fr-notes-on-classification%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fsource%2ftutorial%2fr-notes-on-classification%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fsource%2ftutorial%2fr-notes-on-classification%2f&amp;title=R%20Notes%20on%20Classification%2c%20Clustering%2c%20etc."
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fsource%2ftutorial%2fr-notes-on-classification%2f&amp;title=R%20Notes%20on%20Classification%2c%20Clustering%2c%20etc."
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=R%20Notes%20on%20Classification%2c%20Clustering%2c%20etc.&amp;body=%2fsource%2ftutorial%2fr-notes-on-classification%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<div id="TOC">
+<ul>
+<li><a href="#set-up">Set up</a></li>
+<li><a href="#classification">CLASSIFICATION</a><ul>
+<li><a href="#k-nearest-neighbors-knn-classification">k-Nearest-Neighbors (kNN) CLASSIFICATION</a></li>
+<li><a href="#exe-decision-trees">EXE Decision trees</a></li>
+<li><a href="#exe-naive-bayes-bayesian-classifier">EXE Naive Bayes // Bayesian Classifier</a></li>
+</ul></li>
+<li><a href="#cluster-analisys">CLUSTER ANALISYS</a><ul>
+<li><a href="#three-major-kinds-of-clustering">Three major kinds of clustering:</a><ul>
+<li><a href="#exe-12-hierarchical-clust">EXE 1/2 HIERARCHICAL CLUST</a></li>
+<li><a href="#exe-22-hierarchical">EXE 2/2 hierarchical</a></li>
+<li><a href="#exe-12-k-means-clustering">EXE 1/2 k-means Clustering</a></li>
+<li><a href="#exe-22-k-means-clust---theory-illustration">EXE 2/2 k-means CLUST - THEORY ILLUSTRATION</a></li>
+<li><a href="#resources">RESOURCES</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="set-up" class="section level2">
+<h2>Set up</h2>
+</div>
+<div id="classification" class="section level1">
+<h1>CLASSIFICATION</h1>
+<p>Assign an observation to the “class” where it belongs:</p>
+<p>NOTES:
+- (<em>) <em>typically not useful for understanding the nature of teh relationship between the feature and class outcome (aka the sign), but can be very effective as “black box”prediction engines&quot; </em>
+- (</em>) <em>closely depends on available variables </em></p>
+<p>TYPES</p>
+<ul>
+<li><strong>SUPERVISED</strong>: I DO have the actual “label”
+<ul>
+<li>criterion become <em>accuracy</em> of the prediction</li>
+</ul></li>
+<li><strong>UNSUPERVISED</strong>: I don’t have the actual “label”
+<ul>
+<li>criterion (to shape groups) become <em>similarity</em></li>
+</ul></li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>spam filter</li>
+<li>genetic testing</li>
+<li>fraud detection</li>
+<li>psicological diagnosis</li>
+</ul>
+<p>ALGORITHMs:</p>
+<ul>
+<li>K-nn ( Find the number of cases in the multidimensional space that are closest to the new one)</li>
+<li>k-means</li>
+<li>Decision trees</li>
+<li>Random forest</li>
+<li>Naive Bayes (start prior probability (eg of having cancer) then naive Bayes adjusts the probability - posterior probability- with each new piece of information, )</li>
+<li>SVM</li>
+<li>ANN (are multiple layers of equations and weights to model nonlinear outcomes)</li>
+<li>Logistic regression</li>
+</ul>
+<div id="k-nearest-neighbors-knn-classification" class="section level3">
+<h3>k-Nearest-Neighbors (kNN) CLASSIFICATION</h3>
+<p>NOTES:
+- (<em>) <em>“Closest” usually is defined by Euclidean distance (OF for quantitative features) in feature space</em>
+- (</em>) <em>You typically first standardize each feature to have mean =0 and variance =1 in the training sample</em>
+- (*) <em>The Nearest-Neighbors technique can also be used in regressoin and works reasonably well for low-dimensional problems. Instead, with high-dimensional features, the bias-variance tradeoff does not work in regr as it does in classificationo</em></p>
+<div id="example-credit-default-data---using-classknn" class="section level4">
+<h4>1/2) Example Credit Default data - using <code>class::knn</code></h4>
+<blockquote>
+<p>colnames(df)
+[1] “ID” “LIMIT_BAL” “SEX” “EDUCATION” “MARRIAGE” “AGE” “PAY_0” “PAY_2” “PAY_3” “PAY_4”<br />
+[11] “PAY_5” “PAY_6” “BILL_AMT1” “BILL_AMT2” “BILL_AMT3” “BILL_AMT4” “BILL_AMT5” “BILL_AMT6” “PAY_AMT1” “PAY_AMT2”
+[21] “PAY_AMT3” “PAY_AMT4” “PAY_AMT5” “PAY_AMT6” “DEFAULT”</p>
+</blockquote>
+<pre class="r"><code># DM_04_03.R
+
+# LOAD PACKAGES ############################################
+pacman::p_load(&quot;class&quot;)  # class has knn function
+
+# LOAD DATA ################################################
+# Read CSV 
+df_big &lt;- read.csv(here::here(&quot;content&quot;,&quot;tutorial&quot;, &quot;data&quot;, &quot;ccdefault.csv&quot;), header = T)
+# I want a smaller dataset 
+df&lt;- df_big[sample(nrow(df_big),replace=F,size=0.05*nrow(df_big)),]
+ 
+# NORMALIZE DATA ###########################################
+# If ranges for variables are very different, then it&#39;s a
+# good idea to normalize the variables, which puts them in
+# similar ranges. Use custom function for now.
+
+# Define function for normalizing data
+normalize &lt;- function(x) {
+    num &lt;- x - min(x)
+    denom &lt;- max(x) - min(x)
+    return (num/denom)
+}
+
+# Apply function to data frame (but not index or outcome)
+dfn &lt;- as.data.frame(lapply(df[, 2:24], normalize))
+head(dfn)
+
+# Put outcome variable back on and rename
+dfn &lt;- cbind(dfn, df[, 25])
+names(dfn)[24] &lt;- &quot;DEFAULT&quot;
+
+# Check data
+colnames(dfn)
+head(dfn)
+
+# SPLIT DATA ###############################################
+
+# Split data into training set (2/3) and testing set (1/3)
+set.seed(2786)  # Random seed
+dfn.split &lt;- sample(2, 
+                          nrow(dfn), 
+                    replace = TRUE,# assign a 1 or a 2 to a certain row and then reset the vector of 2 to its original state
+                    prob = c(2/3, 1/3))
+
+# Create training and testing datasets without outcome
+# labels. Use just the first 23 variables.
+dfn.train &lt;- dfn[dfn.split == 1, 1:23]
+dfn.test  &lt;- dfn[dfn.split == 2, 1:23]
+
+# Create outcome labels
+dfn.train.labels &lt;- dfn[dfn.split == 1, 24]
+dfn.test.labels  &lt;- dfn[dfn.split == 2, 24]
+
+# BUILD AND TEST knn CLASSIFIER ################################
+# Build classifier for test data.
+# k = number of neighbors to compare; odd n avoids ties.
+# Try with several values of k and check accuracy on following table.
+dfn.pred &lt;- class::knn(train = dfn.train,
+                test = dfn.test, 
+                cl = dfn.train.labels,  # true class
+                k = 9)                  # you set k = n neighbors
+
+dfn.pred 
+# -&gt; is a factor vector with the predicted classes for each row of the test data 
+
+
+
+# ================ Evaluate  predicted outcome to observed outcome
+table(dfn.pred, dfn.test.labels)
+
+# ================ Evaluate  predicted outcome 
+# Put `dfn.test.labels` in a data frame
+dfn.test.labels_df &lt;- data.frame(dfn.test.labels)
+
+# Merge `iris_pred` and `dfn.test.labels_df` 
+merge &lt;- data.frame(dfn.pred, dfn.test.labels_df)
+
+# Specify column names for `merge`
+names(merge) &lt;- c(&quot;Predicted Species&quot;, &quot;Observed Species&quot;)
+
+# Visually Inspect `merge`  and get an idea of how well it predicted 
+head(merge)
+
+# ================ FURTHER Evaluate predicted outcome `gmodels`
+# make a cross tabulation or a contingency table
+gmodels::CrossTable(x = dfn.test.labels, y = dfn.pred, 
+                          prop.chisq=FALSE,
+                          format = &quot;SPSS&quot;)
+
+# argument `prop.chisq` =  chi-square statistic is the sum of the contributions from each of the individual cells and is used to decide whether the difference between the observed and the expected values is significant.</code></pre>
+</div>
+<div id="a2-example-credit-default-data---using-caret" class="section level4">
+<h4>2a/2) Example Credit Default data - using <code>caret</code></h4>
+<blockquote>
+<p>the <code>caret</code> package picks the optimal number of neighbors (k) for you</p>
+</blockquote>
+<pre class="r"><code># LOAD PACKAGES ############################################
+# caret
+
+# LOAD DATA ################################################
+# Read CSV 
+# df_big &lt;- read.csv(here::here(&quot;content&quot;,&quot;tutorial&quot;, &quot;data&quot;, &quot;ccdefault.csv&quot;), header = T)
+# I want a smaller dataset 
+# df&lt;- df_big[sample(nrow(df_big),replace=F,size=0.05*nrow(df_big)),]
+
+# NORMALIZE  ################################################
+# Apply function to data frame (but not index or outcome)
+# dfn &lt;- as.data.frame(lapply(df[, 2:24], normalize))
+# head(dfn)
+
+# Put outcome variable back on and rename
+dfn &lt;- cbind(dfn, df[, 25])
+names(dfn)[24] &lt;- &quot;DEFAULT&quot;
+ 
+# LABEL must be a factor 
+ dfn$DEFAULT &lt;- as.factor (dfn$DEFAULT)
+
+ 
+# Create index to split based on labels  
+index &lt;- caret::createDataPartition(dfn$DEFAULT, p=0.75, list=FALSE)
+
+# Subset training set with index
+dfn.training &lt;- dfn[index,]
+
+# Subset test set with index
+dfn.test &lt;- dfn[-index,]
+
+# ========= TRAIN MODEL ################################################
+# Overview of algos supported by caret
+# names(getModelInfo())
+
+# Train a model
+model_knn &lt;- caret::train(dfn.training[, 1:23], dfn.training[, 24], method=&#39;knn&#39;)
+
+# How many k did caret  use? 
+model_knn # 9
+model_knn$bestTune
+#Use plots to see optimal number of clusters:
+#Plotting yields Number of Neighbours Vs accuracy (based on repeated cross validation)
+plot(model_knn)</code></pre>
+<p><img src="/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/knn_careta-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># PREDICT   ################################################
+# Predict the labels of the test set
+predictions &lt;- predict.train(object= model_knn, dfn.test[ ,1:23], type=&quot;raw&quot;)
+
+# Evaluate the predictions
+table(predictions)
+
+# Confusion matrix 
+confusionMatrix(predictions, dfn.test[,24])</code></pre>
+</div>
+<div id="b2-example-credit-default-data---using-caret-pre-processing" class="section level4">
+<h4>2b/2) Example Credit Default data - using <code>caret</code> + PRE-PROCESSING</h4>
+<p>Use data without normalization and preprocess with caret</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Some knitr error here</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</div>
+</div>
+<div id="exe-decision-trees" class="section level3">
+<h3>EXE Decision trees</h3>
+<blockquote>
+<p>add from NYEE example
+<a href="https://opendatascience.com/the-complete-guide-to-decision-trees-part-1/" class="uri">https://opendatascience.com/the-complete-guide-to-decision-trees-part-1/</a></p>
+</blockquote>
+</div>
+<div id="exe-naive-bayes-bayesian-classifier" class="section level3">
+<h3>EXE Naive Bayes // Bayesian Classifier</h3>
+<p>Builds upon Bayes Rule</p>
+<!-- Using markdown way -->
+<div class="figure">
+<img src="/tutorial/tut_img/Bayes.png" alt="Bayes Rule" />
+<p class="caption">Bayes Rule</p>
+</div>
+<p>(*) The naiveBayes function takes in numeric or factor variables in a data frame or a numeric matrix. It’s important to note that single vectors will not work for the input data but will work for the dependent variable (Y).</p>
+<pre><code>* Factor variables and Character variables are accepted.
+* Character variables are coerced into Factors.
+* Numeric variables will be placed on a normal distribution.
+* Then the numeric variable will be converted into a probability on that distribution.</code></pre>
+<p>(*) <a href="http://www.learnbymarketing.com/tutorials/naive-bayes-in-r/" class="uri">http://www.learnbymarketing.com/tutorials/naive-bayes-in-r/</a></p>
+<pre class="r"><code>## ------------------------------------------------------------------------
+SpamData&lt;-read.csv(here::here(&quot;content&quot;,&quot;tutorial&quot;, &quot;data&quot;, &quot;SpamData2.csv&quot;))
+
+## ------------------------------------------------------------------------
+head(SpamData)
+mean(SpamData$Spam)
+
+## ------------------------------------------------------------------------
+SpamEmails&lt;-subset(SpamData,Spam==1)
+mean(SpamEmails$exclamation_point==1)
+
+# Challenge: prove that the maximum likelihood estiamte of θj,y corresponds to the proportion of emails in category y that contain the feature j.
+# ================ Let’s now run our Bayesian classifier. We will a package already implementing a Bayesian classifier in R that will repeat what we just did for all the features.
+
+## ------------------------------------------------------------------------
+#install.packages(&quot;e1071&quot;)
+library(e1071)
+
+## ------------------------------------------------------------------------
+# We will also split our sample into training and testing data:
+
+#install.packages(&quot;caTools&quot;)
+library(caTools)
+SpamData$sample&lt;-sample.split(SpamData$Spam,SplitRatio=0.8)
+train=subset(SpamData, SpamData$sample==TRUE)
+test=subset(SpamData, SpamData$sample==FALSE)
+
+train&lt;-train[,1:55]
+test&lt;-test[,1:55]
+
+
+## ------------------------------------------------------------------------
+#  We call our naiveBayes function with to estimate the model and we evaluate its performance on the testing dataset
+# Create the model on train 
+# model     &lt;- naiveBayes(Class ~ .,            data = HouseVotes84)
+nB_model &lt;- naiveBayes(as.factor(Spam) ~.,  data=train)
+ 
+# Predict (using the model) on test 
+pred_vect &lt;- predict(nB_model, test[,1:54], type=&quot;class&quot;)
+table(pred_vect, as.factor(test$Spam) ,dnn=c(&quot;Prediction&quot;,&quot;Actual&quot;))
+
+pred_T &lt;- table(pred_vect, as.factor(test$Spam) )
+pred_T
+colnames(pred_T)&lt;-c(&quot;predicted non-spam&quot;,&quot;predicted spam&quot;)
+rownames(pred_T)&lt;-c(&quot;true non-spam&quot;, &quot;true spam&quot;)
+# make %
+pred_T &lt;- pred_T/sum(pred_T)
+pred_T
+
+## ------------------------------------------------------------------------
+#Precission:
+pred_T[2,2]/(pred_T[2,2]+pred_T[1,2])
+
+#Recall
+pred_T[2,2]/(pred_T[2,2]+pred_T[2,1])
+
+##Accuracy
+pred_T[2,2]+pred_T[1,1]</code></pre>
+<hr />
+</div>
+</div>
+<div id="cluster-analisys" class="section level1">
+<h1>CLUSTER ANALISYS</h1>
+<p>Clustering is “pragmatic grouping” done for a reason that make sense to me.
+It is considered <code>Exploratory Data Mining</code> bc it helps tease out relationships in large datasets
+Examples:
++ marketing segmentation - similar customers
++ medicine - simiar patients
++ music - genre on playlist that I want together</p>
+<p>ALGORITHMs:
++ by <strong>distance</strong> (only convex clusters)
+- euclidean distance
+- connectivity models
+- hierarchical diagrams
+- joining or splitting</p>
+<ul>
+<li>by <strong>distance from centroid</strong> (only convex clusters similar size, you pick k)
+<ul>
+<li>(mean for every group)</li>
+<li>k-means clustering</li>
+</ul></li>
+<li>by <strong>density</strong>
+<ul>
+<li>connected dense regions in k-dimensions</li>
+<li>model nonconvex clusters</li>
+<li>it is possible to sort of ignore outliers</li>
+<li>hard to describe (by parametric distrib function)</li>
+</ul></li>
+<li>by <strong>distribution model</strong>
+<ul>
+<li>clusters as stat distributions</li>
+<li>(ex. multivariate normal)</li>
+<li>prone to overfitting</li>
+<li>good to see correlations b/w attributes in data</li>
+<li>limited to convex clusters</li>
+</ul></li>
+</ul>
+<div id="three-major-kinds-of-clustering" class="section level2">
+<h2>Three major kinds of clustering:</h2>
+<ol style="list-style-type: decimal">
+<li>Hierarchical: Start separate and combine</li>
+<li>Split into set number of clusters (e.g., kmeans)</li>
+<li>Dividing: Start with a single group and split</li>
+</ol>
+<div id="exe-12-hierarchical-clust" class="section level3">
+<h3>EXE 1/2 HIERARCHICAL CLUST</h3>
+<ul>
+<li>by <strong>distance</strong> (only convex clusters)</li>
+</ul>
+<pre class="r"><code># DM_03_03.R
+
+# LOAD DATA ################################################
+# POV is where .toml is? 
+states &lt;- read.csv(here::here(&quot;content&quot;,&quot;tutorial&quot;, &quot;data&quot;,&quot;ClusterData.csv&quot;), header = T)
+
+colnames(states)
+
+# Save numerical data only
+st &lt;- states[, 3:27]
+row.names(st) &lt;- states[, 2]
+colnames(st)
+
+# Sports search data only
+sports &lt;- st[, 8:11]
+head(sports)
+
+# CLUSTERING ###############################################
+
+# Create distance matrix
+d &lt;- dist(st)
+
+# Hierarchical clustering
+c &lt;- hclust(d)
+c # Info on clustering
+
+# Plot dendrogram of clusters
+plot(c, main = &quot;Cluster with All Searches and Personality&quot;)</code></pre>
+<p><img src="/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Or nest commands in one line (for sports data)
+plot(hclust(dist(sports)), main = &quot;Sports Searches&quot;)</code></pre>
+<p><img src="/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/unnamed-chunk-2-2.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="exe-22-hierarchical" class="section level3">
+<h3>EXE 2/2 hierarchical</h3>
+<pre class="r"><code># Conducting a cluster analysis
+
+# Load data
+#?mtcars
+data(mtcars)
+mtcars[1:5, ]
+mtcars1 &lt;- mtcars[, c(1:4, 6:7, 9:11)]  # Select variables
+mtcars1[1:5, ]
+
+# -------- We&#39;ll use hierarchical clustering
+# Need distance matrix (dissimilarity matrix)
+d &lt;- dist(mtcars1)
+head(d)  # Huge matrix
+
+# Use distance matrix for clustering
+c &lt;- hclust(d)
+c
+
+# Plot dendrogram of clusters
+plot(c)
+
+# Put observations in groups
+# Need to specify either k = groups or h = height
+g3 &lt;- cutree(c, k = 3)  # &quot;g3&quot; = &quot;groups 3&quot;
+# cutree(hcmt, h = 230) will give same result
+g3
+
+# Or do several levels of groups at once
+# &quot;gm&quot; = &quot;groups/multiple&quot;
+gm &lt;- cutree(c, k = 2:5) # or k = c(2, 4)
+gm
+
+# Draw boxes around clusters
+rect.hclust(c, k = 2, border = &quot;gray&quot;)
+rect.hclust(c, k = 3, border = &quot;blue&quot;)
+rect.hclust(c, k = 4, border = &quot;green4&quot;)
+rect.hclust(c, k = 5, border = &quot;darkred&quot;)</code></pre>
+<p><img src="/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="exe-12-k-means-clustering" class="section level3">
+<h3>EXE 1/2 k-means Clustering</h3>
+<ul>
+<li>by <strong>distance from centroid</strong> (only convex clusters similar size, you pick k)</li>
+</ul>
+<p><code>k-means</code> is on well known <em>unsupervised</em> clustering algorithm that finds the minimum total distance of obs. form the centroid of the (best) cluster (for all dimensions)</p>
+<p>(*) <em>hyperparameter</em> <code>k</code> = the number of clusters and has to be set beforehand. k should be picked as a # that is in the bal park of what you are willing to act on (eg. 5 if I want 5 segments of donors)</p>
+<p>(*) Where (through an iterative approach) it finds:
++ The distance between data points within clusters should be as small as possible.
++ The distance of the centroids (= centres of the clusters) should be as big as possible.</p>
+<pre class="r"><code># ======================================================
+mtcars1 &lt;- mtcars[, c(1:4, 6:7, 9:11)]  # Select variables
+
+# k-means clustering - I pick 3 clusters 
+km &lt;- stats::kmeans(mtcars1, centers=3)
+km
+
+# Graph based on k-means
+require(cluster)
+clusplot(mtcars1,  # data frame
+         km$cluster,  # cluster data
+         color = TRUE,  # color
+#          shade = TRUE,  # Lines in clusters
+         lines = 3,  # Lines connecting centroids
+         labels = 2)  # Labels clusters and cases</code></pre>
+<p><img src="/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmen-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># here I get the centers
+km$centers
+
+# here I get the cluster assignment (vector)
+km$cluster
+
+# You can evaluate the clusters by looking at $totss and $betweenss.
+km$totss
+km$withinss # sum of the square of the distance from each data point to the cluster center.  Lower is better. (high withinss would indicate either outliers are in your data or you need to create more clusters.)
+km$betweenss # sum of the squared distance between cluster centers.  Ideally you want cluster centers far apart from each other.
+ 
+
+# ======================================================
+# k-means clustering - I pick 5 clusters 
+km2 &lt;- kmeans(mtcars1, 5)
+km2
+
+# Graph based on k-means
+require(cluster)
+clusplot(mtcars1,  # data frame
+         km2$cluster,  # cluster data
+         color = TRUE,  # color
+#          shade = TRUE,  # Lines in clusters
+         lines = 3,  # Lines connecting centroids
+         labels = 2)  # Labels clusters and cases</code></pre>
+<p><img src="/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmen-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code> # here I get the centers
+km2$centers
+
+# You can evaluate the clusters by looking at $totss and $betweenss.
+km2$totss
+km2$withinss # sum of the square of the distance from each data point to the cluster center.  Lower is better. (high withinss would indicate either outliers are in your data or you need to create more clusters.)
+km2$betweenss # sum of the squared distance between cluster centers.  Ideally you want cluster centers far apart from each other.
+
+
+# ======================================================
+# Find ideal k
+rng&lt;-2:20 #K from 2 to 20
+tries &lt;-100 #Run the K Means algorithm 100 times
+avg.totw.ss &lt;-integer(length(rng)) #Set up an empty vector to hold all of points
+
+for(v in rng){ # For each value of the range variable
+ v.totw.ss &lt;-integer(tries) #Set up an empty vector to hold the 100 tries
+ for(i in 1:tries){
+ k.temp &lt;-kmeans(mtcars1,centers=v) #Run kmeans
+ v.totw.ss[i] &lt;-k.temp$tot.withinss#Store the total withinss
+ }
+ avg.totw.ss[v-1] &lt;-mean(v.totw.ss) #Average the 100 total withinss
+}
+
+plot(rng,avg.totw.ss,type=&quot;b&quot;, main=&quot;Total Within SS by Various K&quot;,
+ ylab=&quot;Average Total Within Sum of Squares&quot;,
+ xlab=&quot;Value of K&quot;)</code></pre>
+<p><img src="/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmen-3.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Somewhere around K = 5 we start losing dramatic gains.  So I’m satisfied with 5 clusters.</code></pre>
+</div>
+<div id="exe-22-k-means-clust---theory-illustration" class="section level3">
+<h3>EXE 2/2 k-means CLUST - THEORY ILLUSTRATION</h3>
+<p>Building the algorithm
+<a href="http://www.learnbymarketing.com/tutorials/k-means-clustering-in-r-example/" class="uri">http://www.learnbymarketing.com/tutorials/k-means-clustering-in-r-example/</a>
+<a href="http://blog.ephorie.de/learning-data-science-understanding-and-using-k-means-clustering" class="uri">http://blog.ephorie.de/learning-data-science-understanding-and-using-k-means-clustering</a></p>
+<p>Because there are too many possible combinations of all possible clusters comprising all possible data points k-means follows an iterative approach called <strong><em>expectation-maximization algorithm</em></strong>.:
+1. Initialization: assign clusters randomly to all data points
+2. E-step (for expectation): assign each observation to the “nearest” (based on Euclidean distance) cluster
+3. M-step (for maximization): determine new centroids based on the mean of assigned objects
+4. Repeat steps 3 and 4 until no further changes occur</p>
+<pre class="r"><code>n &lt;- 3 # no. of centroids
+set.seed(1415) # set seed for reproducibility
+ 
+M1 &lt;- matrix(round(runif(100, 1, 5), 1), ncol = 2)
+M2 &lt;- matrix(round(runif(100, 7, 12), 1), ncol = 2)
+M3 &lt;- matrix(round(runif(100, 20, 25), 1), ncol = 2)
+M &lt;- rbind(M1, M2, M3)
+ 
+C &lt;- M[1:n, ] # define centroids as first n objects
+obs &lt;- length(M) / 2
+A &lt;- sample(1:n, obs, replace = TRUE) # assign objects to centroids at random
+colors &lt;- seq(10, 200, 25) 
+
+# helper function for plotting the steps 
+clusterplot &lt;- function(M, C, txt) {
+  plot(M, main = txt, xlab = &quot;&quot;, ylab = &quot;&quot;)
+  for(i in 1:n) {
+    points(C[i, , drop = FALSE], pch = 23, lwd = 3, col = colors[i])
+    points(M[A == i, , drop = FALSE], col = colors[i])    
+  }
+}
+clusterplot(M, C, &quot;Initialization&quot;)</code></pre>
+<p><img src="/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#------------k-means algorithm iterative
+# diamonds are the Centroids
+
+repeat {
+  # calculate Euclidean distance between objects and centroids
+  D &lt;- matrix(data = NA, nrow = n, ncol = obs)
+  for(i in 1:n) {
+    for(j in 1:obs) {
+      D[i, j] &lt;- sqrt((M[j, 1] - C[i, 1])^2 + (M[j, 2] - C[i, 2])^2)
+    }
+  }
+  O &lt;- A
+   
+  ## E-step: parameters are fixed, distributions are optimized
+  A &lt;- max.col(t(-D)) # assign objects to centroids
+  if(all(O == A)) break # if no change stop
+  clusterplot(M, C, &quot;E-step&quot;)
+   
+  ## M-step: distributions are fixed, parameters are optimized
+  # determine new centroids based on mean of assigned objects
+  for(i in 1:n) {
+    C[i, ] &lt;- apply(M[A == i, , drop = FALSE], 2, mean)
+  }
+  clusterplot(M, C, &quot;M-step&quot;)
+}</code></pre>
+<p><img src="/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-2.png" width="672" style="display: block; margin: auto;" /><img src="/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-3.png" width="672" style="display: block; margin: auto;" /><img src="/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-4.png" width="672" style="display: block; margin: auto;" /><img src="/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-5.png" width="672" style="display: block; margin: auto;" /><img src="/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-6.png" width="672" style="display: block; margin: auto;" /><img src="/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-7.png" width="672" style="display: block; margin: auto;" /><img src="/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-8.png" width="672" style="display: block; margin: auto;" /><img src="/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-9.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#Check results 
+(custom &lt;- C[order(C[ , 1]), ])
+##        [,1]   [,2]
+## [1,]  3.008  2.740
+## [2,]  9.518  9.326
+## [3,] 22.754 22.396
+
+
+#------------k-means algorithm BASE R
+cl &lt;- kmeans(M, n)
+clusterplot(M, cl$centers, &quot;Base R&quot;)</code></pre>
+<p><img src="/tutorial/2019-06-9-r-notes-on-classification_files/figure-html/kmmenSTEP-10.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#Check results 
+(base &lt;- cl$centers[order(cl$centers[ , 1]), ])
+##     [,1]   [,2]
+## 2  3.008  2.740
+## 1  9.518  9.326
+## 3 22.754 22.396
+
+# same!</code></pre>
+<hr />
+</div>
+<div id="resources" class="section level3">
+<h3>RESOURCES</h3>
+<ul>
+<li><a href="http://www.learnbymarketing.com/tutorials/" class="uri">http://www.learnbymarketing.com/tutorials/</a></li>
+<li><a href="https://www.linkedin.com/learning/r-statistics-essential-training/computing-a-bivariate-regression" class="uri">https://www.linkedin.com/learning/r-statistics-essential-training/computing-a-bivariate-regression</a> (Linkedin Premium)</li>
+<li><p><a href="https://www.linkedin.com/learning/data-science-foundations-data-mining/anomaly-detection-in-r" class="uri">https://www.linkedin.com/learning/data-science-foundations-data-mining/anomaly-detection-in-r</a> (Linkedin Premium)</p></li>
+<li>IADB ML course</li>
+<li><p>Hastie, Tibshirani, Firedman “The elements of Statistical Learning”, 2009</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/source/tags/clustering/">clustering</a>
+  
+  <a class="badge badge-light" href="/source/tags/classification/">classification</a>
+  
+  <a class="badge badge-light" href="/source/tags/k-nn/">K-nn</a>
+  
+  <a class="badge badge-light" href="/source/tags/k-mean/">K-mean</a>
+  
+</div>
+
+
+
+    
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="/source/img/portrait.png" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/source/">Lulliter</a></h5>
+    <h6 class="card-subtitle">Chief of Procrastination</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      <li>
+        <a itemprop="sameAs" href="mailto:lmm76@georgetown.edu" >
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/Lulliter" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.linkedin.com/in/luisa-m-mimmi/" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://scholar.google.com/citations?user=OBYla5gAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">
+          <i class="ai ai-google-scholar"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.researchgate.net/profile/Luisa_Mimmi" target="_blank" rel="noopener">
+          <i class="ai ai-researchgate"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="//github.com/Lulliter" >
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+
+    
+
+    
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="/source/privacy/">CC BY-SA 4.0</a>
+  </p>
+  
+
+  <p class="powered-by">
+    &copy; Luisa M. Mimmi, 2019 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    
+    <script src="/source/js/mathjax-config.500a6cbb2c0f345fcecc21b3116d6637aa78f1f11db8081ea581abe05390c2e8f3bbffe61be3cf0217baf785c40efceabe51050a4f007e69af94efd3643260e8.js" integrity="sha512-UApsuywPNF/OzCGzEW1mN6p48fEduAgepYGr4FOQwujzu//mG&#43;PPAhe694XEDvzqvlEFCk8AfmmvlO/TZDJg6A=="></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/bash.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cs.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/http.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/json.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/markdown.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/xml.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    <script src="/source/js/hugo-academic.js"></script>
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/source/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "Search Results",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    <script src="/source/js/search.js"></script>
+    
+
+    
+    
+
+  </body>
+</html>
+

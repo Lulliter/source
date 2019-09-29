@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Lulliter</title>
+    <link>/source/tags/</link>
+    <description>Recent content in Tags on Lulliter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Luisa M. Mimmi, 2019</copyright>
+    <lastBuildDate>Mon, 18 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/source/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>forloop</title>
+      <link>/source/tags/forloop/</link>
+      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/forloop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lists</title>
+      <link>/source/tags/lists/</link>
+      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/lists/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>purrr</title>
+      <link>/source/tags/purrr/</link>
+      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/purrr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>readxl</title>
+      <link>/source/tags/readxl/</link>
+      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/readxl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/source/tags/r/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>links</title>
+      <link>/source/tags/links/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/links/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Italian</title>
+      <link>/source/tags/italian/</link>
+      <pubDate>Thu, 27 Dec 2018 00:00:00 -0500</pubDate>
+      
+      <guid>/source/tags/italian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quotes</title>
+      <link>/source/tags/quotes/</link>
+      <pubDate>Thu, 27 Dec 2018 00:00:00 -0500</pubDate>
+      
+      <guid>/source/tags/quotes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lapply</title>
+      <link>/source/tags/lapply/</link>
+      <pubDate>Fri, 28 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/lapply/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>open data</title>
+      <link>/source/tags/open-data/</link>
+      <pubDate>Tue, 15 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/open-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>resilience</title>
+      <link>/source/tags/resilience/</link>
+      <pubDate>Tue, 15 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/resilience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spatial data</title>
+      <link>/source/tags/spatial-data/</link>
+      <pubDate>Tue, 15 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/spatial-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>favelas</title>
+      <link>/source/tags/favelas/</link>
+      <pubDate>Sat, 21 Feb 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/favelas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sussidiarieta</title>
+      <link>/source/tags/sussidiarieta/</link>
+      <pubDate>Sat, 21 Feb 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/sussidiarieta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ANOVA</title>
+      <link>/source/tags/anova/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/anova/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>K-mean</title>
+      <link>/source/tags/k-mean/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/k-mean/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>K-nn</title>
+      <link>/source/tags/k-nn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/k-nn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PCA</title>
+      <link>/source/tags/pca/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/pca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>association</title>
+      <link>/source/tags/association/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/association/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>classification</title>
+      <link>/source/tags/classification/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/classification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clustering</title>
+      <link>/source/tags/clustering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/clustering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>corr</title>
+      <link>/source/tags/corr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/corr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dimensionality reduction</title>
+      <link>/source/tags/dimensionality-reduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/dimensionality-reduction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>directlabels</title>
+      <link>/source/tags/directlabels/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/directlabels/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ggplot2</title>
+      <link>/source/tags/ggplot2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/ggplot2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kableExtra</title>
+      <link>/source/tags/kableextra/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/kableextra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>outliers</title>
+      <link>/source/tags/outliers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/outliers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sequential patterns</title>
+      <link>/source/tags/sequential-patterns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/sequential-patterns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>t-test</title>
+      <link>/source/tags/t-test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/source/tags/t-test/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

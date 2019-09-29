@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Inspiration on Lulliter</title>
+    <link>/source/categories/inspiration/</link>
+    <description>Recent content in Inspiration on Lulliter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Luisa M. Mimmi, 2019</copyright>
+    <lastBuildDate>Thu, 27 Dec 2018 00:00:00 -0500</lastBuildDate>
+    
+	<atom:link href="/source/categories/inspiration/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Wise Words | Perle di saggezza</title>
+      <link>/source/post/2018-quotes/</link>
+      <pubDate>Thu, 27 Dec 2018 00:00:00 -0500</pubDate>
+      
+      <guid>/source/post/2018-quotes/</guid>
+      <description>23rd of June 2019   you should choose to enter by the small rivers, and not go right away into the sea, because you should move from easy things to difficult things.
+(Letter of St. Thomas Aquinas to Brother John on How to Study)
+  1st of March 2019   Apri la mente a quel ch’io ti paleso
+e fermalvi entro; ché non fa scïenza,
+sanza lo ritenere, avere inteso.</description>
+    </item>
+    
+  </channel>
+</rss>
