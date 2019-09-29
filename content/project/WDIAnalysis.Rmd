@@ -1,0 +1,30 @@
+---
+title: World Development Indicator data analysis 
+date: 2018-02-20T00:00:00.000Z
+lastmod: 2018-02-20T00:00:00.000Z
+draft: false
+# toc: true
+type: docs
+linktitle: WDI-Analysis
+menu:
+  project:
+    parent: Projects
+    weight: 2
+---
+
+## Study of World Bank's WDI indicator **_Life expectancy at birth_**
+
+This mini-study project was an exercise to learn how to use the World Bank's API for the [World Development Indicator (WDI)](http://datatopics.worldbank.org/world-development-indicators/) repository. 
+
+In this study, I explore the indicator **_Life expectancy at birth_** and I also do some comparative analisys using other indicators that I expect to be highly correlated with life expectancy: namely **GDP** and the status of **Fragile and conflict affected situations** (FCS). 
+
+> In order to flag the individual countries that are classified as FCS, I used the World Bank list of economies (as of June 2017) found [here](http://databank.worldbank.org/data/download/site-content/CLASS.xls)
+
+## Results
+
+[WDI Analysis Brief](/project/WB_DEC.pdf)
+
+[WDI Analysis Github Repo](https://github.com/Lulliter/DECdatascience)
+
+
+ 

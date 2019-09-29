@@ -1,0 +1,331 @@
+---
+title: "2019-03-18 Files (and Lists) in Environment"
+author: ''
+date: '2019-03-18'
+draft: false
+output:
+  blogdown::html_page:
+    toc: true
+    # toc_float: true error in this theme https://github.com/rstudio/blogdown/issues/58
+    #smart: true
+slug: files-list-management
+categories:
+  - Rtutorial
+tags:
+  - readxl
+  - purrr
+  - forloop
+  - lists
+image:
+  caption: ''
+  focal_point: ''
+summary: "Write & read multiple `.xlsx/.csv/.Rdata` files to/from R environment"   
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#preliminary-steps">0) PRELIMINARY STEPS</a></li>
+<li><a href="#task-1-write-maintaining-names">TASK 1) WRITE ?? (MAINTAINING NAMES)</a><ul>
+<li><a href="#option-1.1a-write-list-of-envir-objects-as-.csv-using-ls-for">OPTION (1.1a) WRITE list of Envir objects as <strong>.csv</strong> using <code>ls</code> + <code>for</code></a></li>
+<li><a href="#option-1.1b-write-list-of-envir-objects-as-.rdata-files-using-ls-for">OPTION (1.1b) WRITE list of Envir objects –&gt; as <strong>.Rdata</strong> files using <code>ls</code> + <code>for</code></a></li>
+<li><a href="#option-1.2-write-list-of-envir-objects-as-.csv-using-lapply-within-a-function">OPTION (1.2) WRITE list of Envir objects as <strong>.csv</strong> using <code>lapply</code> (within a function)</a></li>
+<li><a href="#option-1.3-write-list-of-envir-objects-as-.csv-using-purrrwalk-not-map">OPTION (1.3) WRITE list of Envir objects as <strong>.csv</strong> using <code>purrr:walk</code> (not <del>map</del> )</a></li>
+</ul></li>
+<li><a href="#option-2-clean-write-as-.csvto-disk-group_by-group_map-purrrgroup_map">OPTION (2) CLEAN &amp;&amp; WRITE as <strong>.csv</strong>to disk <code>group_by + group_map + purrr::group_map</code></a></li>
+<li><a href="#task-2-reverse-topic-read-into-environment">TASK 2) Reverse topic: READ into Environment</a><ul>
+<li><a href="#option-2.1-read-list-of-.csv-into-r-environment-list.files-for-loop-custom-function">OPTION (2.1) READ list of *.csv into R environment <code>list.files</code> + <code>for</code> loop {<code>custom function</code>}</a></li>
+<li><a href="#option-2.2-read-list-of-.csv-into-r-environment-list.files-stringr-map">OPTION (2.2) READ list of *.csv into R environment <code>list.files</code> + <code>stringr</code>+ <code>map</code></a></li>
+</ul></li>
+<li><a href="#task-3-render-multiple-.rmd-files-saving-outputs-in-separate-dir-using-baselist.files-purrrwalk">TASK 3) Render multiple .Rmd files saving outputs in separate DIR using <code>base::list.files + purrr::walk</code></a></li>
+<li><a href="#acknowledgments">ACKNOWLEDGMENTS</a></li>
+</ul>
+</div>
+
+<p><strong>GOAL</strong>: Below are a few different ways to write &amp; read multiple <code>.xlsx/.csv/.Rdata</code> files to/from R environment - while retaining the same name(s). <!--more--></p>
+<div id="preliminary-steps" class="section level2">
+<h2>0) PRELIMINARY STEPS</h2>
+<div id="use-some-pre-loaded-r-datasets-save-as-dfs" class="section level4">
+<h4>Use some pre-loaded R datasets &amp; save as DFs</h4>
+<pre class="r"><code># data() 
+mtcars &lt;- as.data.frame(mtcars)
+iris &lt;- as.data.frame(iris)
+orange &lt;- as.data.frame(Orange)
+titanic &lt;- as.data.frame(Titanic)
+Orange &lt;- as.data.frame(Orange)
+OrchardSprays &lt;- as.data.frame(OrchardSprays)
+airquality &lt;- as.data.frame(airquality)
+airmiles &lt;- as.data.frame(airmiles)</code></pre>
+</div>
+<div id="create-a-list-list-with-names-2-ways-to-name-elements-of-list" class="section level4">
+<h4>Create a list <code>list</code> with names (2 ways to name elements of list)</h4>
+<pre class="r"><code># 1.a) Create a list of n data frames
+list_dfs &lt;- list(mtcars, iris ,  orange, titanic)
+list_dfs[1]
+
+# 1.b) Give names the data frames
+names(list_dfs) &lt;- c(&quot;mtcars&quot;,&quot;iris&quot;, &quot;orange&quot; , &quot;titanic&quot;) 
+
+# OR -----
+
+# 2) Create a list of n data frames WHILE giving them a  name
+list_dfs_N &lt;- list(mtcars = mtcars, iris = iris, orange = orange, titanic = titanic)
+list_dfs_N[[1]]</code></pre>
+</div>
+<div id="create-output-dir-file.path-in-a-proj-folder-e.g.-.staticpost" class="section level4">
+<h4>Create Output DIR <code>file.path</code> in a proj folder (e.g. “./static/post/…”)</h4>
+<pre class="r"><code># Create Output Dir... remember final&quot;/&quot;
+Outdf2csv &lt;- file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;df2csv/&quot;)
+dir.create(Outdf2csv)
+
+# Dir_pcr &lt;- file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;pcr/&quot;)
+# dir.create(Dir_pcr)</code></pre>
+<hr />
+</div>
+</div>
+<div id="task-1-write-maintaining-names" class="section level2">
+<h2>TASK 1) WRITE ?? (MAINTAINING NAMES)</h2>
+<div id="option-1.1a-write-list-of-envir-objects-as-.csv-using-ls-for" class="section level3">
+<h3>OPTION (1.1a) WRITE list of Envir objects as <strong>.csv</strong> using <code>ls</code> + <code>for</code></h3>
+<p><strong>NOTE</strong></p>
+<ul>
+<li>Not <del><code>length(list_loop_DF)</code></del> (lenght of the list), but <code>seq_along(list_loop_DF)</code> -&gt; <em>CORRECT</em>! (Generates a sequence long as the list)</li>
+<li><code>utils:write.table(x, file = &quot;&quot;)</code> where
+<ul>
+<li>x = <code>list_loop_DF[[i]]</code></li>
+<li>file = <code>paste0(Outdf2csv, names(list_loop_DF[i]), &quot;.csv&quot;)</code></li>
+</ul></li>
+</ul>
+<div id="list-of-envir-objects-many-csv-files" class="section level4">
+<h4>List of Envir objects –&gt; many csv files</h4>
+<pre class="r"><code># Create a list of NAMED dataframes
+list_loop_DF &lt;- list(airquality = airquality, airmiles = airmiles)
+
+# Write a .csv file with each
+for (i in seq_along(list_loop_DF)) {
+  # Outdf2csv &lt;- if (!dir.exists(&quot;./zzz_purrr/Output/&quot;)) {
+  #   dir.create(file.path(&quot;./zzz_purrr/Output/&quot;))
+  # } else {
+  #   print(&quot;Dir already exists!&quot;)
+  # }
+  write.csv(x = list_loop_DF[[i]], 
+             file = paste0(Outdf2csv, names(list_loop_DF[i]), &quot;.csv&quot;))
+}
+
+
+# or -----
+for (i in seq_along(list_loop_DF)) {
+  # Outdf2csv &lt;- if (!dir.exists(&quot;./zzz_purrr/Output/&quot;)) {
+  #   dir.create(file.path(&quot;./zzz_purrr/Output/&quot;))
+  # } else {
+  #   print(&quot;Dir already exists!&quot;)
+  # }
+  readr::write_csv(x = list_loop_DF[[i]], 
+             path = paste0(Outdf2csv, names(list_loop_DF[i]), &quot;.csv&quot;))
+}</code></pre>
+</div>
+</div>
+<div id="option-1.1b-write-list-of-envir-objects-as-.rdata-files-using-ls-for" class="section level3">
+<h3>OPTION (1.1b) WRITE list of Envir objects –&gt; as <strong>.Rdata</strong> files using <code>ls</code> + <code>for</code></h3>
+<blockquote>
+<p><strong>NOTE</strong> <code>save (list= ...., file = ...)</code> -&gt; <em>list instead of obj name</em>!</p>
+</blockquote>
+<pre class="r"><code># Create Output Dir... remember final&#39;/&#39;
+OutAPI &lt;- file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;SendGrid_API/&quot;)
+# dir.create(OutAPI)
+
+# List of files starting  with &lt;REcip_&gt;
+files_Recip &lt;- ls( pattern=&quot;^Recip_&quot;# &quot;^xx&quot; = &quot;starts with  xx&quot;
+                         # all.files = FALSE,
+                         # full.names = FALSE, recursive = FALSE,
+                         # ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
+)   
+
+# ====== LOOP for as many times as there are items in the listing (= LENGHT)
+for (i in 1:length(files_Recip)) {
+    # at each round  
+    save (list = (files_Recip[i]) ,  # ... take the name of an item from the list 
+            file = paste0(OutAPI, files_Recip[i], &quot;.Rdata&quot;))
+}</code></pre>
+</div>
+<div id="option-1.2-write-list-of-envir-objects-as-.csv-using-lapply-within-a-function" class="section level3">
+<h3>OPTION (1.2) WRITE list of Envir objects as <strong>.csv</strong> using <code>lapply</code> (within a function)</h3>
+<p><strong>NOTE</strong> I already created above landing Output dir <code>Outdf2csv</code> - becomes:</p>
+<pre class="r"><code># Create a list of NAMED dataframes
+list_lapply_DF &lt;- list(mtcars = mtcars, titanic = titanic ) # 
+
+# Write the function with arguments (DFlist)
+Func_list_lapply &lt;- function(list_lapply_DF) { # optional arg2 (Outdf2csv)
+    lapply(1:length(list_lapply_DF), 
+             function(i) write.csv(list_lapply_DF[[i]], 
+                                         file = paste0(Outdf2csv, 
+                                                          names(list_lapply_DF[i]), &quot;.csv&quot;), 
+                                         row.names = FALSE
+             )
+    )
+}
+
+# Call the function
+Func_list_lapply(list_lapply_DF)</code></pre>
+<hr />
+</div>
+<div id="option-1.3-write-list-of-envir-objects-as-.csv-using-purrrwalk-not-map" class="section level3">
+<h3>OPTION (1.3) WRITE list of Envir objects as <strong>.csv</strong> using <code>purrr:walk</code> (not <del>map</del> )</h3>
+<p><strong>NOTE</strong> Writing a file to a disk is considered to be a side-effect (we are not changing our data, only save it) so we must use <code>purrr:walk</code></p>
+<blockquote>
+<p>Specifically, we are using <code>purrr::walk2(.x, .y, .f, ...</code> where
+<code>.x</code> and <code>.y</code> are vectors of the same length
+<code>.f</code> is a 2-argument function</p>
+</blockquote>
+<pre class="r"><code>library(purrr)
+library(tidyverse)
+
+# Create a list of NAMED dataframes
+list_purrr_DF &lt;- list(Orange = Orange, OrchardSprays = OrchardSprays ) # 
+
+# Set the Output Dir to an object - done before... 
+  # Outdf2csv &lt;- if (!dir.exists(&quot;./zzz_purrr/Output/&quot;)) {
+  #   dir.create(file.path(&quot;./zzz_purrr/Output/&quot;))
+  # } else {
+  #   print(&quot;Dir already exists!&quot;)
+  # }
+
+# ... &amp; combine it with the complete file path
+path &lt;- file.path(paste0(Outdf2csv, names(list_purrr_DF), &quot;.csv&quot;))
+
+# run the function
+purrr::walk2(list_purrr_DF, path, write.csv)</code></pre>
+<hr />
+</div>
+</div>
+<div id="option-2-clean-write-as-.csvto-disk-group_by-group_map-purrrgroup_map" class="section level2">
+<h2>OPTION (2) CLEAN &amp;&amp; WRITE as <strong>.csv</strong>to disk <code>group_by + group_map + purrr::group_map</code></h2>
+<p><a href="https://luisdva.github.io/rstats/export-iteratively/">Luis Verde Arregoitia’s</a></p>
+<p>In this case, the five new files (one for each bat family) will end up in the working directory.
+<strong>NOTE</strong> We use <code>group_by</code> and <code>group_map</code> to create a grouped tibble and <code>apply</code> functions to each group.
++group_map returns a list, so we can use paste0 to create a path for each file to be written, including a custom prefix.</p>
+<pre class="r"><code># read csv from web
+batRecs &lt;- read.csv(&quot;https://raw.githubusercontent.com/luisDVA/codeluis/master/batRecords.csv&quot;,
+  stringsAsFactors = FALSE
+)
+# preview how many files we should be ending up with
+batRecs %&gt;% count(family)
+
+# drop na,
+batRecs %&gt;% na.omit() %&gt;%
+  # split to create a list of data frames for each group,
+  group_by(family) %&gt;%
+  # then map to apply functions to each list element. I
+  group_map(~ distinct(.x, decimal_latitude, decimal_longitude, .keep_all = TRUE), keep = TRUE) %&gt;%
+  # walk because write.csv returns nothing and creates the csv file as a side effect
+  walk(~ .x %&gt;% 
+        write_csv(path = paste0(Outdf2csv, &quot;nov1_&quot;, unique(.x$family), &quot;.csv&quot;), 
+                     append = F))</code></pre>
+<hr />
+<hr />
+</div>
+<div id="task-2-reverse-topic-read-into-environment" class="section level2">
+<h2>TASK 2) Reverse topic: READ into Environment</h2>
+<div id="option-2.1-read-list-of-.csv-into-r-environment-list.files-for-loop-custom-function" class="section level3">
+<h3>OPTION (2.1) READ list of *.csv into R environment <code>list.files</code> + <code>for</code> loop {<code>custom function</code>}</h3>
+<p>Here, I want to read all .csv files into R and create a DF for each (keeping the original csv file name
+minus “spaces and”.csv&quot;.</p>
+<pre class="r"><code># path
+path &lt;- file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;df2csv/&quot;)
+# list of files 
+list_2read &lt;-  list.files(path = path, 
+                        # pattern = c(&#39;^Send&#39;,&#39;.csv$&#39; ), 
+                    full.names = F,  
+                        all.files = FALSE,  # def (= only visible)
+                  recursive = FALSE,  # def  (= no inside sub-dir )
+                  ignore.case = TRUE, # (= pattern-matching be case-insensitive)
+                  include.dirs = FALSE, # def (subdir names NOT be included in recursive listings)
+                  no.. = FALSE) %&gt;% # def (both &quot;.&quot; and &quot;..&quot; be excluded also from non-recursive listings) 
+            sort(decreasing = FALSE) 
+
+# CSV_read FUNCTION
+for (file in list_2read) {
+  order &lt;- which( # Give the TRUE indices of a logical object
+    strsplit(file, &quot;&quot;)[[1]] == &quot;.&quot;
+  ) # Split the elements of a character vector &quot;file&quot; to the matches to substring split
+  
+  assign( # Assign a value to a name in an environment.
+    gsub(&quot; &quot;, &quot;&quot;, substr(file, 1, order - 1)), # x = a variable name
+    # read.csv(paste(path,file,sep=&quot;&quot;), stringsAsFactors = F) # value = to be assigned to x
+    read_csv(paste(path, file, sep = &quot;&quot;))
+  )
+}</code></pre>
+</div>
+<div id="option-2.2-read-list-of-.csv-into-r-environment-list.files-stringr-map" class="section level3">
+<h3>OPTION (2.2) READ list of *.csv into R environment <code>list.files</code> + <code>stringr</code>+ <code>map</code></h3>
+<p>Elegant version of above</p>
+<pre class="r"><code># path
+path &lt;- file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;df2csv/&quot;)
+# list of files 
+list_2read &lt;-  list.files(path = path, 
+                        # pattern = c(&#39;^Send&#39;,&#39;.csv$&#39; ), 
+                    full.names = F,  
+                        all.files = FALSE,  # def (= only visible)
+                  recursive = FALSE,  # def  (= no inside sub-dir )
+                  ignore.case = TRUE, # (= pattern-matching be case-insensitive)
+                  include.dirs = FALSE, # def (subdir names NOT be included in recursive listings)
+                  no.. = FALSE) %&gt;% # def (both &quot;.&quot; and &quot;..&quot; be excluded also from non-recursive listings) 
+            sort(decreasing = FALSE) 
+
+# select only 2
+list_2read %&gt;% 
+    .[stringr::str_detect(., &quot;air&quot;)] -&gt; csv_files
+
+ 
+# Load everything into the Global Environment
+csv_files %&gt;%
+  purrr::map(function(file_name){ # iterate through each file name
+  # Give a name to :    
+  assign(x = stringr::str_remove(file_name, &quot;.csv&quot;), # x = file, but without &quot;.csv&quot;)
+         value = read_csv(paste0(path, file_name)), # value -&gt; it will take in env
+         envir = .GlobalEnv) # (where)
+})</code></pre>
+<hr />
+</div>
+</div>
+<div id="task-3-render-multiple-.rmd-files-saving-outputs-in-separate-dir-using-baselist.files-purrrwalk" class="section level2">
+<h2>TASK 3) Render multiple .Rmd files saving outputs in separate DIR using <code>base::list.files + purrr::walk</code></h2>
+<p>This is the case in which I have several <code>.Rmd</code> files in the working directory and I want to render them all in one go.
+<strong>NOTE</strong> The output types were specifies in the .Rmd files themselves like so :</p>
+<blockquote>
+<p>uses {base::list.files + purrr::walk}</p>
+</blockquote>
+<pre class="r"><code>#======  DIRECTORIES PATHS  
+root_DIR &lt;- fs::path_abs(&quot;.&quot;)
+reports_DIR &lt;- fs::path_abs(&quot;./reports&quot;) # output reports 
+
+# ======== LIST THE FILES I NEED TO RENDER   
+filesRmd &lt;- list.files(path = &quot;.&quot;, 
+                              pattern=&quot;.Rmd$&quot;,
+                              all.files = FALSE,  # def (= only visible)
+                              full.names = TRUE,  # I NEED dir name prepended
+                              recursive = FALSE,  # def  (= no inside sub-dir )
+                              ignore.case = TRUE, # (= pattern-matching be case-insensitive)
+                              include.dirs = FALSE, # def (subdirectory names NOT be included in recursive listings)
+                              no.. = FALSE)   # def (both &quot;.&quot; and &quot;..&quot; be excluded also from non-recursive listings) 
+ 
+
+# Execute them them in the environment
+purrr::walk(filesRmd, rmarkdown::render,
+    output_file = NULL, #  If using NULL then the output filename will be based on filename for the input file
+    output_format = &quot;all&quot;, # because I specify it in the .Rmd files (Html &amp; pdf) 
+    output_dir = reports_DIR,
+    envir = new.env(), # The environment in which the code chunks are to be evaluated during knitting
+    encoding = &quot;UTF-8&quot;
+)</code></pre>
+<hr />
+</div>
+<div id="acknowledgments" class="section level2">
+<h2>ACKNOWLEDGMENTS</h2>
+<ul>
+<li><a href="https://luisdva.github.io/rstats/export-iteratively/">More operations</a></li>
+<li><a href="https://lsru.github.io/tv_course/TD_purrr_solution.html">Following this post</a></li>
+<li>Prof Claus Wilke has a <a href="https://serialmentor.com/blog/2016/6/13/reading-and-combining-many-tidy-data-files-in-R">Useful tutorial</a></li>
+<li><a href="https://martinctc.github.io/blog/vignette-write-and-read-multiple-excel-files-with-purrr/">Martin Chan’s post</a></li>
+</ul>
+</div>

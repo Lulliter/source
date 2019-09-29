@@ -1,0 +1,26 @@
+---
+title: NYE fundraising data analysis 
+date: 2019-04-14T00:00:00.000Z
+lastmod: 2019-04-14T00:00:00.000Z
+draft: false
+# toc: true
+type: docs
+linktitle: NYE-fundraising
+menu:
+  project:
+    parent: Projects
+    weight: 2
+---
+
+## Analysis of Fundraising data for Non Profit "NYE Encounter" 
+
+Since March 2018, I have worked part-time as a Pro-Bono Fundraising Data Analyst for the nonprofit organization [New York Encounter](http://www.newyorkencounter.org/). I performed several ETL tasks –via SQL-based data transformations and R programming– to set up the integration of data that existed in separate and disconnected platforms. Namely, the Nonprofit had informations on donors and attendees on **SendGrid**, donations recorded via **Square** and miscellaneous other information in **Salesforce**. After cleaning and merging such information, I performed an initial explorative characterization of the Nonprofit private donors. Most of the data integration and analisys was performed in R. 
+  
+## Results
+
+I cannot share the GIthub repo because it contains confidential data.
+
+This link points to a presentation I delivered with insights from my [Fundraising Analysis](/project/NYE-fundraising_Presentation_14April2019.pdf)
+
+
+ 

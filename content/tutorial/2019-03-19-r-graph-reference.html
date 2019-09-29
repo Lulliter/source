@@ -1,0 +1,425 @@
+---
+title: R Graph Reference
+author: Luisa M. Mimmi
+date: "Last run: September 24, 2019"
+draft: false
+output:
+  blogdown::html_page:
+    toc: true
+    # toc_float: true error in this theme https://github.com/rstudio/blogdown/issues/58
+    #smart: true
+slug: r-graph-reference
+categories:
+  - Rtutorial
+tags:
+  - ggplot2
+  - directlabels
+  - kableExtra
+image:
+  caption: ''
+  focal_point: ''
+summary: "Reusable code for R plots" 
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#set-up">Set up</a><ul>
+<li><a href="#reproducing-small-r-object-nye-anonimized-stuff">Reproducing small R object (NYE anonimized stuff )</a></li>
+</ul></li>
+<li><a href="#multiple-line-graph-facet_wrap">Multiple line graph + facet_wrap</a><ul>
+<li><a href="#below-are-saved-images">(Below are saved images)</a></li>
+</ul></li>
+<li><a href="#count-of-element-in-sample-by-2-categorical-variables-1-law-stack-2-rango-size">Count of element in Sample By 2 categorical variables: {1) Law Stack 2) rango-size }</a></li>
+<li><a href="#density-plot-of-1-continuous-var-nrwm3_pct-by-1-categorical-variables-q1_ownership_lbl">Density plot of 1 continuous {VAR NRWm3_pct} BY 1 categorical variables: {Q1_ownership_lbl}</a></li>
+<li><a href="#density-plot-of-1-continuous-var-nrwm3_pct-by-1-categorical-variables-faceted-cov_pop_rango_lbl">Density plot of 1 continuous VAR {NRWm3_pct} BY 1 categorical variables (faceted): {Cov_pop_rango_lbl}</a></li>
+<li><a href="#dotplot-2-cont-variables-by-color-1-categ-var">DOTPLOT {2 cont variables &amp; BY (color) 1 categ var}</a></li>
+<li><a href="#boxplot-could-do-the-same-but-1-cont-variable-1-categ-variable">BOXPLOT could do the same but {1 cont variable &amp; 1 categ Variable }</a></li>
+<li><a href="#barplot-of-count-of-obs-by-1-grouped-var-by-color-1-categ-variable">BARPLOT of Count of obs BY 1 grouped var &amp; By (color) 1 categ Variable</a></li>
+</ul>
+</div>
+
+<div id="set-up" class="section level2">
+<h2>Set up</h2>
+<ul>
+<li>I load the R scipt with my theme</li>
+</ul>
+<pre class="r"><code>pacman::p_load(tidyverse, plyr, ggplot2, here, png)
+
+
+# === save and source R script with `my_theme`
+source(here::here( &quot;content&quot;,&quot;tutorial&quot;, &quot;ggplot-theme.R&quot;))
+
+# (OR) # Define the theme locally
+require(ggplot2)
+
+my_theme &lt;- theme(
+    legend.position = &quot;right&quot;,
+    panel.background = element_rect(fill = NA),
+    panel.border = element_rect(fill = NA, color = &quot;grey75&quot;), axis.ticks = element_line(color = &quot;grey85&quot;),
+    panel.grid.major = element_line(color = &quot;grey95&quot;, size = 0.2), panel.grid.minor = element_line(color = &quot;grey95&quot;, size = 0.2), legend.key = element_blank())
+
+# === To USE: simply add to plot `+ my_theme`</code></pre>
+<div id="reproducing-small-r-object-nye-anonimized-stuff" class="section level3">
+<h3>Reproducing small R object (NYE anonimized stuff )</h3>
+<pre class="r"><code># I had save the file as ASCII object before 
+        #dput(Don_byType, file = &quot;Don_byType.text&quot;)
+
+# Read it back here 
+NYEtest &lt;- dget(here::here( &quot;content&quot;,&quot;tutorial&quot;, &quot;Don_byType.text&quot;))</code></pre>
+</div>
+</div>
+<div id="multiple-line-graph-facet_wrap" class="section level2">
+<h2>Multiple line graph + facet_wrap</h2>
+<ul>
+<li>wide to long df</li>
+<li>(all gathered vars must have same type)</li>
+<li>show point + line</li>
+</ul>
+<pre class="r"><code># ---- wide to  Long format 
+ByTypeTOT_Long &lt;- NYEtest %&gt;% 
+    select(1, 3:11)  %&gt;% 
+    # I have t reconvert back to numeric or error
+    # ... attributes are not identical across measure variables;they will be dropped 
+    # mutate_each(list(~as.numeric), contains(&#39;TOT_&#39;)) %&gt;%
+    gather(key= &quot;NYE_Edition&quot; , value = &quot;USDollars&quot;,
+             &#39;TOT_NYE11&#39;, &#39;TOT_NYE12&#39;, &#39;TOT_NYE13&#39;, &#39;TOT_NYE14&#39;, &#39;TOT_NYE15&#39;,
+             &#39;TOT_NYE16&#39;, &#39;TOT_NYE17&#39;, &#39;TOT_NYE18&#39;,&#39;TOT_NYE19&#39;, 
+              na.rm = FALSE)  
+
+# ---- plot
+plot &lt;- ggplot(ByTypeTOT_Long) + 
+    aes(x = NYE_Edition,  y = USDollars,  color = Acc_Type_NA) + 
+    geom_point() +
+    geom_line(aes(group = Acc_Type_NA))  +
+    labs(title=&quot;Total donations over the years by Type of Accounts&quot;,
+          x =NULL, y = &quot;US Dollars&quot;) +
+    ggthemes::theme_hc() + #+ scale_colour_hc()# theme_urban() +
+    theme(axis.text.x = element_text(angle=45) ) +  ##  theme(text=element_text(family=&quot;Garamond&quot;, size=14))
+    facet_wrap((~ Acc_Type_NA))  
+
+plot</code></pre>
+<p><img src="/tutorial/2019-03-19-r-graph-reference_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<hr />
+<div id="below-are-saved-images" class="section level3">
+<h3>(Below are saved images)</h3>
+<hr />
+</div>
+</div>
+<div id="count-of-element-in-sample-by-2-categorical-variables-1-law-stack-2-rango-size" class="section level2">
+<h2>Count of element in Sample By 2 categorical variables: {1) Law Stack 2) rango-size }</h2>
+<ul>
+<li>dataset in wide form<br />
+</li>
+<li><code>DON'T MAP A VARIABLE TO Y</code></li>
+<li>shows counts of obs by level of one var, by class of another var</li>
+</ul>
+<pre class="r"><code># -----  { Count of obs in sample by 2 categorical variables: 1) Law Stack 2) rango-size }
+ggplot(data = Bra1_complete) + 
+    geom_bar() + #   position = &quot;dodge&quot;,width=0.7) +
+    aes(x = Q8a_c_Leg_comb) + 
+    aes(fill = Cov_pop_rango_lbl) +
+    # scale_fill_discrete(name = &quot;Size of population \ncovered&quot;) + 
+    scale_fill_manual(values = colorRampPalette(RColorBrewer::brewer.pal(9, &quot;Purples&quot;))(8)[0:8], 
+                            na.value=&quot;grey&quot;, guide = guide_legend(reverse = F)) +
+    labs(fill = &quot;Size of population \ncovered&quot;) +
+    
+    labs(x = &quot;&quot;) +
+    labs(y = &quot;Count of Suppliers in Sample&quot;) +
+    labs(title = &quot;Number of WSS suppliers in Brazil sample by existing legislation 
+          \n(Coverage + Service + Quality + Tariffs) and Size of covered area&quot;) +
+    coord_flip()  + 
+    my_theme -&gt; p2
+p2
+#ggsave(p2, filename=here::here(&quot;07_output&quot;, &quot;Plot_CountByRango.png&quot;))</code></pre>
+<pre class="r"><code># -----  Doesn&#39;t work (dir issue)
+img2_path &lt;- here::here(&quot;content&quot;,&quot;tutorial&quot;, &quot;Plot_CountByRango.png&quot;)
+library(png)
+img2 &lt;- readPNG(img2_path, native = TRUE, info = TRUE)
+# attr(img1, &quot;info&quot;)
+
+# -----  Doesn&#39;t work (dir issue)
+# knitr::include_graphics(img1_path)</code></pre>
+<!-- Using markdown way OK for site rendering -->
+<div class="figure">
+<img src="/tutorial/Plot_CountByRango.png" alt="Count By LawStack and Rango" />
+<p class="caption">Count By LawStack and Rango</p>
+</div>
+<pre class="r"><code># similar 
+ggplot(data = Bra1_complete) + 
+    aes(x = Q8a_c_Leg_comb) + 
+    aes(fill = Q1_ownership_lbl) +
+    geom_bar() +
+    labs(fill = &quot;Type of Supplier: \nOwnership&quot;) +
+    labs(x = &quot;&quot;) +
+    labs(y = &quot;Count of Suppliers&quot;) +
+    labs(title = &quot;Number of WSS suppliers in Brazil sample by existing legislation 
+          \n(Coverage + Service + Quality + Tariffs) and Ownership&quot;) +
+    coord_flip()  + my_theme -&gt; p
+
+p
+# save plot
+ggsave(p, filename=here::here(&quot;07_output&quot;, &quot;Plot_CountByLawOwnersh.png&quot;))</code></pre>
+<!-- Using markdown way -->
+<div class="figure">
+<img src="/tutorial/Plot_CountByLawOwnersh.png" alt="Count By LawStack and Ownership" />
+<p class="caption">Count By LawStack and Ownership</p>
+</div>
+<hr />
+</div>
+<div id="density-plot-of-1-continuous-var-nrwm3_pct-by-1-categorical-variables-q1_ownership_lbl" class="section level2">
+<h2>Density plot of 1 continuous {VAR NRWm3_pct} BY 1 categorical variables: {Q1_ownership_lbl}</h2>
+<ul>
+<li>dataset in wide form</li>
+<li>Using <code>plyr::ddply</code> –&gt; Split data frame, apply function, and return results in a data frame
+(similar to <code>dplyr::group__map()_by %&gt;%  summarise</code> to iterate on groups)</li>
+<li><code>ggplot2::geom_density</code> + <code>ggplot2::geom_vline</code></li>
+</ul>
+<pre class="r"><code>library(plyr)
+
+# ----- find the mean for each group 
+densNWR &lt;- Bra1_complete %&gt;% 
+    # Get rid of NA in NRW 
+    drop_na(., NRWm3_pct) %&gt;% 
+    # return mean by group
+    plyr::ddply(., # data
+                    &quot;Q1_ownership_lbl&quot;, # var  
+                    summarise, NRWm3_pct.mean=mean(NRWm3_pct), NRWm3_pct.med=median(NRWm3_pct) # function
+                    )
+
+# ----- Plot 
+ggplot (    data = Bra1_complete , aes ( x=NRWm3_pct, fill = Q1_ownership_lbl )) +
+    geom_density(alpha=.3) +
+    geom_vline(data=densNWR, aes(xintercept= NRWm3_pct.mean,  colour=Q1_ownership_lbl),
+                  linetype=&quot;dashed&quot;, size=1, show.legend = T)  +
+    labs(title = &quot;Density plot of % NRW by ownership type&quot;,
+          subtitle = &quot;(Vertical line = Group MEAN)&quot;) +
+    my_theme -&gt;  NRWp
+
+NRWp    
+
+# ----- Save plot
+ggsave(NRWp, filename=here::here(&quot;07_output&quot;, &quot;Plot_DensNRW_byOwn.png&quot;))</code></pre>
+<!-- Using markdown way -->
+<div class="figure">
+<img src="/tutorial/Plot_DensNRW_byOwn.png" alt="Density of NRW By Ownership" />
+<p class="caption">Density of NRW By Ownership</p>
+</div>
+</div>
+<div id="density-plot-of-1-continuous-var-nrwm3_pct-by-1-categorical-variables-faceted-cov_pop_rango_lbl" class="section level2">
+<h2>Density plot of 1 continuous VAR {NRWm3_pct} BY 1 categorical variables (faceted): {Cov_pop_rango_lbl}</h2>
+<ul>
+<li>(same as above), but…</li>
+<li><code>ggplot2::facet_wrap</code></li>
+</ul>
+<pre class="r"><code>library(plyr)
+# BY  Q9a_d_Mix_comb /  Cov_pop_rango_lbl
+
+# ----- find the mean for each group 
+densSIZE &lt;- Bra1_complete %&gt;% 
+    # Get rid of NA in NRW 
+    drop_na(., NRWm3_pct) %&gt;% 
+    plyr::ddply(., &quot;Cov_pop_rango_lbl&quot;, summarise, 
+                    NRWm3_pct.mean=mean(NRWm3_pct) , NRWm3_pct.med=median(NRWm3_pct))
+densSIZE
+
+# -----Plot 
+ggplot (    data = Bra1_complete , aes ( x=NRWm3_pct, fill = Cov_pop_rango_lbl )) +
+    geom_density(alpha=.3) +
+    geom_vline(data=densSIZE, aes(xintercept= NRWm3_pct.mean,  colour=Cov_pop_rango_lbl),
+                  linetype=&quot;dashed&quot;, size=1, show.legend = T)  +
+    labs(title = &quot;Density plot of % NRW by Size of covered area&quot;,
+          subtitle = &quot;(Vertical line = Group MEAN)&quot;) +
+    facet_wrap(~ Cov_pop_rango_lbl, scales = &quot;free_y&quot;) +
+    my_theme -&gt;  SIZEp
+
+# ----- see plot
+SIZEp   
+# ----- save plot 
+ggsave(SIZEp, filename=here::here(&quot;07_output&quot;, &quot;Plot_DensNRW_bySIZE.png&quot;))</code></pre>
+<!-- Using markdown way -->
+<div class="figure">
+<img src="/tutorial/Plot_DensNRW_bySIZE.png" alt="Density of NRW By Size" />
+<p class="caption">Density of NRW By Size</p>
+</div>
+<blockquote>
+<p>Using functions to repeat charts
+follow <a href="https://rpubs.com/alexbra/173596" class="uri">https://rpubs.com/alexbra/173596</a> !!!!!!</p>
+</blockquote>
+</div>
+<div id="dotplot-2-cont-variables-by-color-1-categ-var" class="section level2">
+<h2>DOTPLOT {2 cont variables &amp; BY (color) 1 categ var}</h2>
+<ul>
+<li>design a function that I can reuse (changing variables, labels, title)</li>
+<li>call the function</li>
+</ul>
+<pre class="r"><code># ----- Create function for scatterplot object 
+point_plot_func &lt;- function(factor, x_str, y_str, xl, yl, t, rvrs = T,lt = &quot;Factor levels&quot; ){
+    # I declaring the dataset inside for the project
+    ggplot( data = Bra1_complete, aes_string(x=x_str, y = y_str, color=factor)) +
+        geom_point(size=3, alpha=0.5, position=&quot;jitter&quot;) +
+        xlab(xl)+
+        ylab(yl)+    
+        ggtitle(t)+
+        scale_color_brewer(palette=&quot;Spectral&quot;,
+                                 guide = guide_legend(title = lt, reverse = rvrs)) +
+        my_theme
+}
+
+
+# ----- call Func: NRWm3_pct x Q27_IndivMeter_Perc BY Q9a_d_Mix_comb
+dot1 &lt;- point_plot_func(factor = &quot;Q9a_d_Mix_comb&quot;,
+                      x_str = &quot;Q27_IndivMeter_Perc&quot;, 
+                      y_str = &quot;NRWm3_pct&quot;, 
+                      xl = &quot;Perc Conn with Indiv Meter&quot;, 
+                      yl = &quot;Percent NRW&quot;, 
+                      t = &quot;&quot;, # no title, I am using caption in md 
+                      rvrs = F)+
+    coord_cartesian(ylim=c(0,100)) +  
+    geom_rect(aes(xmin=0,xmax=Inf,ymin=50,ymax=Inf), alpha=0.005,fill=&quot;red&quot;, linetype=&quot;blank&quot;) 
+
+# ----- save 
+ggsave(dot1, filename=here::here(&quot;07_output&quot;, &quot;Plot_DotsNWR_Meter_byMIX.png&quot;))</code></pre>
+<!-- Using markdown way -->
+<div class="figure">
+<img src="/tutorial/Plot_DotsNWR_Meter_byMIX.png" alt="Dot Plot of NRW By ServMix and Perc Meters" />
+<p class="caption">Dot Plot of NRW By ServMix and Perc Meters</p>
+</div>
+</div>
+<div id="boxplot-could-do-the-same-but-1-cont-variable-1-categ-variable" class="section level2">
+<h2>BOXPLOT could do the same but {1 cont variable &amp; 1 categ Variable }</h2>
+<ul>
+<li>design a function that I can reuse (changing variables, labels, title)</li>
+<li>call the function</li>
+</ul>
+<pre class="r"><code># -----function to create box plot object
+box_plot_func &lt;- function(factor, 
+                                  lt = &quot;Factor levels&quot;,
+                                  x_str = &quot;quality.rank&quot;, 
+                                  y_str, 
+                                  xl = &quot;Quality rank&quot;,
+                                  yl,
+                                  t){
+    ggplot(data = Bra1_complete, aes_string(x=x_str, y = y_str, color=factor)) +
+        geom_boxplot() +
+        xlab(xl) +
+        ylab(yl) + 
+        ggtitle(t) +
+        my_theme
+}
+
+# -----call Func :   NRWm3_pct BY Q41_ClandConn_Analyzed
+box_plot_func(factor = NULL,
+                    x_str = &quot;Q41_ClandConn_Analyzed&quot;, 
+                    y_str = &quot;NRWm3_pct&quot;, 
+                    xl = &quot;Is there a process to detect informal connections?&quot;, 
+                    yl = &quot;Percent NRW&quot;, 
+                    t = &quot;Perc of NRW vs. Having a system to detect IRREGULAR CONNECTIONS&quot;) +
+    coord_cartesian(ylim=c(0,100)) +  
+    geom_rect(aes(xmin=0,xmax=Inf,ymin=50,ymax=Inf), alpha=0.005,fill=&quot;red&quot;, linetype=&quot;blank&quot;) -&gt; box1
+
+# -----save 
+ggsave(box1, filename=here::here(&quot;07_output&quot;, &quot;Plot_BOXNWR_Cland.png&quot;))</code></pre>
+<!-- Using markdown way -->
+<div class="figure">
+<img src="/tutorial/Plot_BOXNWR_Cland.png" alt="Box plot of NRW By Perc clandest" />
+<p class="caption">Box plot of NRW By Perc clandest</p>
+</div>
+<hr />
+</div>
+<div id="barplot-of-count-of-obs-by-1-grouped-var-by-color-1-categ-variable" class="section level2">
+<h2>BARPLOT of Count of obs BY 1 grouped var &amp; By (color) 1 categ Variable</h2>
+<ul>
+<li>wide to long</li>
+<li>design a function that I can reuse (changing variables, labels, title)</li>
+<li>call the function</li>
+</ul>
+<pre class="r"><code># -----wide to long --&gt; gather variables about SWIT  
+SWIT_long &lt;- Bra1_compl_SWIT %&gt;%  
+    # wide to long (omly on specified selected var )
+    tidyr::gather(.,key = &quot;technology&quot; , value = &quot;value&quot;,  
+                      # specific vars I want to gather
+                      VolLossEstim =  Q24_VolLossMech_Has,
+                      LeaksDetection  = Q39_LeaksDetection_Analyzed, 
+                      Dept_Innov= Q55_Dept_Inn_Has, 
+                      Dept_R_D = Q56_Dept_ReD_Has , 
+                      Dept_IT_data= Q57_Dept_ITdata_Has , 
+                      GIS_Pipes= Q58a_GIS_Pipe_Has , 
+                      GIS_PressValves= Q58b_GIS_Press_Has, 
+                      GIS_Reserv= Q58c_GIS_Storg_Has , 
+                      GIS_ConnPts = Q58d_GIS_Conn_Has , 
+                      HidrMod   = Q60_HidrMod_Has , 
+                      DMA   = Q62_DMA_Has   , 
+                      DMA_w_flows   = Q63_DMA_Has_Flows   , 
+                      DMA_w_pressvalves = Q64_DMA_Has_PressValv   , 
+                      PressSyst= Q65_PressSyst_Has, 
+                      AMR  , 
+                      AMI) %&gt;% 
+    # I turn value from &quot;Yes/No/DK&quot; to DUMMY 0/1
+    dplyr::mutate(value_dummy = case_when(value == &quot;Yes&quot; ~ 1,
+                                                      value == &quot;InConstr&quot; ~ 1,
+                                                      value == &quot;No&quot; ~ 0,
+                                                      value == &quot;DK&quot; ~ 0,
+                                                      value == &quot;na&quot; ~ 0))  
+
+
+# ----- GROUP BY &amp; COUNT obs each group 
+SWIT_long2 &lt;- SWIT_long %&gt;% 
+    dplyr::group_by(technology) %&gt;% 
+    dplyr::summarise(Count_SWIT = sum( value_dummy)) %&gt;% 
+# ----- add technology category var 
+    dplyr::mutate( tech_type = case_when(
+        technology ==   &quot;Q55_Dept_Inn_Has&quot; | technology ==  &quot;Q56_Dept_ReD_Has&quot; | technology ==   &quot;Q57_Dept_ITdata_Has&quot; ~ 1, 
+        technology ==   &quot;Q24_VolLossMech_Has&quot;| technology == &quot;Q39_LeaksDetection_Analyzed&quot; ~ 2 ,
+        technology == &quot;Q68_SCADA_UtilLevel&quot; | technology == &quot;Q58a_GIS_Pipe_Has&quot; | 
+        technology == &quot;Q58b_GIS_Press_Has&quot;| technology ==&quot;Q58c_GIS_Storg_Has&quot; |
+        technology ==&quot;Q58d_GIS_Conn_Has&quot; ~ 3, 
+        technology ==    &quot;Q60_HidrMod_Has&quot;   ~ 4, 
+        technology == &quot;Q62_DMA_Has&quot; |technology == &quot;Q65_PressSyst_Has&quot; 
+        |technology ==  &quot;Q63_DMA_Has_Flows&quot; |technology == &quot;Q64_DMA_Has_PressValv&quot;      ~ 5, 
+        technology ==  &quot;AMR&quot;  | technology ==&quot;AMI&quot;~ 6)
+        )
+
+
+# ----- Define the order I want for technology category vars
+SWIT_long2$technology &lt;-factor(SWIT_long2$technology, 
+                                         levels = c(&quot;Q55_Dept_Inn_Has&quot;, &quot;Q56_Dept_ReD_Has&quot;, &quot;Q57_Dept_ITdata_Has&quot;, 
+                                                      &quot;Q24_VolLossMech_Has&quot;,  &quot;Q39_LeaksDetection_Analyzed&quot;, 
+                                                      &quot;Q68_SCADA_UtilLevel&quot; ,  &quot;Q58a_GIS_Pipe_Has&quot; , 
+                                                      &quot;Q58b_GIS_Press_Has&quot;, &quot;Q58c_GIS_Storg_Has&quot;,  
+                                                      &quot;Q58d_GIS_Conn_Has&quot; , &quot;Q60_HidrMod_Has&quot; , &quot;Q62_DMA_Has&quot; , 
+                                                      &quot;Q65_PressSyst_Has&quot; , &quot;Q63_DMA_Has_Flows&quot; ,  
+                                                      &quot;Q64_DMA_Has_PressValv&quot;, &quot;AMR&quot;  , &quot;AMI&quot; ))
+
+SWIT_long2$tech_type &lt;-factor(SWIT_long2$tech_type, 
+                                        levels = c(&quot;1&quot;, &quot;2&quot;,&quot;3&quot; ,&quot;4&quot; ,&quot;5&quot; ,&quot;6&quot; ), # order
+                                        labels = c(&quot;Technical Staff&quot;, &quot;Network Mngmnt&quot;,&quot;GIS or SCADA&quot; ,&quot;Hydr Model&quot;,
+                                                      &quot;DMA or Pressure Mngmnt&quot; ,&quot;Smart Meters&quot; )
+)
+
+# ----- PLOT  
+ggplot(SWIT_long2) + 
+    aes(x = technology, y = Count_SWIT , fill = tech_type)  + 
+    geom_bar(stat = &quot;identity&quot;, position=&quot;identity&quot;) + 
+    # count inside bars
+    geom_text(aes(label=Count_SWIT), color = &quot;white&quot;, hjust=2)+
+    theme( axis.text.x = element_text(size=10), axis.text.y = element_text(size=10,face=&quot;bold&quot;) ) + # they are flipped!!!
+    labs(title=&quot;SWIT and other ICT tools used by the Suppliers in Brazil Sample&quot; ,
+          subtitle = &quot;(Includes when technology is in construction)&quot;) + 
+    labs(x = &quot;&quot;, y = &quot;# suppliers in sample&quot; ) + 
+    # rename legend labels
+    guides(fill=guide_legend(title=&quot;Type of Technology&quot;)) + 
+    # reference line to show tot N of sample
+    geom_hline(yintercept=38, color = &quot;#616161&quot;, size=0.3) +
+    geom_text(aes(x= 7, label=&quot;sample = 38&quot;, y=38), colour=&quot;#616161&quot;, angle=90, vjust = 1.2 ) +
+    coord_flip()        -&gt; ggSWITbar   
+
+# ----- save 
+ggSWITbar  
+ggsave( ggSWITbar, filename =here::here(&quot;07_output&quot;, &quot;ggSWITbar.png&quot;))</code></pre>
+<!-- Using markdown way -->
+<div class="figure">
+<img src="/tutorial/ggSWITbar.png" alt="Bar Plot for # of obs adopting SWIT by Type" />
+<p class="caption">Bar Plot for # of obs adopting SWIT by Type</p>
+</div>
+</div>

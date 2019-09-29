@@ -1,0 +1,467 @@
+---
+title: R Graph Reference
+author: Luisa M. Mimmi
+date: "Last run: `r format(Sys.time(), '%B %e, %Y')`"
+draft: false
+output:
+  blogdown::html_page:
+    toc: true
+    # toc_float: true error in this theme https://github.com/rstudio/blogdown/issues/58
+    #smart: true
+slug: r-graph-reference
+categories:
+  - Rtutorial
+tags:
+  - ggplot2
+  - directlabels
+  - kableExtra
+image:
+  caption: ''
+  focal_point: ''
+summary: "Reusable code for R plots" 
+---
+
+## Set up 
+
++ I load the R scipt with my theme
+```{r prep, eval = TRUE, echo=TRUE, message=FALSE, warning=FALSE}
+pacman::p_load(tidyverse, plyr, ggplot2, here, png)
+
+
+# === save and source R script with `my_theme`
+source(here::here( "content","tutorial", "ggplot-theme.R"))
+
+# (OR) # Define the theme locally
+require(ggplot2)
+
+my_theme <- theme(
+	legend.position = "right",
+	panel.background = element_rect(fill = NA),
+	panel.border = element_rect(fill = NA, color = "grey75"), axis.ticks = element_line(color = "grey85"),
+	panel.grid.major = element_line(color = "grey95", size = 0.2), panel.grid.minor = element_line(color = "grey95", size = 0.2), legend.key = element_blank())
+
+# === To USE: simply add to plot `+ my_theme`
+```
+
+
+### Reproducing small R object (NYE anonimized stuff )
+```{r loadNYE, eval = TRUE, echo=TRUE, message=FALSE, warning=FALSE}
+# I had save the file as ASCII object before 
+		#dput(Don_byType, file = "Don_byType.text")
+
+# Read it back here 
+NYEtest <- dget(here::here( "content","tutorial", "Don_byType.text"))
+
+```
+
+## Multiple line graph + facet_wrap 
+
++ wide to long df
++ (all gathered vars must have same type)
++ show point  + line 
+```{r eval=TRUE, echo=TRUE, message=FALSE, warning=FALSE}
+# ---- wide to  Long format 
+ByTypeTOT_Long <- NYEtest %>% 
+	select(1, 3:11)  %>% 
+	# I have t reconvert back to numeric or error
+	# ... attributes are not identical across measure variables;they will be dropped 
+	# mutate_each(list(~as.numeric), contains('TOT_')) %>%
+	gather(key= "NYE_Edition" , value = "USDollars",
+			 'TOT_NYE11', 'TOT_NYE12', 'TOT_NYE13', 'TOT_NYE14', 'TOT_NYE15',
+			 'TOT_NYE16', 'TOT_NYE17', 'TOT_NYE18','TOT_NYE19', 
+			  na.rm = FALSE)  
+
+# ---- plot
+plot <- ggplot(ByTypeTOT_Long) + 
+	aes(x = NYE_Edition,  y = USDollars,  color = Acc_Type_NA) + 
+	geom_point() +
+	geom_line(aes(group = Acc_Type_NA))  +
+	labs(title="Total donations over the years by Type of Accounts",
+		  x =NULL, y = "US Dollars") +
+	ggthemes::theme_hc() + #+ scale_colour_hc()# theme_urban() +
+	theme(axis.text.x = element_text(angle=45) ) +  ##  theme(text=element_text(family="Garamond", size=14))
+	facet_wrap((~ Acc_Type_NA))  
+
+plot
+```
+
+
+***
+
+###  (Below are saved images)
+
+*** 
+
+## Count of element in Sample By 2  categorical variables: {1) Law Stack 2) rango-size }
+
++  dataset in wide form  
++  `DON'T MAP A VARIABLE TO Y` 
++ shows counts of obs by level of one var, by class of another var
+
+
+```{r geombar, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE}
+# -----  { Count of obs in sample by 2 categorical variables: 1) Law Stack 2) rango-size }
+ggplot(data = Bra1_complete) + 
+	geom_bar() + #   position = "dodge",width=0.7) +
+	aes(x = Q8a_c_Leg_comb) + 
+	aes(fill = Cov_pop_rango_lbl) +
+	# scale_fill_discrete(name = "Size of population \ncovered") + 
+	scale_fill_manual(values = colorRampPalette(RColorBrewer::brewer.pal(9, "Purples"))(8)[0:8], 
+							na.value="grey", guide = guide_legend(reverse = F)) +
+	labs(fill = "Size of population \ncovered") +
+	
+	labs(x = "") +
+	labs(y = "Count of Suppliers in Sample") +
+	labs(title = "Number of WSS suppliers in Brazil sample by existing legislation 
+		  \n(Coverage + Service + Quality + Tariffs) and Size of covered area") +
+	coord_flip()  + 
+	my_theme -> p2
+p2
+#ggsave(p2, filename=here::here("07_output", "Plot_CountByRango.png"))
+```
+
+```{r , eval=TRUE, echo=TRUE, message=FALSE, warning=FALSE}
+# -----  Doesn't work (dir issue)
+img2_path <- here::here("content","tutorial", "Plot_CountByRango.png")
+library(png)
+img2 <- readPNG(img2_path, native = TRUE, info = TRUE)
+# attr(img1, "info")
+
+# -----  Doesn't work (dir issue)
+# knitr::include_graphics(img1_path)
+```
+
+<!-- Using markdown way OK for site rendering -->
+![Count By LawStack and Rango](/tutorial/Plot_CountByRango.png)
+
+
+```{r geombar2, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE}
+# similar 
+ggplot(data = Bra1_complete) + 
+	aes(x = Q8a_c_Leg_comb) + 
+	aes(fill = Q1_ownership_lbl) +
+	geom_bar() +
+	labs(fill = "Type of Supplier: \nOwnership") +
+	labs(x = "") +
+	labs(y = "Count of Suppliers") +
+	labs(title = "Number of WSS suppliers in Brazil sample by existing legislation 
+		  \n(Coverage + Service + Quality + Tariffs) and Ownership") +
+	coord_flip()  + my_theme -> p
+
+p
+# save plot
+ggsave(p, filename=here::here("07_output", "Plot_CountByLawOwnersh.png"))
+```
+
+ 
+
+```{r , eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+img1_path <- here::here("content","tutorial", "Plot_CountByLawOwnersh.png")
+library(png)
+img1 <- readPNG(img1_path, native = TRUE, info = TRUE)
+# attr(img1, "info")
+
+# Doesn't work (dir issue)
+# knitr::include_graphics(img1_path)
+```
+
+<!-- Using markdown way -->
+![Count By LawStack and Ownership](/tutorial/Plot_CountByLawOwnersh.png)
+
+*** 
+
+## Density plot of 1 continuous {VAR NRWm3_pct} BY 1 categorical variables: {Q1_ownership_lbl}
+
++ dataset in wide form 
++ Using `plyr::ddply` --> Split data frame, apply function, and return results in a data frame 
+(similar to `dplyr::group__map()_by %>%  summarise`  to iterate on groups)
++ `ggplot2::geom_density` + `ggplot2::geom_vline`
+
+```{r geomDENS, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE}
+library(plyr)
+
+# ----- find the mean for each group 
+densNWR <- Bra1_complete %>% 
+	# Get rid of NA in NRW 
+	drop_na(., NRWm3_pct) %>% 
+	# return mean by group
+	plyr::ddply(., # data
+					"Q1_ownership_lbl", # var  
+					summarise, NRWm3_pct.mean=mean(NRWm3_pct), NRWm3_pct.med=median(NRWm3_pct) # function
+					)
+
+# ----- Plot 
+ggplot (	data = Bra1_complete , aes ( x=NRWm3_pct, fill = Q1_ownership_lbl )) +
+	geom_density(alpha=.3) +
+	geom_vline(data=densNWR, aes(xintercept= NRWm3_pct.mean,  colour=Q1_ownership_lbl),
+				  linetype="dashed", size=1, show.legend = T)  +
+	labs(title = "Density plot of % NRW by ownership type",
+		  subtitle = "(Vertical line = Group MEAN)") +
+	my_theme ->  NRWp
+
+NRWp	
+
+# ----- Save plot
+ggsave(NRWp, filename=here::here("07_output", "Plot_DensNRW_byOwn.png"))
+```
+
+<!-- Using markdown way -->
+![Density of NRW By Ownership](/tutorial/Plot_DensNRW_byOwn.png)
+
+
+
+## Density plot of 1 continuous VAR {NRWm3_pct} BY 1 categorical variables (faceted): {Cov_pop_rango_lbl} 
+
++ (same as above), but... 
++ `ggplot2::facet_wrap`
+
+```{r geomDENSfacet, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE}
+library(plyr)
+# BY  Q9a_d_Mix_comb /  Cov_pop_rango_lbl
+
+# ----- find the mean for each group 
+densSIZE <- Bra1_complete %>% 
+	# Get rid of NA in NRW 
+	drop_na(., NRWm3_pct) %>% 
+	plyr::ddply(., "Cov_pop_rango_lbl", summarise, 
+					NRWm3_pct.mean=mean(NRWm3_pct) , NRWm3_pct.med=median(NRWm3_pct))
+densSIZE
+
+# -----Plot 
+ggplot (	data = Bra1_complete , aes ( x=NRWm3_pct, fill = Cov_pop_rango_lbl )) +
+	geom_density(alpha=.3) +
+	geom_vline(data=densSIZE, aes(xintercept= NRWm3_pct.mean,  colour=Cov_pop_rango_lbl),
+				  linetype="dashed", size=1, show.legend = T)  +
+	labs(title = "Density plot of % NRW by Size of covered area",
+		  subtitle = "(Vertical line = Group MEAN)") +
+	facet_wrap(~ Cov_pop_rango_lbl, scales = "free_y") +
+	my_theme ->  SIZEp
+
+# ----- see plot
+SIZEp	
+# ----- save plot 
+ggsave(SIZEp, filename=here::here("07_output", "Plot_DensNRW_bySIZE.png"))
+```
+
+<!-- Using markdown way -->
+![Density of NRW By Size](/tutorial/Plot_DensNRW_bySIZE.png)
+
+
+
+> Using functions to repeat charts 
+ follow https://rpubs.com/alexbra/173596 !!!!!!
+
+
+## DOTPLOT {2 cont variables & BY (color) 1 categ var}
+
++ design a function that I can reuse (changing variables, labels, title)
++ call the function 
+
+```{r dotplot, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE}
+# ----- Create function for scatterplot object 
+point_plot_func <- function(factor, x_str, y_str, xl, yl, t, rvrs = T,lt = "Factor levels" ){
+	# I declaring the dataset inside for the project
+	ggplot( data = Bra1_complete, aes_string(x=x_str, y = y_str, color=factor)) +
+		geom_point(size=3, alpha=0.5, position="jitter") +
+		xlab(xl)+
+		ylab(yl)+    
+		ggtitle(t)+
+		scale_color_brewer(palette="Spectral",
+								 guide = guide_legend(title = lt, reverse = rvrs)) +
+		my_theme
+}
+
+
+# ----- call Func: NRWm3_pct x Q27_IndivMeter_Perc BY Q9a_d_Mix_comb
+dot1 <- point_plot_func(factor = "Q9a_d_Mix_comb",
+					  x_str = "Q27_IndivMeter_Perc", 
+					  y_str = "NRWm3_pct", 
+					  xl = "Perc Conn with Indiv Meter", 
+					  yl = "Percent NRW", 
+					  t = "", # no title, I am using caption in md 
+					  rvrs = F)+
+	coord_cartesian(ylim=c(0,100)) +  
+	geom_rect(aes(xmin=0,xmax=Inf,ymin=50,ymax=Inf), alpha=0.005,fill="red", linetype="blank") 
+
+# ----- save 
+ggsave(dot1, filename=here::here("07_output", "Plot_DotsNWR_Meter_byMIX.png"))
+```
+
+<!-- Using markdown way -->
+![Dot Plot of NRW By ServMix and Perc Meters](/tutorial/Plot_DotsNWR_Meter_byMIX.png)
+
+
+## BOXPLOT could do the same but  {1 cont variable & 1 categ Variable }
+
++ design a function that I can reuse (changing variables, labels, title)
++ call the function 
+
+```{r boxplot, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE}
+# -----function to create box plot object
+box_plot_func <- function(factor, 
+								  lt = "Factor levels",
+								  x_str = "quality.rank", 
+								  y_str, 
+								  xl = "Quality rank",
+								  yl,
+								  t){
+	ggplot(data = Bra1_complete, aes_string(x=x_str, y = y_str, color=factor)) +
+		geom_boxplot() +
+		xlab(xl) +
+		ylab(yl) + 
+		ggtitle(t) +
+		my_theme
+}
+
+# -----call Func :   NRWm3_pct BY Q41_ClandConn_Analyzed
+box_plot_func(factor = NULL,
+					x_str = "Q41_ClandConn_Analyzed", 
+					y_str = "NRWm3_pct", 
+					xl = "Is there a process to detect informal connections?", 
+					yl = "Percent NRW", 
+					t = "Perc of NRW vs. Having a system to detect IRREGULAR CONNECTIONS") +
+	coord_cartesian(ylim=c(0,100)) +  
+	geom_rect(aes(xmin=0,xmax=Inf,ymin=50,ymax=Inf), alpha=0.005,fill="red", linetype="blank") -> box1
+
+# -----save 
+ggsave(box1, filename=here::here("07_output", "Plot_BOXNWR_Cland.png"))
+```
+
+<!-- Using markdown way -->
+![Box plot of NRW By Perc clandest](/tutorial/Plot_BOXNWR_Cland.png)
+
+*** 
+## BARPLOT of Count of obs BY 1 grouped var & By (color) 1 categ Variable 
+
++ wide to long 
++ design a function that I can reuse (changing variables, labels, title)
++ call the function 
+
+
+```{r SWITbar, eval=FALSE, echo=TRUE, message=FALSE, warning=FALSE}
+
+# -----wide to long --> gather variables about SWIT  
+SWIT_long <- Bra1_compl_SWIT %>%  
+	# wide to long (omly on specified selected var )
+	tidyr::gather(.,key = "technology" , value = "value",  
+					  # specific vars I want to gather
+					  VolLossEstim =  Q24_VolLossMech_Has,
+					  LeaksDetection  = Q39_LeaksDetection_Analyzed, 
+					  Dept_Innov= Q55_Dept_Inn_Has, 
+					  Dept_R_D = Q56_Dept_ReD_Has , 
+					  Dept_IT_data= Q57_Dept_ITdata_Has , 
+					  GIS_Pipes= Q58a_GIS_Pipe_Has , 
+					  GIS_PressValves= Q58b_GIS_Press_Has, 
+					  GIS_Reserv= Q58c_GIS_Storg_Has , 
+					  GIS_ConnPts = Q58d_GIS_Conn_Has , 
+					  HidrMod	= Q60_HidrMod_Has , 
+					  DMA	= Q62_DMA_Has   , 
+					  DMA_w_flows	= Q63_DMA_Has_Flows   , 
+					  DMA_w_pressvalves	= Q64_DMA_Has_PressValv   , 
+					  PressSyst= Q65_PressSyst_Has, 
+					  AMR  , 
+					  AMI) %>% 
+	# I turn value from "Yes/No/DK" to DUMMY 0/1
+	dplyr::mutate(value_dummy = case_when(value == "Yes" ~ 1,
+													  value == "InConstr" ~ 1,
+													  value == "No" ~ 0,
+													  value == "DK" ~ 0,
+													  value == "na" ~ 0))  
+
+
+# ----- GROUP BY & COUNT obs each group 
+SWIT_long2 <- SWIT_long %>% 
+	dplyr::group_by(technology) %>% 
+	dplyr::summarise(Count_SWIT = sum( value_dummy)) %>% 
+# ----- add technology category var 
+	dplyr::mutate( tech_type = case_when(
+		technology == 	"Q55_Dept_Inn_Has" | technology ==  "Q56_Dept_ReD_Has" | technology ==   "Q57_Dept_ITdata_Has" ~ 1, 
+		technology == 	"Q24_VolLossMech_Has"| technology == "Q39_LeaksDetection_Analyzed" ~ 2 ,
+		technology == "Q68_SCADA_UtilLevel" | technology == "Q58a_GIS_Pipe_Has" | 
+		technology == "Q58b_GIS_Press_Has"| technology =="Q58c_GIS_Storg_Has" |
+		technology =="Q58d_GIS_Conn_Has" ~ 3, 
+		technology == 	 "Q60_HidrMod_Has"   ~ 4, 
+		technology == "Q62_DMA_Has" |technology == "Q65_PressSyst_Has" 
+		|technology ==  "Q63_DMA_Has_Flows" |technology == "Q64_DMA_Has_PressValv"		~ 5, 
+		technology ==  "AMR"  | technology =="AMI"~ 6)
+		)
+
+
+# ----- Define the order I want for technology category vars
+SWIT_long2$technology <-factor(SWIT_long2$technology, 
+										 levels = c("Q55_Dept_Inn_Has", "Q56_Dept_ReD_Has", "Q57_Dept_ITdata_Has", 
+										 			  "Q24_VolLossMech_Has",  "Q39_LeaksDetection_Analyzed", 
+										 			  "Q68_SCADA_UtilLevel" ,  "Q58a_GIS_Pipe_Has" , 
+										 			  "Q58b_GIS_Press_Has", "Q58c_GIS_Storg_Has",  
+										 			  "Q58d_GIS_Conn_Has" , "Q60_HidrMod_Has" , "Q62_DMA_Has" , 
+										 			  "Q65_PressSyst_Has" , "Q63_DMA_Has_Flows" ,  
+										 			  "Q64_DMA_Has_PressValv", "AMR"  , "AMI" ))
+
+SWIT_long2$tech_type <-factor(SWIT_long2$tech_type, 
+										levels = c("1", "2","3" ,"4" ,"5" ,"6" ), # order
+										labels = c("Technical Staff", "Network Mngmnt","GIS or SCADA" ,"Hydr Model",
+													  "DMA or Pressure Mngmnt" ,"Smart Meters" )
+)
+
+# ----- PLOT  
+ggplot(SWIT_long2) + 
+	aes(x = technology, y = Count_SWIT , fill = tech_type)  + 
+ 	geom_bar(stat = "identity", position="identity") + 
+	# count inside bars
+	geom_text(aes(label=Count_SWIT), color = "white", hjust=2)+
+ 	theme( axis.text.x = element_text(size=10), axis.text.y = element_text(size=10,face="bold") ) + # they are flipped!!!
+	labs(title="SWIT and other ICT tools used by the Suppliers in Brazil Sample" ,
+		  subtitle = "(Includes when technology is in construction)") + 
+	labs(x = "", y = "# suppliers in sample" ) + 
+	# rename legend labels
+	guides(fill=guide_legend(title="Type of Technology")) + 
+	# reference line to show tot N of sample
+	geom_hline(yintercept=38, color = "#616161", size=0.3) +
+	geom_text(aes(x= 7, label="sample = 38", y=38), colour="#616161", angle=90, vjust = 1.2 ) +
+	coord_flip()        -> ggSWITbar   
+
+# ----- save 
+ggSWITbar  
+ggsave( ggSWITbar, filename =here::here("07_output", "ggSWITbar.png"))
+```
+
+
+<!-- Using markdown way -->
+![Bar Plot for # of obs adopting SWIT by Type](/tutorial/ggSWITbar.png)
+
+```{r echo=FALSE}
+```
+
+
+
+```{r echo=FALSE}
+```
+
+
+
+```{r echo=FALSE}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

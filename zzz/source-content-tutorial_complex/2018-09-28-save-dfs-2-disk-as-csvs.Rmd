@@ -1,0 +1,282 @@
+---
+title: Save DFs 2 disk as CSVs
+author: ''
+date: '2018-09-28'
+slug: save-dfs-2-disk-as-csvs
+categories:
+  - Rtutorial
+tags:
+  - lapply
+  - forloop
+  - purrr
+header:
+  caption: ''
+  image: ''
+---
+
+<!-- --- -->
+<!-- title: "Save DFs 2 disk as CSVs" -->
+<!-- author: '' -->
+<!-- date: '2018-09-28' -->
+<!-- slug: save-dfs-2-disk-as-csvs -->
+<!-- categories: ["Rtutorial"] -->
+<!-- tags: ["lapply","forloop","purrr"] -->
+<!-- header: -->
+<!--   caption: '' -->
+<!--   image: '' -->
+<!-- # menu.tutorial: -->
+<!-- #   name: "R tutorials" -->
+<!-- #   weight: 1 -->
+<!-- # thumbnailImagePosition: left -->
+<!-- # thumbnailImage: ./images/logo.png -->
+<!-- # coverImage: ../../../images/transparent.png   -->
+<!-- # coverSize: partial # full: for maximum cover size -->
+<!-- # metaAlignment: center -->
+<!-- disable_comments: true -->
+<!-- # output: -->
+<!-- #   blogdown::html_page: -->
+<!--     toc: false -->
+<!--     fig_width: 8 -->
+<!--     css: "/css/my-style.css" -->
+<!-- --- -->
+
+**GOAL**: A frequent situation I encounter is when I have a number of dataframes (resulting from some analysis) in my environment and want to convert in .csv files to save or share - while retaining the same name(s). Below are a few different ways to do it. 
+
+--- 
+
+```{r global_options, include=FALSE}
+# I am not executing bc it for the blog post 
+knitr::opts_chunk$set(eval = FALSE, echo = TRUE , tidy = TRUE, results='hide',  message = TRUE, 
+							 warning = FALSE , fig.show='hide', fig.align='center', fig.width=8, fig.height=8)
+# load libraries
+library(dplyr)
+library(purrr)
+library(readr)
+library(tidyr)
+```
+
+
+
+
+# SOME PREPARATION FIRST 
+
+## Load some pre-loaded R datasets & save as DFs
+
+```{r}
+# Explore R default datasets
+# data() 
+
+# I save them as DFs in my env
+mtcars <- as.data.frame(mtcars)
+iris <- as.data.frame(iris)
+orange <- as.data.frame(Orange)
+titanic <- as.data.frame(Titanic)
+Orange <- as.data.frame(Orange)
+OrchardSprays <- as.data.frame(OrchardSprays)
+airquality <- as.data.frame(airquality)
+airmiles <- as.data.frame(airmiles)
+```
+
+
+## Preliminary parameters setting (2 ways to name elements of list)
+```{r}
+### 1.a) Create a list of n data frames
+list_dfs <- list(mtcars, iris ,  orange, titanic)
+list_dfs[1]
+
+### 1.b) Give names the data frames
+names(list_dfs) <- c("mtcars","iris", "orange" , "titanic") 
+
+### 2) Create a list of n data frames & GIVE thema  name 
+list_dfs_N <- list(mtcars = mtcars,iris = iris , orange = orange, titanic = titanic ) 
+list_dfs_N[[1]] 
+```
+
+
+# Create Static directories - I have some issue here 
+```{r}
+# Create Output Dir... remember final"/"
+
+Outdf2csv <-	file.path(".", "static","post", "df2csv/")
+dir.create(Outdf2csv)
+
+Dir_pcr <-	file.path(".", "static","post", "pcr/")
+dir.create(Dir_pcr)
+```
+
+--- 
+
+# OPTION (1) Using a For loop 
+
+**NOTE**
+`length(list_loop_DF)` # = to the lenght of the list -> WRONG! (I need apply to all elements)
+`seq_along(list_loop_DF)` # generates a sequence long as the list -> OK!
+
+```{r loop}
+# Create a list of NAMED dataframes
+list_loop_DF <- list(airquality = airquality, airmiles = airmiles) 
+
+
+
+# Write a .csv file with each 
+for (i in seq_along(list_loop_DF)) { # generate a sequence along with 
+	# returns list of same lenght as x 
+
+	# Outdf2csv <- if (!dir.exists("./zzz_purrr/Output/")){dir.create(file.path("./zzz_purrr/Output/"))}
+	# else {print("Dir already exists!")}
+	write.csv(x = list_loop_DF[[i]], file = paste0(Outdf2csv, names(list_loop_DF[i]) , ".csv")  )
+
+	# OutDir <- if (!dir.exists("./zzz_purrr/Output/")){dir.create(file.path("./zzz_purrr/Output/"))}
+	# else {print("Dir already exists!")}
+	write.csv(x = list_loop_DF[[i]], file = paste0(Outdf2csv, names(list_loop_DF[i]) , ".csv")  )
+
+}
+
+```
+
+--- 
+
+# OPTION (2) Using lapply  (within a function) 
+In simple form, this is what I am going to do:
+
+	`MyFunc <- function (list, OutputDir) { `
+	`	OutputDir <- ..set dir location.`
+	`	lapply(X = forall(list), FUN, ...)`
+	`	}`
+
+```{r lapply }
+# Create a list of NAMED dataframes
+list_lapply_DF <- list(mtcars = mtcars, titanic = titanic ) # 
+
+
+# Output... remember final"/"
+# Outdf2csv <-	file.path(".", "content","post", "df2csv/")
+# dir.create(Outdf2csv)
+
+
+# Write the function with arguments (DFlist, OutputDir)
+Func_list_lapply <- function(list_lapply_DF) { # optional arg2 (Outdf2csv)
+	# Outdf2csv <- if (!dir.exists("./zzz_purrr/Output/")){dir.create(file.path("./zzz_purrr/Output/"))}
+	# else {print("Dir already exists!")}
+	lapply(1:length(list_lapply_DF), # from 1 to n = lenght of "x" 
+		function(i) write.csv(list_lapply_DF[[i]], # after applying a "function"
+			file = paste0(Outdf2csv, names(list_lapply_DF[i]), ".csv"), row.names = FALSE))
+}
+
+# Call the function
+Func_list_lapply(list_lapply_DF)
+```
+
+--- 
+
+# OPTION (3) alternative WAY WITH purrr:~~map~~ walk  
+
+[Useful link](https://serialmentor.com/blog/2016/6/13/reading-and-combining-many-tidy-data-files-in-R
+https://luisdva.github.io/rstats/export-iteratively/)
+
+**NOTE** Writing a file to a disk is considered to be a side-effect: we are not interested in changing our data, so should use `walk` instead of `map`.
+
+Using `walk2(.x, .y, .f, ...` where 
+	`.x` and `.y` are vectors of the same length
+	`.f` is a 2-argument function 
+	
+```{r purr}
+library(purrr)
+library(tidyverse)
+
+# Create a list of NAMED dataframes
+list_purrr_DF <- list(Orange = Orange, OrchardSprays = OrchardSprays ) # 
+
+# Set the Output Dir to an object 
+
+# Outdf2csv <-	file.path(".", "content","post", "df2csv/")
+# dir.create(Outdf2csv)
+
+path <- file.path(paste0(Outdf2csv, names(list_purrr_DF), ".csv"))
+walk2(list_purrr_DF, path, write.csv)
+
+here::here()
+```
+---
+
+# OPTION (4) alternative WAY WITH purrr::map
+[Intructions found in ](https://lsru.github.io/tv_course/TD_purrr_solution.html)
+I need to get back to this ...
+
+```{r purrcomplex}
+# Data
+# unzip(zipfile = "pcr.zip", exdir = "./content/post/pcr") # will create a data/pcr subfolder and extract the files
+pcr_files <- list.files(file.path(".", "static","post", "pcr"), full.names = TRUE)
+
+#=== map() will name each output element asin the input vector. 
+list.files(file.path(".", "static","post", "pcr"), full.names = TRUE) %>%
+  set_names() %>% # Use set_names() to keep this information.
+	map(read_delim, delim = " ") %>% 
+  	names()
+
+#=== remove the path and extension from the filename using basename() and tools::file_path_sans_ext()
+list.files(file.path(".", "static","post", "pcr"), full.names = TRUE) %>%
+  set_names(nm = (basename(.) %>% # remove PATH
+  tools::file_path_sans_ext())) %>% # remove .ext
+  map(read_delim, delim = " ") %>% 
+  names()
+
+# Getting a single tibble out of all files would be much handier.---> map_df
+list.files(file.path(".", "static","post", "pcr"), full.names = TRUE) %>%
+  set_names(nm = (basename(.) %>% # remove PATH
+  tools::file_path_sans_ext())) %>% # remove .ext
+  map_df(read_delim, delim = " ", .id = "filename")
+
+# ====Rearrange the data and save multiple files
+dir.create(file.path(".", "static","post", "by_gene"), showWarnings = FALSE) 
+
+# Method 1: using walk2 but inside a mutate call
+list.files(file.path(".", "static","post", "pcr"), full.names = TRUE) %>%
+	set_names(nm = (basename(.) %>% tools::file_path_sans_ext())) %>%
+  map_df(read_delim, delim = " ", .id = "filename") %>%
+  group_by(gene) %>%
+  nest() %>%
+  mutate(file_out = paste0(gene, ".csv"),
+         file_out_path = file.path(".", "static","post", "by_gene", file_out),
+         data = walk2(data, file_out_path, write_csv))
+
+# Method 2: using walk on the transposed tibble with an anonymous function
+list.files(file.path(".", "static","post", "pcr"), full.names = TRUE) %>%
+  set_names(nm = (basename(.) %>% tools::file_path_sans_ext())) %>%
+  map_df(read_delim, delim = " ", .id = "filename") %>%
+  group_by(gene) %>%
+  nest() %>%
+  mutate(file_out = paste0(gene, ".csv"),
+         file_out_path = file.path(".", "static","post", "by_gene", file_out)) %>%
+  transpose() %>%
+  walk(~write_csv(.$data, .$file_out_path))
+
+```
+
+
+---
+
+# OPTION (5) Adjacent topic: drop na, split, remove duplicates, write to disk
+
+In this case, the five new files (one for each bat family) will end up in the working directory, but if we want to do this with more files and dedicated directories then using the here and glue packages is probably a good idea.
+[Useful link](https://luisdva.github.io/rstats/export-iteratively/)
+
+```{r}
+# read csv from web
+batRecs <- read.csv("https://raw.githubusercontent.com/luisDVA/codeluis/master/batRecords.csv",
+						  stringsAsFactors = FALSE)
+
+# drop na, split, remove duplicates, write to disk
+batRecs %>%  na.omit() %>% 
+	# split to create a list of data frames for each group, 
+	split(.$family) %>% 
+	# then map to apply functions to each list element. I
+	map(~distinct(.x,decimal_latitude,decimal_longitude,.keep_all=TRUE)) %>% 
+	# walk because write.csv returns nothing and creates the csv file as a side effect
+
+  	walk(~.x %>% write.csv(file = paste0(Outdf2csv,"nov1_",unique(.x$family),".csv"), row.names = FALSE)  
+
+  		)
+```
+
+

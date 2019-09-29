@@ -1,0 +1,240 @@
+---
+title: Save DFs 2 disk as CSVs
+author: ''
+date: '2018-09-28'
+slug: save-dfs-2-disk-as-csvs
+categories:
+  - Rtutorial
+tags:
+  - lapply
+  - forloop
+  - purrr
+header:
+  caption: ''
+  image: ''
+---
+
+
+
+<!-- --- -->
+<!-- title: "Save DFs 2 disk as CSVs" -->
+<!-- author: '' -->
+<!-- date: '2018-09-28' -->
+<!-- slug: save-dfs-2-disk-as-csvs -->
+<!-- categories: ["Rtutorial"] -->
+<!-- tags: ["lapply","forloop","purrr"] -->
+<!-- header: -->
+<!--   caption: '' -->
+<!--   image: '' -->
+<!-- # menu.tutorial: -->
+<!-- #   name: "R tutorials" -->
+<!-- #   weight: 1 -->
+<!-- # thumbnailImagePosition: left -->
+<!-- # thumbnailImage: ./images/logo.png -->
+<!-- # coverImage: ../../../images/transparent.png   -->
+<!-- # coverSize: partial # full: for maximum cover size -->
+<!-- # metaAlignment: center -->
+<!-- disable_comments: true -->
+<!-- # output: -->
+<!-- #   blogdown::html_page: -->
+<!--     toc: false -->
+<!--     fig_width: 8 -->
+<!--     css: "/css/my-style.css" -->
+<!-- --- -->
+<p><strong>GOAL</strong>: A frequent situation I encounter is when I have a number of dataframes (resulting from some analysis) in my environment and want to convert in .csv files to save or share - while retaining the same name(s). Below are a few different ways to do it.</p>
+<hr />
+<div id="some-preparation-first" class="section level1">
+<h1>SOME PREPARATION FIRST</h1>
+<div id="load-some-pre-loaded-r-datasets-save-as-dfs" class="section level2">
+<h2>Load some pre-loaded R datasets &amp; save as DFs</h2>
+<pre class="r"><code># Explore R default datasets data()
+
+# I save them as DFs in my env
+mtcars &lt;- as.data.frame(mtcars)
+iris &lt;- as.data.frame(iris)
+orange &lt;- as.data.frame(Orange)
+titanic &lt;- as.data.frame(Titanic)
+Orange &lt;- as.data.frame(Orange)
+OrchardSprays &lt;- as.data.frame(OrchardSprays)
+airquality &lt;- as.data.frame(airquality)
+airmiles &lt;- as.data.frame(airmiles)</code></pre>
+</div>
+<div id="preliminary-parameters-setting-2-ways-to-name-elements-of-list" class="section level2">
+<h2>Preliminary parameters setting (2 ways to name elements of list)</h2>
+<pre class="r"><code>### 1.a) Create a list of n data frames
+list_dfs &lt;- list(mtcars, iris, orange, titanic)
+list_dfs[1]
+
+### 1.b) Give names the data frames
+names(list_dfs) &lt;- c(&quot;mtcars&quot;, &quot;iris&quot;, &quot;orange&quot;, &quot;titanic&quot;)
+
+### 2) Create a list of n data frames &amp; GIVE thema name
+list_dfs_N &lt;- list(mtcars = mtcars, iris = iris, orange = orange, titanic = titanic)
+list_dfs_N[[1]]</code></pre>
+</div>
+</div>
+<div id="create-static-directories---i-have-some-issue-here" class="section level1">
+<h1>Create Static directories - I have some issue here</h1>
+<pre class="r"><code># Create Output Dir... remember final&#39;/&#39;
+
+Outdf2csv &lt;- file.path(&quot;.&quot;, &quot;static&quot;, &quot;post&quot;, &quot;df2csv/&quot;)
+dir.create(Outdf2csv)
+
+Dir_pcr &lt;- file.path(&quot;.&quot;, &quot;static&quot;, &quot;post&quot;, &quot;pcr/&quot;)
+dir.create(Dir_pcr)</code></pre>
+<hr />
+</div>
+<div id="option-1-using-a-for-loop" class="section level1">
+<h1>OPTION (1) Using a For loop</h1>
+<p><strong>NOTE</strong>
+<code>length(list_loop_DF)</code> # = to the lenght of the list -&gt; WRONG! (I need apply to all elements)
+<code>seq_along(list_loop_DF)</code> # generates a sequence long as the list -&gt; OK!</p>
+<pre class="r"><code># Create a list of NAMED dataframes
+list_loop_DF &lt;- list(airquality = airquality, airmiles = airmiles)
+
+
+
+# Write a .csv file with each generate a sequence along with returns list of
+# same lenght as x
+for (i in seq_along(list_loop_DF)) {
+    
+    # Outdf2csv &lt;- if
+    # (!dir.exists(&#39;./zzz_purrr/Output/&#39;)){dir.create(file.path(&#39;./zzz_purrr/Output/&#39;))}
+    # else {print(&#39;Dir already exists!&#39;)}
+    write.csv(x = list_loop_DF[[i]], file = paste0(Outdf2csv, names(list_loop_DF[i]), 
+        &quot;.csv&quot;))
+    
+    # OutDir &lt;- if
+    # (!dir.exists(&#39;./zzz_purrr/Output/&#39;)){dir.create(file.path(&#39;./zzz_purrr/Output/&#39;))}
+    # else {print(&#39;Dir already exists!&#39;)}
+    write.csv(x = list_loop_DF[[i]], file = paste0(Outdf2csv, names(list_loop_DF[i]), 
+        &quot;.csv&quot;))
+    
+}</code></pre>
+<hr />
+</div>
+<div id="option-2-using-lapply-within-a-function" class="section level1">
+<h1>OPTION (2) Using lapply (within a function)</h1>
+<p>In simple form, this is what I am going to do:</p>
+<pre><code>`MyFunc &lt;- function (list, OutputDir) { `
+`   OutputDir &lt;- ..set dir location.`
+`   lapply(X = forall(list), FUN, ...)`
+`   }`</code></pre>
+<pre class="r"><code># Create a list of NAMED dataframes
+list_lapply_DF &lt;- list(mtcars = mtcars, titanic = titanic ) # 
+
+
+# Output... remember final&quot;/&quot;
+# Outdf2csv &lt;-  file.path(&quot;.&quot;, &quot;content&quot;,&quot;post&quot;, &quot;df2csv/&quot;)
+# dir.create(Outdf2csv)
+
+
+# Write the function with arguments (DFlist, OutputDir)
+Func_list_lapply &lt;- function(list_lapply_DF) { # optional arg2 (Outdf2csv)
+    # Outdf2csv &lt;- if (!dir.exists(&quot;./zzz_purrr/Output/&quot;)){dir.create(file.path(&quot;./zzz_purrr/Output/&quot;))}
+    # else {print(&quot;Dir already exists!&quot;)}
+    lapply(1:length(list_lapply_DF), # from 1 to n = lenght of &quot;x&quot; 
+        function(i) write.csv(list_lapply_DF[[i]], # after applying a &quot;function&quot;
+            file = paste0(Outdf2csv, names(list_lapply_DF[i]), &quot;.csv&quot;), row.names = FALSE))
+}
+
+# Call the function
+Func_list_lapply(list_lapply_DF)</code></pre>
+<hr />
+</div>
+<div id="option-3-alternative-way-with-purrrmap-walk" class="section level1">
+<h1>OPTION (3) alternative WAY WITH purrr:<del>map</del> walk</h1>
+<p><a href="https://serialmentor.com/blog/2016/6/13/reading-and-combining-many-tidy-data-files-in-R%20https://luisdva.github.io/rstats/export-iteratively/">Useful link</a></p>
+<p><strong>NOTE</strong> Writing a file to a disk is considered to be a side-effect: we are not interested in changing our data, so should use <code>walk</code> instead of <code>map</code>.</p>
+<p>Using <code>walk2(.x, .y, .f, ...</code> where
+<code>.x</code> and <code>.y</code> are vectors of the same length
+<code>.f</code> is a 2-argument function</p>
+<pre class="r"><code>library(purrr)
+library(tidyverse)
+
+# Create a list of NAMED dataframes
+list_purrr_DF &lt;- list(Orange = Orange, OrchardSprays = OrchardSprays)  # 
+
+# Set the Output Dir to an object
+
+# Outdf2csv &lt;- file.path(&#39;.&#39;, &#39;content&#39;,&#39;post&#39;, &#39;df2csv/&#39;)
+# dir.create(Outdf2csv)
+
+path &lt;- file.path(paste0(Outdf2csv, names(list_purrr_DF), &quot;.csv&quot;))
+walk2(list_purrr_DF, path, write.csv)
+
+here::here()</code></pre>
+<hr />
+</div>
+<div id="option-4-alternative-way-with-purrrmap" class="section level1">
+<h1>OPTION (4) alternative WAY WITH purrr::map</h1>
+<p><a href="https://lsru.github.io/tv_course/TD_purrr_solution.html">Intructions found in</a>
+I need to get back to this …</p>
+<pre class="r"><code># Data
+# unzip(zipfile = &quot;pcr.zip&quot;, exdir = &quot;./content/post/pcr&quot;) # will create a data/pcr subfolder and extract the files
+pcr_files &lt;- list.files(file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;pcr&quot;), full.names = TRUE)
+
+#=== map() will name each output element asin the input vector. 
+list.files(file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;pcr&quot;), full.names = TRUE) %&gt;%
+  set_names() %&gt;% # Use set_names() to keep this information.
+    map(read_delim, delim = &quot; &quot;) %&gt;% 
+    names()
+
+#=== remove the path and extension from the filename using basename() and tools::file_path_sans_ext()
+list.files(file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;pcr&quot;), full.names = TRUE) %&gt;%
+  set_names(nm = (basename(.) %&gt;% # remove PATH
+  tools::file_path_sans_ext())) %&gt;% # remove .ext
+  map(read_delim, delim = &quot; &quot;) %&gt;% 
+  names()
+
+# Getting a single tibble out of all files would be much handier.---&gt; map_df
+list.files(file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;pcr&quot;), full.names = TRUE) %&gt;%
+  set_names(nm = (basename(.) %&gt;% # remove PATH
+  tools::file_path_sans_ext())) %&gt;% # remove .ext
+  map_df(read_delim, delim = &quot; &quot;, .id = &quot;filename&quot;)
+
+# ====Rearrange the data and save multiple files
+dir.create(file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;by_gene&quot;), showWarnings = FALSE) 
+
+# Method 1: using walk2 but inside a mutate call
+list.files(file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;pcr&quot;), full.names = TRUE) %&gt;%
+    set_names(nm = (basename(.) %&gt;% tools::file_path_sans_ext())) %&gt;%
+  map_df(read_delim, delim = &quot; &quot;, .id = &quot;filename&quot;) %&gt;%
+  group_by(gene) %&gt;%
+  nest() %&gt;%
+  mutate(file_out = paste0(gene, &quot;.csv&quot;),
+         file_out_path = file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;by_gene&quot;, file_out),
+         data = walk2(data, file_out_path, write_csv))
+
+# Method 2: using walk on the transposed tibble with an anonymous function
+list.files(file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;pcr&quot;), full.names = TRUE) %&gt;%
+  set_names(nm = (basename(.) %&gt;% tools::file_path_sans_ext())) %&gt;%
+  map_df(read_delim, delim = &quot; &quot;, .id = &quot;filename&quot;) %&gt;%
+  group_by(gene) %&gt;%
+  nest() %&gt;%
+  mutate(file_out = paste0(gene, &quot;.csv&quot;),
+         file_out_path = file.path(&quot;.&quot;, &quot;static&quot;,&quot;post&quot;, &quot;by_gene&quot;, file_out)) %&gt;%
+  transpose() %&gt;%
+  walk(~write_csv(.$data, .$file_out_path))</code></pre>
+<hr />
+</div>
+<div id="option-5-adjacent-topic-drop-na-split-remove-duplicates-write-to-disk" class="section level1">
+<h1>OPTION (5) Adjacent topic: drop na, split, remove duplicates, write to disk</h1>
+<p>In this case, the five new files (one for each bat family) will end up in the working directory, but if we want to do this with more files and dedicated directories then using the here and glue packages is probably a good idea.
+<a href="https://luisdva.github.io/rstats/export-iteratively/">Useful link</a></p>
+<pre class="r"><code># read csv from web
+batRecs &lt;- read.csv(&quot;https://raw.githubusercontent.com/luisDVA/codeluis/master/batRecords.csv&quot;,
+                          stringsAsFactors = FALSE)
+
+# drop na, split, remove duplicates, write to disk
+batRecs %&gt;%  na.omit() %&gt;% 
+    # split to create a list of data frames for each group, 
+    split(.$family) %&gt;% 
+    # then map to apply functions to each list element. I
+    map(~distinct(.x,decimal_latitude,decimal_longitude,.keep_all=TRUE)) %&gt;% 
+    # walk because write.csv returns nothing and creates the csv file as a side effect
+
+    walk(~.x %&gt;% write.csv(file = paste0(Outdf2csv,&quot;nov1_&quot;,unique(.x$family),&quot;.csv&quot;), row.names = FALSE)  
+
+        )</code></pre>
+</div>
