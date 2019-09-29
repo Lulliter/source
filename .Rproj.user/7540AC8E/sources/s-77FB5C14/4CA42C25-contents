@@ -9,11 +9,11 @@
 
 #=========================================== (In Root ./ start) ================================================#
 #=====  Go To Root ./ folder
-cd ~/GoogleDrive/source
+cd ~/GoogleDrive/Github/source
 
 #=====  (Clean Everiting *INSIDE* ./public) 
 setopt rmstarsilent # prevent from asking me permission
-rm -rf  public/*  
+rm -rf  docs/*  
 unsetopt rmstarsilent
 
 ########################################################

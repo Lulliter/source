@@ -2,16 +2,18 @@
     "collab_server" : "",
     "contents" : "",
     "created" : 1569786103111.000,
-    "dirty" : false,
+    "dirty" : true,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2353466872",
+    "hash" : "0",
     "id" : "4CA42C25",
     "lastKnownWriteTime" : 1569182123,
-    "last_content_update" : 1569182123,
+    "last_content_update" : 1569786464850,
     "path" : "~/GoogleDrive/Github/source/___render-deploy.sh",
     "project_path" : "___render-deploy.sh",
     "properties" : {
+        "cursorPosition" : "62,0",
+        "scrollLine" : "43"
     },
     "read_only" : false,
     "read_only_alternatives" : [
