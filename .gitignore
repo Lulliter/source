@@ -1,6 +1,8 @@
 
-# R proj files
+# R proj files ( I added the  /*)
 .Rproj.user
+.Rproj.user/
+.Rproj.user/**
 
 # History files
 .Rhistory
